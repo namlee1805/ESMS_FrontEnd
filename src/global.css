@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap");
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --font-roboto: Roboto;
+  --font-inter: Inter;
+
+  /* font sizes */
+  --font-size-base: 16px;
+  --font-size-xl: 20px;
+  --font-size-sm: 14px;
+
+  /* Colors */
+  --color-whitesmoke: #f3f9fa;
+  --color-darkslategray-100: #294957;
+  --secondary-text: #313957;
+  --color-darkslategray-200: #162d3a;
+  --color-white: #fff;
+  --color-lightslategray: #8897ad;
+  --color-lightgray: #d4d7e3;
+  --primary-text: #0c1421;
+  --color-silver: rgba(188, 193, 194, 0.23);
+  --color-darkgray: rgba(169, 172, 172, 0.23);
+  --color-gainsboro: #cfdfe2;
+  --color-coral-100: #f57c51;
+  --color-coral-200: rgba(245, 125, 81, 0.33);
+
+  /* Gaps */
+  --gap-base: 16px;
+  --gap-5xs: 8px;
+  --gap-5xl: 24px;
+
+  /* Paddings */
+  --padding-xs: 12px;
+  --padding-4xs: 9px;
+  --padding-base: 16px;
+  --padding-5xs: 8px;
+  --padding-sm: 14px;
+  --padding-3xs: 10px;
+  --padding-5xl: 24px;
+
+  /* Border radiuses */
+  --br-xs: 12px;
+  --br-5xl: 24px;
+}
