@@ -1,7 +1,21 @@
+import { async } from "@firebase/util";
 import React, { useState, useEffect, useCallback } from "react";
+import { Link } from "react-router-dom";
+import { UserAuth } from "../../context/AuthContext";
 import "./ProStudent_mobile.css";
 
 const ProStudent_mobile = () => {
+
+  const { user, logOut } = UserAuth();
+
+  const handleSignOut = async () => {
+    try {
+      await logOut();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   const [studentData, setStudentData] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -106,7 +120,7 @@ const ProStudent_mobile = () => {
               </button>
             </div>
           </div>
-          <button className="logout3" onClick={onLogoutBtnClick}>
+          {/* <button className="logout3" onClick={onLogoutBtnClick}>
             <div className="logout-container">
               <b className="logout4">
                 <span className="logout-txt1">
@@ -114,6 +128,9 @@ const ProStudent_mobile = () => {
                 </span>
               </b>
             </div>
+          </button> */}
+          <button onClick={handleSignOut} className="logout3">
+            Logout
           </button>
         </div>
         <div className="profile-parent">

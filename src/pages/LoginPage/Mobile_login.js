@@ -1,7 +1,31 @@
 import { useCallback } from "react";
+import React, { useEffect } from "react";
+import { UserAuth } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 import "./Mobile_login.css";
+import { async } from "@firebase/util";
+import GoogleButton from "react-google-button";
 
-const Mobile = () => {
+const Mobile_login = () => {
+
+  const { googleSignIn, user} = UserAuth();
+
+  const navigate = useNavigate();
+
+  const handleGoogleSingIn = async () => {
+    try{
+      await googleSignIn();
+    }catch(error){
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    if(user != null){
+      navigate('/profile');
+    }
+  },[user]);
+
   const onMainButtonClick = useCallback(() => {
     window.open("localhost:8888/loginStudents");
   }, []);
@@ -57,16 +81,17 @@ const Mobile = () => {
               <div className="label4">Or sign in with</div>
               <div className="or-inner" />
             </div>
-            <button className="social-buttons-columns1">
-              <div
+            <div className="social-buttons-columns1">
+              {/* <div
                 className="social-button"
                 onClick={onSocialButtonContainerClick}
               >
                 <img className="google-icon3" alt="" src="/google3.svg" />
                 <img className="facebook-icon3" alt="" src="/facebook3.svg" />
                 <div className="facebook1">Google</div>
-              </div>
-            </button>
+              </div> */}
+              <GoogleButton onClick={handleGoogleSingIn}/>
+            </div>
           </div>
         </div>
         <img className="logo-long-2-icon1" alt="" src="/logolong-21@2x.png" />
@@ -75,4 +100,4 @@ const Mobile = () => {
   );
 };
 
-export default Mobile;
+export default Mobile_login;

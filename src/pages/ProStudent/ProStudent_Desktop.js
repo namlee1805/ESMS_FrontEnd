@@ -1,7 +1,20 @@
+import { async } from "@firebase/util";
 import React, { useState, useEffect, useCallback } from "react"; 
+import { Link } from "react-router-dom";
+import { UserAuth } from "../../context/AuthContext";
 import "./ProStudent_Desktop.css";
 
 const ProStudent_Desktop = () => {
+  const { user, logOut } = UserAuth();
+
+  const handleSignOut = async() => {
+    try{
+      await logOut();
+    }catch(error){
+      console.log(error);
+    }
+  }
+
   const [studentData, setStudentData] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -106,7 +119,7 @@ const ProStudent_Desktop = () => {
               </button>
             </div>
           </div>
-          <button className="logout" onClick={onLogoutBtnClick}>
+          {/* <button className="logout" onClick={onLogoutBtnClick}>
             <div className="logout-wrapper">
               <b className="logout1">
                 <span className="logout-txt">
@@ -114,6 +127,9 @@ const ProStudent_Desktop = () => {
                 </span>
               </b>
             </div>
+          </button> */}
+          <button onClick={handleSignOut} className="logout">
+            Logout
           </button>
         </div>
         <div className="body">

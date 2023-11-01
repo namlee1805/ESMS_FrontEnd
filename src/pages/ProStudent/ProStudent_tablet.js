@@ -1,20 +1,31 @@
-import React, { useState, useEffect, useCallback } from "react"; 
+import React, { useState, useEffect, useCallback } from "react";
 import "./ProStudent_tablet.css";
 
 const ProStudent_tablet = () => {
+
+  const { user, logOut } = UserAuth();
+
+  const handleSignOut = async () => {
+    try {
+      await logOut();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   const [studentData, setStudentData] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch('http://localhost:8088/students')
-    .then(response => response.json())
-    .then(data => {
-      setStudentData(data);
-      setLoading(false);
-    })
-    .catch(error => {
-      setLoading(false);
-    });
+      .then(response => response.json())
+      .then(data => {
+        setStudentData(data);
+        setLoading(false);
+      })
+      .catch(error => {
+        setLoading(false);
+      });
   }, []);
 
   //All links
@@ -30,7 +41,7 @@ const ProStudent_tablet = () => {
   const onExamStuClick = useCallback(() => {
     window.location.href('http://localhost:3000/ExStudent');
   }, []);
-  
+
   const onProStuClick = useCallback(() => {
     window.location.href('http://localhost:3000/ProStudent');
   }, []);
@@ -111,7 +122,7 @@ const ProStudent_tablet = () => {
                 </button>
               </div>
             </div>
-            <button className="logout6" onClick={onLogoutBtnClick}> 
+            {/* <button className="logout6" onClick={onLogoutBtnClick}> 
               <div className="logout-frame">
                 <b className="logout7">
                   <span className="logout-txt2">
@@ -119,6 +130,9 @@ const ProStudent_tablet = () => {
                   </span>
                 </b>
               </div>
+            </button> */}
+            <button onClick={handleSignOut} className="logout6">
+              Logout
             </button>
           </div>
           <div className="profile-group">
@@ -134,14 +148,14 @@ const ProStudent_tablet = () => {
             <div className="student-id2">Email:</div>
             <div className="tinddse173049fpteduvn-frame">
               <div className="tinddse173049fpteduvn2">
-              {loading ? 'Loading...' : studentData?.studentEmail}
+                {loading ? 'Loading...' : studentData?.studentEmail}
               </div>
             </div>
           </div>
         </div>
         <div className="report-group">
           <div className="report4">
-            <button className="report-inner" onClick={onReportStuClick}/>
+            <button className="report-inner" onClick={onReportStuClick} />
             <div className="report5">Report</div>
             <div className="image-1-frame">
               <img className="image-1-icon2" alt="" src="/image-11@2x.png" />

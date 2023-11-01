@@ -1,7 +1,31 @@
+import { async } from "@firebase/util";
+import React, { useEffect } from "react";
 import { useCallback } from "react";
+import { GoogleButton } from "react-google-button";
+import { UserAuth } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 import "./Desktop_login.css";
 
-const DesktopTry = () => {
+const Desktop_login = () => {
+
+  const { googleSignIn, user } = UserAuth();
+
+  const navigate = useNavigate();
+
+  const handleGoogleSignIn = async () => {
+    try{
+      await googleSignIn();
+    }catch (error){
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    if(user != null) {
+      navigate('/profile');
+    }
+  },[user]);
+
   const onMainButtonClick = useCallback(() => {
     window.open("localhost:8888/loginStudents");
   }, []);
@@ -58,11 +82,13 @@ const DesktopTry = () => {
                 <div className="or-child" />
               </div>
               <div className="social-buttons-columns">
-                <button className="login-google" onClick={onLoginGoogleClick}>
+                {/* <button className="login-google" onClick={onLoginGoogleClick}>
                   <img className="google-icon2" alt="" src="/google2.svg" />
                   <img className="facebook-icon2" alt="" src="/facebook2.svg" />
                   <div className="sign-in-with1">Sign in with Google</div>
-                </button>
+                </button> */}
+
+                <GoogleButton onClick={handleGoogleSignIn}/>
               </div>
             </div>
             <img className="logo-long-2-icon" alt="" src="/logolong-2@2x.png" />
@@ -76,4 +102,4 @@ const DesktopTry = () => {
   );
 };
 
-export default DesktopTry;
+export default Desktop_login;
