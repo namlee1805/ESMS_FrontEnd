@@ -69,10 +69,9 @@ const ProStudent_tablet = () => {
             <div className="fpt-university2">FPT UNIVERSITY</div>
           </div>
           <button className="avatar2" onClick={onAvatarProClick}>
-            <img className="avatar-item" alt="" src="/avt@2x.png" />
+            <img className="avatar-item" alt="" src={user?.photoURL} referrerPolicy="no-referrer"  />
             <div className="lecturer-name">
-              <p className="lecturer">Lecturer</p>
-              <p className="lecturer"> Name</p>
+              <p className="lecturer">{user?.displayName}</p>
             </div>
           </button>
         </div>
@@ -82,11 +81,11 @@ const ProStudent_tablet = () => {
               <img
                 className="profile-image-icon2"
                 alt=""
-                src="/profile-image2@2x.png"
+                src={user?.photoURL} referrerPolicy="no-referrer" 
               />
               <div className="name-container">
-                <b className="name4">Tin Dinh</b>
-                <div className="tittle2">Real Estate Builders</div>
+                <b className="name4">{user?.displayName}</b>
+                <div className="tittle2">{user?.email}</div>
               </div>
             </button>
             <div className="options2">

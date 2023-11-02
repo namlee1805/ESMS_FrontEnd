@@ -5,7 +5,7 @@ import { UserAuth } from "../../context/AuthContext";
 import "./ProStudent_Desktop.css";
 
 const ProStudent_Desktop = () => {
-  const { user, logOut } = UserAuth();
+  const { logOut, user } = UserAuth();
 
   const handleSignOut = async() => {
     try{
@@ -70,10 +70,9 @@ const ProStudent_Desktop = () => {
           </div>
         </div>
         <button className="avatar" onClick={onAvatarProClick}>
-          <img className="avt-icon" alt="" src="/avt@2x.png" />
+          <img className="avt-icon" alt="" src={user?.photoURL} referrerPolicy="no-referrer"/>
           <div className="student-name">
-            <p className="student">Student</p>
-            <p className="student"> Name</p>
+            <p className="student">{user?.displayName}</p>
           </div>
         </button>
       </div>
@@ -83,11 +82,12 @@ const ProStudent_Desktop = () => {
             <img
               className="profile-image-icon"
               alt=""
-              src="/profile-image@2x.png"
+              src={user?.photoURL}
+              referrerPolicy="no-referrer"
             />
             <div className="name-parent">
-              <b className="name1">Tin Dinh</b>
-              <div className="tittle">Real Estate Builders</div>
+              <b className="name1">{user?.displayName}</b>
+              <div className="tittle">{user?.email}</div>
             </div>
           </button>
           <div className="options">

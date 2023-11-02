@@ -72,7 +72,7 @@ const ProStudent_mobile = () => {
             <div className="fpt-university1">FPT UNIVERSITY</div>
           </div>
           <button className="avatar1" onClick={onAvatarProClick}>
-            <img className="avatar-child" alt="" src="/avt@2x.png" />
+            <img className="avatar-child" alt="" src={user?.photoURL} referrerPolicy="no-referrer" />
           </button>
         </div>
         <div className="left-side-menu">
@@ -80,11 +80,11 @@ const ProStudent_mobile = () => {
             <img
               className="profile-image-icon1"
               alt=""
-              src="/profile-image1@2x.png"
+              src={user?.photoURL} referrerPolicy="no-referrer" 
             />
             <div className="name-group">
-              <b className="name2">Tin Dinh</b>
-              <div className="tittle1">Real Estate Builders</div>
+              <b className="name2">{user?.displayName}</b>
+              <div className="tittle1">{user?.email}</div>
             </div>
           </button>
           <div className="options1">
