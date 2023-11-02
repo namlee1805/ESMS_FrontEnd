@@ -20,9 +20,15 @@ const Desktop_login = () => {
     }
   };
 
+  const emailDomain = user?.email?.split("@")[1]; // Extracting domain from email
+
+
+  //Authorization 
   useEffect(() => {
-    if(user != null) {
-      navigate('/profile');
+    if(emailDomain === "fpt.edu.vn") {
+      navigate('/profileSt');
+    }else if (emailDomain === "gmail.com"){
+      navigate("/profileLe");
     }
   },[user]);
 

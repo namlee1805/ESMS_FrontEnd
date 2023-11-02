@@ -22,7 +22,7 @@ const Mobile_login = () => {
 
   useEffect(() => {
     if(user != null){
-      navigate('/profile');
+      navigate('/profileSt');
     }
   },[user]);
 

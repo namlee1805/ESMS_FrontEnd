@@ -1,12 +1,15 @@
 
 import React, { useEffect, useState } from "react";
 import { Routes, Route, useNavigationType, useLocation } from "react-router-dom";
-import { AuthContextProvider } from "./context/AuthContext";
+import { AuthContextProvider, UserAuth } from "./context/AuthContext";
 import Desktop_login from "./pages/LoginPage/Desktop_login";
 import Moobile_login from "./pages/LoginPage/Mobile_login";
 import ProStudent_Desktop from "./pages/ProStudent/ProStudent_Desktop";
 import ProStudent_tablet from "./pages/ProStudent/ProStudent_tablet";
 import ProStudent_mobile from "./pages/ProStudent/ProStudent_mobile";
+import ProLec_Desktop from "./pages/ProLec/ProLec_Desktop";
+import ProLec_tablet from "./pages/ProLec/ProLec_tablet";
+import ProLec_mobile from "./pages/ProLec/ProLec_mobile";
 import Proctected from "./components/Protected";
 
 
@@ -75,16 +78,33 @@ function App() {
     ProfileComponent = ProStudent_mobile;
   }
 
+  let ProfileComponent_2;
+  if (window.innerWidth >= 1200) {
+    ProfileComponent_2 = ProLec_Desktop;
+  } else if (window.innerWidth >= 840) {
+    ProfileComponent_2 = ProLec_tablet;
+  } else {
+    ProfileComponent_2 = ProLec_mobile;
+  }
+
+
   return (
     <div>
       <AuthContextProvider>
         <Routes>
           <Route path="/" element={isMobile ? <Moobile_login /> : <Desktop_login />} />
-          <Route path="/profile" element={
+
+          < Route path="/profileSt" element={
             <Proctected>
               <ProfileComponent />
             </Proctected>
+          }
+          />
 
+          < Route path="/profileLe" element={
+            <Proctected>
+              <ProfileComponent />
+            </Proctected>
           }
           />
           {/* <Route path="/profile" element={isMobile ? <ProStudentMobile /> : (window.innerWidth >= 840 ? <ProStudentTablet /> : <ProStudentDesktop />)} /> */}
