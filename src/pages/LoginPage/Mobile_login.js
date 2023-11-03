@@ -5,12 +5,69 @@ import { useNavigate } from "react-router-dom";
 import "./Mobile_login.css";
 import { async } from "@firebase/util";
 import GoogleButton from "react-google-button";
+import axios from "axios";
 
 const Mobile_login = () => {
 
   const { googleSignIn, user} = UserAuth();
-
   const navigate = useNavigate();
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  // async function login(event) {
+  //   event.preventDefault();
+  //   try{
+  //     await axios.post("http://localhost:8888/login/admin", {
+  //       username: username,
+  //       password: password,
+  //     }).then((res) => {
+  //       console.log(res.data);
+        
+  //       if(res.data.message == "Username not exits")
+  //       {
+  //         alert("Email not exists");
+  //       }
+  //       else if(res.data.message == "Login Success")
+  //       {
+  //         navigate("/examschex");
+  //       }
+  //       else
+  //       {
+  //         alert("Incorrect Email and Password not match");
+  //       }
+  //     }, fail => {
+  //       console.log(fail);
+  //     });
+  //   }
+  //   catch (err) {
+  //     alert (err);
+  //   }
+  // }
+
+  async function login(event) {
+    event.preventDefault();
+    try {
+      const res = await axios.post("http://localhost:8888/login/admin", {
+        username: username,
+        password: password,
+      });
+
+      console.log(res.data);
+
+      if (res.data.message === "Username not exists") {
+        alert("Email not exists");
+      } else if (res.data.message === "Login Success") {
+        navigate("/examschex");
+      } else {
+        alert("Incorrect Email and Password not match");
+      }
+    } catch (err) {
+      console.error(err);
+      alert(err);
+    }
+  }
+
 
   const handleGoogleSingIn = async () => {
     try{
@@ -71,7 +128,7 @@ const Mobile_login = () => {
             >
               Forgot Password?
             </a>
-            <button className="main-button1" onClick={onMainButtonClick}>
+            <button className="main-button1" onClick={login}>
               <div className="sign-in3">Log in</div>
             </button>
           </div>

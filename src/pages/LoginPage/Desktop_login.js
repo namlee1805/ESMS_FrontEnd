@@ -1,16 +1,72 @@
 import { async } from "@firebase/util";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useCallback } from "react";
 import { GoogleButton } from "react-google-button";
 import { UserAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import "./Desktop_login.css";
+import axios from "axios";
 
 const Desktop_login = () => {
-
   const { googleSignIn, user } = UserAuth();
-
   const navigate = useNavigate();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  // async function login(event) {
+  //   event.preventDefault();
+  //   try{
+  //     await axios.post("http://localhost:8888/login/admin", {
+  //       username: username,
+  //       password: password,
+  //     }).then((res) => {
+  //       console.log(res.data);
+        
+  //       if(res.data.message == "Username not exits")
+  //       {
+  //         alert("Email not exists");
+  //       }
+  //       else if(res.data.message == "Login Success")
+  //       {
+  //         navigate("/examschex");
+  //       }
+  //       else
+  //       {
+  //         alert("Incorrect Email and Password not match");
+  //       }
+  //     }, fail => {
+  //       console.log(fail);
+  //     });
+  //   }
+  //   catch (err) {
+  //     alert (err);
+  //   }
+  // }
+
+  async function login(event) {
+    event.preventDefault();
+    try {
+      const res = await axios.post("http://localhost:8888/login/admin", {
+        username: username,
+        password: password,
+      });
+
+      console.log(res.data);
+
+      if (res.data.message === "Username not exists") {
+        alert("Email not exists");
+      } else if (res.data.message === "Login Success") {
+        navigate("/examschex");
+      } else {
+        alert("Incorrect Email and Password not match");
+      }
+    } catch (err) {
+      console.error(err);
+      alert(err);
+    }
+  }
+
+
 
   const handleGoogleSignIn = async () => {
     try{
@@ -60,6 +116,10 @@ const Desktop_login = () => {
                   className="username"
                   placeholder="Example@email.com"
                   type="text"
+                  value={username}
+                  onChange={(event) => {
+                    setUsername(event.target.value);
+                  }}
                 />
               </div>
               <div className="input4">
@@ -68,6 +128,10 @@ const Desktop_login = () => {
                   className="username"
                   placeholder="at least 8 characters"
                   type="password"
+                  value={password}
+                  onChange={(event) => {
+                    setPassword(event.target.value);
+                  }}
                 />
               </div>
               <a
@@ -77,8 +141,8 @@ const Desktop_login = () => {
               >
                 Forgot Password?
               </a>
-              <button className="main-button" onClick={onMainButtonClick}>
-                <div className="sign-in2">Log in</div>
+              <button className="main-button" onClick={login}>
+                <div className="sign-in2" >Log in</div>
               </button>
             </div>
             <div className="social-sign-in">
@@ -88,11 +152,6 @@ const Desktop_login = () => {
                 <div className="or-child" />
               </div>
               <div className="social-buttons-columns">
-                {/* <button className="login-google" onClick={onLoginGoogleClick}>
-                  <img className="google-icon2" alt="" src="/google2.svg" />
-                  <img className="facebook-icon2" alt="" src="/facebook2.svg" />
-                  <div className="sign-in-with1">Sign in with Google</div>
-                </button> */}
 
                 <GoogleButton onClick={handleGoogleSignIn}/>
               </div>

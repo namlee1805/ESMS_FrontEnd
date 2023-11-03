@@ -19,17 +19,25 @@ const ProStudent_mobile = () => {
   const [studentData, setStudentData] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  console.log(localStorage.getItem("email"));
+  const disable = localStorage.getItem("email");
   useEffect(() => {
-    fetch('http://localhost:8088/students')
-      .then(response => response.json())
-      .then(data => {
-        setStudentData(data);
-        setLoading(false);
-      })
-      .catch(error => {
-        setLoading(false);
-      });
-  }, []);
+
+    if (disable) {
+      fetch(`http://localhost:8888/profileStudent?email=${disable}`)
+        .then(response => response.json())
+        .then(data => {
+          setStudentData(data);
+          setLoading(false);
+        })
+        .catch(error => {
+          setLoading(false);
+        });
+    }
+
+  }, [disable]);
+
+
 
   //All links
 

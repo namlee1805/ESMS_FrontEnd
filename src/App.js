@@ -103,7 +103,7 @@ function App() {
 
           < Route path="/profileLe" element={
             <Proctected>
-              <ProfileComponent />
+              <ProfileComponent_2 />
             </Proctected>
           }
           />
