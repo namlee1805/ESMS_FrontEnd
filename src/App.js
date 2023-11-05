@@ -11,6 +11,7 @@ import ProLec_tablet from "./pages/ProLec/ProLec_tablet";
 import ProLec_mobile from "./pages/ProLec/ProLec_mobile";
 import Proctected from "./components/Protected";
 import SalaryLec_Desktop from "./pages/SalaryLec/SalaryLec_Desktop";
+import CreateDataEx_Desktop from "./pages/CreateDataEx/CreateDataEx_Desktop";
 
 
 function App() {
@@ -103,7 +104,14 @@ function App() {
           <Route path="/" element={isMobile ? <Moobile_login /> : <Desktop_login />} />
           < Route path="/salary" element={
             <Proctected>
-              <SalaryLec_Desktop/>
+              <SalaryLec_Desktop />
+            </Proctected>
+          }
+          />
+
+          < Route path="/createDataEx" element={
+            <Proctected>
+              <CreateDataEx_Desktop />
             </Proctected>
           }
           />
