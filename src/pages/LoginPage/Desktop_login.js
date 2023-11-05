@@ -13,35 +13,7 @@ const Desktop_login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  // async function login(event) {
-  //   event.preventDefault();
-  //   try{
-  //     await axios.post("http://localhost:8888/login/admin", {
-  //       username: username,
-  //       password: password,
-  //     }).then((res) => {
-  //       console.log(res.data);
-        
-  //       if(res.data.message == "Username not exits")
-  //       {
-  //         alert("Email not exists");
-  //       }
-  //       else if(res.data.message == "Login Success")
-  //       {
-  //         navigate("/examschex");
-  //       }
-  //       else
-  //       {
-  //         alert("Incorrect Email and Password not match");
-  //       }
-  //     }, fail => {
-  //       console.log(fail);
-  //     });
-  //   }
-  //   catch (err) {
-  //     alert (err);
-  //   }
-  // }
+
 
   async function login(event) {
     event.preventDefault();
