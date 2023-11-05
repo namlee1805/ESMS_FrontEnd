@@ -31,7 +31,10 @@ export const AuthContextProvider = ({ children }) => {
             setUser(currentUser)
             console.log('User', currentUser)
             // localStorage.setItem("name", currentUser.displayName);
-            localStorage.setItem("email", currentUser.email);
+            // localStorage.setItem("email", currentUser.email);
+            if(currentUser){
+                localStorage.setItem("email", currentUser.email);
+            }
         });
         return () => {
             unsubscribe();

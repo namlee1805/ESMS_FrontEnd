@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { Routes, Route, useNavigationType, useLocation } from "react-router-dom";
 import { AuthContextProvider, UserAuth } from "./context/AuthContext";
@@ -11,6 +10,7 @@ import ProLec_Desktop from "./pages/ProLec/ProLec_Desktop";
 import ProLec_tablet from "./pages/ProLec/ProLec_tablet";
 import ProLec_mobile from "./pages/ProLec/ProLec_mobile";
 import Proctected from "./components/Protected";
+import SalaryLec_Desktop from "./pages/SalaryLec/SalaryLec_Desktop";
 
 
 function App() {
@@ -87,12 +87,26 @@ function App() {
     ProfileComponent_2 = ProLec_mobile;
   }
 
+  // let ProfileComponent_3;
+  // if (window.innerWidth >= 960) {
+  //   ProfileComponent_3 = SalaryLec_Desktop;
+  // } else if (window.innerWidth >= 840) {
+  //   ProfileComponent_3 = SalaryLec_Tablet;
+  // } else {
+  //   ProfileComponent_3 = SalaryLec_Mobile;
+  // }
 
   return (
     <div>
       <AuthContextProvider>
         <Routes>
           <Route path="/" element={isMobile ? <Moobile_login /> : <Desktop_login />} />
+          < Route path="/salary" element={
+            <Proctected>
+              <SalaryLec_Desktop/>
+            </Proctected>
+          }
+          />
 
           < Route path="/profileSt" element={
             <Proctected>

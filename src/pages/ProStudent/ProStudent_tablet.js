@@ -1,4 +1,7 @@
-import React, { useState, useEffect, useCallback } from "react";
+import { async } from "@firebase/util";
+import React, { useState, useEffect, useCallback } from "react"; 
+import { Link } from "react-router-dom";
+import { UserAuth } from "../../context/AuthContext";
 import "./ProStudent_tablet.css";
 
 const ProStudent_tablet = () => {

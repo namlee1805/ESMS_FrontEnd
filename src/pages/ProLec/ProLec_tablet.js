@@ -1,4 +1,7 @@
+import { async } from "@firebase/util";
 import React, { useState, useEffect, useCallback } from "react";
+import { Link } from "react-router-dom";
+import { UserAuth } from "../../context/AuthContext";
 import "./ProLec_tablet.css";
 
 const ProLec_tablet = () => {
@@ -13,14 +16,14 @@ const ProLec_tablet = () => {
     }
   }
 
-  const [studentData, setStudentData] = useState(null);
+  const [lecturerData, setLecturerData] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch('http://localhost:8088/students')
       .then(response => response.json())
       .then(data => {
-        setStudentData(data);
+        setLecturerData(data);
         setLoading(false);
       })
       .catch(error => {
@@ -57,114 +60,136 @@ const ProLec_tablet = () => {
   }, []);
 
   return (
-    <div className="ipad-pro-11-1">
-      <div className="ipad-pro-11-11">
-        <div className="navbar2">
-          <div className="fpt2">
-            <div className="fpt-child1" />
-            <div className="fpt-child2" />
-            <div className="exam-schedule2">
+    <div className="ipad-prolecturer">
+      <div className="ipad-prolecturer1">
+        <div className="navbar8">
+          <div className="fpt8">
+            <div className="fpt-child13" />
+            <div className="fpt-child14" />
+            <div className="exam-schedule8">
               Exam schedule management system
             </div>
-            <div className="fpt-university2">FPT UNIVERSITY</div>
+            <div className="fpt-university8">FPT UNIVERSITY</div>
           </div>
-          <button className="avatar2" onClick={onAvatarProClick}>
-            <img className="avatar-item" alt="" src={user?.photoURL} referrerPolicy="no-referrer"  />
-            <div className="lecturer-name">
-              <p className="lecturer">{user?.displayName}</p>
+          <button className="avatar8">
+            <img className="avatar-child3" alt="" src={user?.photoURL} referrerPolicy="no-referrer" />
+            <div className="lecturer-name2">
+              <p className="lecturer7">{user?.displayName}</p>
             </div>
           </button>
         </div>
-        <div className="row1">
-          <div className="left-side-menu1">
-            <button className="user-profile2" onClick={onUserProClick}>
+        <div className="row4">
+          <div className="left-side-menu6">
+            <button className="user-profile8">
               <img
-                className="profile-image-icon2"
+                className="profile-image-icon8"
                 alt=""
                 src={user?.photoURL} referrerPolicy="no-referrer" 
               />
-              <div className="name-container">
-                <b className="name4">{user?.displayName}</b>
-                <div className="tittle2">{user?.email}</div>
+              <div className="name-parent6">
+                <b className="name13">{user?.displayName}</b>
+                <div className="tittle8">{user?.email}</div>
               </div>
             </button>
-            <div className="options2">
-              <div className="exams-container">
-                <button className="exams4" onClick={onExamStuClick}>
-                  <div className="exams-inner1">
-                    <div className="icon-parent1">
-                      <img className="icon4" alt="" src="/icon.svg" />
-                      <div className="exams5">Exams</div>
-                    </div>
+            <div className="exams-parent3">
+              <button className="exams16">
+                <div className="register-child">
+                  <div className="fidollar-sign-group">
+                    <img className="icon10" alt="" src="/icon4.svg" />
+                    <div className="exams17">Exams</div>
                   </div>
-                </button>
-                <button className="profile6" onClick={onProStuClick}>
-                  <div className="exams-inner1">
-                    <div className="template-container">
-                      <img
-                        className="template-icon2"
-                        alt=""
-                        src="/template.svg"
-                      />
-                      <div className="profile7">Profile</div>
-                      <div className="frame-inner" />
-                    </div>
+                </div>
+              </button>
+              <button className="profile12">
+                <div className="register-child">
+                  <div className="template-parent9">
+                    <img
+                      className="template-icon11"
+                      alt=""
+                      src="/homeoutline.svg"
+                    />
+                    <div className="profile13">Profile</div>
+                    <div className="frame-child23" />
                   </div>
-                </button>
-                <button className="reports4" onClick={onProStuClick}>
-                  <div className="exams-inner1">
-                    <div className="icon-parent1">
-                      <img className="icon4" alt="" src="/icon1.svg" />
-                      <div className="reports5">Reports</div>
-                    </div>
+                </div>
+              </button>
+              <button className="exams16">
+                <div className="register-child">
+                  <div className="fidollar-sign-group">
+                    <img
+                      className="upward-trend-icon7"
+                      alt=""
+                      src="/upward-trend1.svg"
+                    />
+                    <div className="exams17">Register</div>
                   </div>
-                </button>
-              </div>
+                </div>
+              </button>
+              <button className="exams16">
+                <div className="register-child">
+                  <div className="fidollar-sign-group">
+                    <img className="icon10" alt="" src="/fidollarsign.svg" />
+                    <div className="salary14">Salary</div>
+                  </div>
+                </div>
+              </button>
+              <button className="exams16">
+                <div className="register-child">
+                  <div className="fidollar-sign-group">
+                    <img className="icon10" alt="" src="/icon5.svg" />
+                    <div className="salary14">Reports</div>
+                  </div>
+                </div>
+              </button>
             </div>
-            {/* <button className="logout6" onClick={onLogoutBtnClick}> 
-              <div className="logout-frame">
-                <b className="logout7">
-                  <span className="logout-txt2">
-                    <p className="lecturer">Logout</p>
+            {/* <button className="logout24">
+              <div className="logout-wrapper6">
+                <b className="logout25">
+                  <span className="logout-txt5">
+                    <p className="lecturer7">Logout</p>
                   </span>
                 </b>
               </div>
             </button> */}
-            <button onClick={handleSignOut} className="logout6">
+            <button onClick={handleSignOut} className="logout24">
               Logout
             </button>
           </div>
-          <div className="profile-group">
-            <b className="profile8">Profile</b>
-            <div className="student-id2">Student ID:</div>
+          <div className="body5">
+            <b className="profile14">Profile</b>
+            <div className="lecturer-id">Lecturer ID:</div>
             <div className="se173049-frame">
-              <div className="se1730492">{loading ? 'Loading...' : studentData?.studentID}</div>
+              <div className="se1730492">{loading ? 'Loading...' : lecturerData?.lecturerID}</div>
             </div>
             <div className="full-name2">Full Name:</div>
             <div className="se173049-frame">
-              <div className="on-nh-tn2">{loading ? 'Loading...' : studentData?.studentName}</div>
+              <div className="on-nh-tn2">{loading ? 'Loading...' : lecturerData?.lecturerName}</div>
             </div>
-            <div className="student-id2">Email:</div>
+            <div className="lecturer-id">Email:</div>
             <div className="tinddse173049fpteduvn-frame">
               <div className="tinddse173049fpteduvn2">
-                {loading ? 'Loading...' : studentData?.studentEmail}
+              {loading ? 'Loading...' : lecturerData?.lecturerEmail}
               </div>
+            </div>
+            <div className="lecturer-id">Phone:</div>
+            <div className="tinddse173049fpteduvn-frame">
+              <div className="tinddse173049fpteduvn2">{loading ? 'Loading...' : lecturerData?.lecturerPhone}</div>
             </div>
           </div>
         </div>
-        <div className="report-group">
-          <div className="report4">
-            <button className="report-inner" onClick={onReportStuClick} />
-            <div className="report5">Report</div>
-            <div className="image-1-frame">
-              <img className="image-1-icon2" alt="" src="/image-11@2x.png" />
+        <div className="bot7">
+          <div className="report16">
+            <button className="report-child5" />
+            <div className="report17">Report</div>
+            <div className="image-1-wrapper6">
+              <img className="image-1-icon8" alt="" src="/image-11@2x.png" />
             </div>
           </div>
-          <div className="logo-long-1-container">
+          <div className="logo-long-1-wrapper2">
             <img
-              className="logo-long-1-icon1"
+              className="logo-long-1-icon6"
               alt=""
-              src="/logolong-1@2x.png"
+              src="/logolong-11@2x.png"
             />
           </div>
         </div>
