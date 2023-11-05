@@ -586,7 +586,7 @@
   box-sizing: border-box;
 }
 .row {
-  align-self: stretch;
+  /* align-self: stretch; */
   flex-direction: row;
   justify-content: center;
   text-align: center;

@@ -13,6 +13,8 @@ import Proctected from "./components/Protected";
 import SalaryLec_Desktop from "./pages/SalaryLec/SalaryLec_Desktop";
 import CreateDataEx_Desktop from "./pages/CreateDataEx/CreateDataEx_Desktop";
 
+import ExscheduleLec from "./pages/ExScheLec/ExscheduleLec";
+
 
 function App() {
   const action = useNavigationType();
@@ -112,6 +114,13 @@ function App() {
           < Route path="/createDataEx" element={
             <Proctected>
               <CreateDataEx_Desktop />
+            </Proctected>
+          }
+          />
+
+          < Route path="/examscheduleStu" element={
+            <Proctected>
+              <ExscheduleLec />
             </Proctected>
           }
           />
