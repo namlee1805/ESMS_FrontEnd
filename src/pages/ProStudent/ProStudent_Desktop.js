@@ -1,5 +1,5 @@
 import { async } from "@firebase/util";
-import React, { useState, useEffect, useCallback } from "react"; 
+import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { UserAuth } from "../../context/AuthContext";
 import "./ProStudent_Desktop.css";
@@ -7,10 +7,10 @@ import "./ProStudent_Desktop.css";
 const ProStudent_Desktop = () => {
   const { logOut, user } = UserAuth();
 
-  const handleSignOut = async() => {
-    try{
+  const handleSignOut = async () => {
+    try {
       await logOut();
-    }catch(error){
+    } catch (error) {
       console.log(error);
     }
   }
@@ -50,7 +50,7 @@ const ProStudent_Desktop = () => {
   const onExamStuClick = useCallback(() => {
     window.location.href('http://localhost:3000/ExStudent');
   }, []);
-  
+
   const onProStuClick = useCallback(() => {
     window.location.href('http://localhost:3000/ProStudent');
   }, []);
@@ -77,7 +77,7 @@ const ProStudent_Desktop = () => {
           </div>
         </div>
         <button className="avatar" onClick={onAvatarProClick}>
-          <img className="avt-icon" alt="" src={user?.photoURL} referrerPolicy="no-referrer"/>
+          <img className="avt-icon" alt="" src={user?.photoURL} referrerPolicy="no-referrer" />
           <div className="student-name">
             <p className="student">{user?.displayName}</p>
           </div>
@@ -107,7 +107,7 @@ const ProStudent_Desktop = () => {
                   </div>
                 </div>
               </button>
-              <button className="profile" onClick={onProStuClick}>
+              {/* <button className="profile" onClick={onProStuClick}>
                 <div className="exams-inner">
                   <div className="template-parent">
                     <img className="template-icon" alt="" src="/template.svg" />
@@ -115,18 +115,29 @@ const ProStudent_Desktop = () => {
                     <div className="frame-child" />
                   </div>
                 </div>
-              </button>
-              <button className="reports" onClick={onReportStuClick}>
-                <div className="exams-inner">
-                  <div className="icon-group">
-                    <img className="icon1" alt="" src="/icon1.svg" />
-                    <div className="reports1">Reports</div>
+              </button> */}
+
+
+                <button className="register">
+                  <div className="register-inner">
+                    <div className="icon-container">
+                      <img className="icon2" alt="" src="/icon2.svg" />
+                      <div className="exams2">Profile</div>
+                      <div className="frame-item" />
+                    </div>
                   </div>
-                </div>
-              </button>
+                </button>
+                <button className="reports" onClick={onReportStuClick}>
+                  <div className="exams-inner">
+                    <div className="icon-group">
+                      <img className="icon1" alt="" src="/icon1.svg" />
+                      <div className="reports1">Reports</div>
+                    </div>
+                  </div>
+                </button>
+              </div>
             </div>
-          </div>
-          {/* <button className="logout" onClick={onLogoutBtnClick}>
+            {/* <button className="logout" onClick={onLogoutBtnClick}>
             <div className="logout-wrapper">
               <b className="logout1">
                 <span className="logout-txt">
@@ -135,40 +146,40 @@ const ProStudent_Desktop = () => {
               </b>
             </div>
           </button> */}
-          <button onClick={handleSignOut} className="logout">
-            Logout
-          </button>
-        </div>
-        <div className="body">
-          <b className="profile2">Profile</b>
-          <div className="student-id">Student ID:</div>
-          <div className="se173049-wrapper">
-            <div className="se173049">{loading ? 'Loading...' : studentData?.studentID}</div>
+            <button onClick={handleSignOut} className="logout">
+              Logout
+            </button>
           </div>
-          <div className="full-name">Full Name:</div>
-          <div className="se173049-wrapper">
-            <div className="on-nh-tn">{loading ? 'Loading...' : studentData?.studentName}</div>
-          </div>
-          <div className="student-id">Email:</div>
-          <div className="tinddse173049fpteduvn-wrapper">
-            <div className="tinddse173049fpteduvn">
-              {loading ? 'Loading...' : studentData?.studentEmail}
+          <div className="body2">
+            <b className="profile2">Profile</b>
+            <div className="student-id">Student ID:</div>
+            <div className="se173049-wrapper">
+              <div className="se173049">{loading ? 'Loading...' : studentData?.studentID}</div>
+            </div>
+            <div className="full-name">Full Name:</div>
+            <div className="se173049-wrapper">
+              <div className="on-nh-tn">{loading ? 'Loading...' : studentData?.studentName}</div>
+            </div>
+            <div className="student-id">Email:</div>
+            <div className="tinddse173049fpteduvn-wrapper">
+              <div className="tinddse173049fpteduvn">
+                {loading ? 'Loading...' : studentData?.studentEmail}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="bot">
-        <div className="report">
-          <button className="report-child" onClick={onReportStuClick}/>
-          <div className="report1">Report</div>
-          <div className="image-1-wrapper">
-            <img className="image-1-icon" alt="" src="/image-1@2x.png" />
+        <div className="bot">
+          <div className="report">
+            <button className="report-child" onClick={onReportStuClick} />
+            <div className="report1">Report</div>
+            <div className="image-1-wrapper">
+              <img className="image-1-icon" alt="" src="/image-1@2x.png" />
+            </div>
           </div>
+          <img className="logofpt-icon" alt="" src="/logofpt@2x.png" />
         </div>
-        <img className="logofpt-icon" alt="" src="/logofpt@2x.png" />
       </div>
-    </div>
-  );
+      );
 };
 
-export default ProStudent_Desktop;
+      export default ProStudent_Desktop;

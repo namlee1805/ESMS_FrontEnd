@@ -4,11 +4,7 @@ import { AuthContextProvider, UserAuth } from "./context/AuthContext";
 import Desktop_login from "./pages/LoginPage/Desktop_login";
 import Moobile_login from "./pages/LoginPage/Mobile_login";
 import ProStudent_Desktop from "./pages/ProStudent/ProStudent_Desktop";
-import ProStudent_tablet from "./pages/ProStudent/ProStudent_tablet";
-import ProStudent_mobile from "./pages/ProStudent/ProStudent_mobile";
 import ProLec_Desktop from "./pages/ProLec/ProLec_Desktop";
-import ProLec_tablet from "./pages/ProLec/ProLec_tablet";
-import ProLec_mobile from "./pages/ProLec/ProLec_mobile";
 import Proctected from "./components/Protected";
 import SalaryLec_Desktop from "./pages/SalaryLec/SalaryLec_Desktop";
 import CreateDataEx_Desktop from "./pages/CreateDataEx/CreateDataEx_Desktop";
@@ -73,32 +69,8 @@ function App() {
   }, [pathname]);
 
   //Conditionally render the appropriate component based on screen width
-  let ProfileComponent;
-  if (window.innerWidth >= 1200) {
-    ProfileComponent = ProStudent_Desktop;
-  } else if (window.innerWidth >= 840) {
-    ProfileComponent = ProStudent_tablet;
-  } else {
-    ProfileComponent = ProStudent_mobile;
-  }
+ 
 
-  let ProfileComponent_2;
-  if (window.innerWidth >= 1200) {
-    ProfileComponent_2 = ProLec_Desktop;
-  } else if (window.innerWidth >= 840) {
-    ProfileComponent_2 = ProLec_tablet;
-  } else {
-    ProfileComponent_2 = ProLec_mobile;
-  }
-
-  // let ProfileComponent_3;
-  // if (window.innerWidth >= 960) {
-  //   ProfileComponent_3 = SalaryLec_Desktop;
-  // } else if (window.innerWidth >= 840) {
-  //   ProfileComponent_3 = SalaryLec_Tablet;
-  // } else {
-  //   ProfileComponent_3 = SalaryLec_Mobile;
-  // }
 
   return (
     <div>
@@ -135,14 +107,14 @@ function App() {
 
           < Route path="/profileSt" element={
             <Proctected>
-              <ProfileComponent />
+              <ProStudent_Desktop />
             </Proctected>
           }
           />
 
           < Route path="/profileLe" element={
             <Proctected>
-              <ProfileComponent_2 />
+              <ProLec_Desktop />
             </Proctected>
           }
           />
