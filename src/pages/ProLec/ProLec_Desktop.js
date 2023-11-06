@@ -18,8 +18,11 @@ const ProLec_Desktop = () => {
   const [lecturerData, setLecturerData] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  console.log(localStorage.getItem("email"));
+  const disable = localStorage.getItem("email");
+
   useEffect(() => {
-    fetch('http://localhost:8088/students')
+    fetch(`http://localhost:8888/profileLecturer?email=${disable}`)
     .then(response => response.json())
     .then(data => {
       setLecturerData(data);
@@ -93,15 +96,15 @@ const ProLec_Desktop = () => {
           </button>
           <div className="options4">
             <div className="exams-parent4">
-              <button className="exams18">
+              <Link className="exams18" to={"/examscheduleLec"}>
                 <div className="exams-inner5">
                   <div className="fidollar-sign-container">
                     <img className="icon12" alt="" src="/icon4.svg" />
                     <div className="exams19">Exams</div>
                   </div>
                 </div>
-              </button>
-              <button className="profile15">
+              </Link>
+              <Link className="profile15" to={"/profileLe"}>
                 <div className="exams-inner5">
                   <div className="template-parent10">
                     <img
@@ -113,7 +116,7 @@ const ProLec_Desktop = () => {
                     <div className="frame-child24" />
                   </div>
                 </div>
-              </button>
+              </Link>
               <button className="exams18">
                 <div className="exams-inner5">
                   <div className="fidollar-sign-container">
@@ -126,14 +129,14 @@ const ProLec_Desktop = () => {
                   </div>
                 </div>
               </button>
-              <button className="exams18">
+              <Link className="exams18" to={"/salary"}>
                 <div className="exams-inner5">
                   <div className="fidollar-sign-container">
                     <img className="icon12" alt="" src="/fidollarsign.svg" />
                     <div className="salary16">Salary</div>
                   </div>
                 </div>
-              </button>
+              </Link>
               <button className="exams18">
                 <div className="exams-inner5">
                   <div className="fidollar-sign-container">
@@ -161,21 +164,21 @@ const ProLec_Desktop = () => {
           <b className="profile17">Profile</b>
           <div className="lecturer-id1">Lecturer ID:</div>
           <div className="se173049-wrapper1">
-            <div className="se1730493">{loading ? 'Loading...' : lecturerData?.lecturerID}</div>
+            <div className="se1730493">{loading ? 'Loading...' : lecturerData?.lecturer_id}</div>
           </div>
           <div className="full-name3">Full Name:</div>
           <div className="se173049-wrapper1">
-            <div className="on-nh-tn3">{loading ? 'Loading...' : lecturerData?.lecturerName}</div>
+            <div className="on-nh-tn3">{loading ? 'Loading...' : lecturerData?.lecturer_name}</div>
           </div>
           <div className="lecturer-id1">Email:</div>
           <div className="tinddse173049fpteduvn-wrapper1">
             <div className="tinddse173049fpteduvn3">
-              {loading ? 'Loading...' : lecturerData?.lecturerEmail}
+              {loading ? 'Loading...' : lecturerData?.lecturer_email}
             </div>
           </div>
           <div className="lecturer-id1">Phone:</div>
           <div className="tinddse173049fpteduvn-wrapper1">
-            <div className="tinddse173049fpteduvn3">{loading ? 'Loading...' : lecturerData?.lecturerPhone}</div>
+            <div className="tinddse173049fpteduvn3">{loading ? 'Loading...' : lecturerData?.lecturer_phone}</div>
           </div>
         </div>
       </div>

@@ -99,14 +99,14 @@ const ProStudent_Desktop = () => {
           </button>
           <div className="options">
             <div className="exams-parent">
-              <button className="exams" onClick={onExamStuClick}>
+              <Link className="exams" to={"/examscheduleStu"}>
                 <div className="exams-inner">
                   <div className="icon-parent">
                     <img className="icon" alt="" src="/icon.svg" />
                     <div className="exams1">Exams</div>
                   </div>
                 </div>
-              </button>
+              </Link>
               <button className="profile" onClick={onProStuClick}>
                 <div className="exams-inner">
                   <div className="template-parent">
@@ -143,16 +143,16 @@ const ProStudent_Desktop = () => {
           <b className="profile2">Profile</b>
           <div className="student-id">Student ID:</div>
           <div className="se173049-wrapper">
-            <div className="se173049">{loading ? 'Loading...' : studentData?.studentID}</div>
+            <div className="se173049">{loading ? 'Loading...' : studentData?.student_id}</div>
           </div>
           <div className="full-name">Full Name:</div>
           <div className="se173049-wrapper">
-            <div className="on-nh-tn">{loading ? 'Loading...' : studentData?.studentName}</div>
+            <div className="on-nh-tn">{loading ? 'Loading...' : studentData?.student_name}</div>
           </div>
           <div className="student-id">Email:</div>
           <div className="tinddse173049fpteduvn-wrapper">
             <div className="tinddse173049fpteduvn">
-              {loading ? 'Loading...' : studentData?.studentEmail}
+              {loading ? 'Loading...' : studentData?.student_email}
             </div>
           </div>
         </div>

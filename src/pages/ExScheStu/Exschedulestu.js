@@ -1,6 +1,6 @@
 import { async } from "@firebase/util";
 import React, { useState, useEffect, useCallback } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../../context/AuthContext";
 import "./Exschedulestu.css";
 
@@ -21,6 +21,7 @@ const Exschedulestu = () => {
     const [studentData, setStudentData] = useState([]);
     // const [lecturerData, setLecturerData] = useState(null);
     const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch('http://localhost:8088/students')
@@ -34,6 +35,9 @@ const Exschedulestu = () => {
                 setLoading(false);
             });
     }, []);
+    // const onProStuClick = useCallback(() => {
+    //     navigate("/profileSt");
+    //   }, []);
 
 
     return (
@@ -70,7 +74,7 @@ const Exschedulestu = () => {
                         </div>
                     </button>
                     <div className="exam-parent">
-                        <button className="register">
+                        <Link className="register" to={"/examscheduleStu"}>
                             <div className="register-inner">
                                 <div className="icon-container">
                                     <img className="icon2" alt="" src="/icon2.svg" />
@@ -78,8 +82,8 @@ const Exschedulestu = () => {
                                     <div className="frame-item" />
                                 </div>
                             </div>
-                        </button>
-                        <button className="profile3">
+                        </Link>
+                        {/* <button className="profile3" onClick={onProStuClick}>
                             <div className="homeoutline-parent">
                                 <img
                                     className="homeoutline-icon"
@@ -88,7 +92,19 @@ const Exschedulestu = () => {
                                 />
                                 <div className="profile4">Profile</div>
                             </div>
-                        </button>
+                        </button> */}
+
+                        <Link className="profile3" to={"/profileSt"}>
+                            <div className="homeoutline-parent">
+                                <img
+                                    className="homeoutline-icon"
+                                    alt=""
+                                    src="/homeoutline.svg"
+                                />
+                                <div className="profile4">Profile</div>
+                            </div>
+                        </Link>
+
                         <button className="profile3">
                             <div className="homeoutline-parent">
                                 <img
@@ -96,7 +112,7 @@ const Exschedulestu = () => {
                                     alt=""
                                     src="/upward-trend.svg"
                                 />
-                                <div className="profile4">Register</div>
+                                <div className="profile4">Reports</div>
                             </div>
                         </button>
                     </div>

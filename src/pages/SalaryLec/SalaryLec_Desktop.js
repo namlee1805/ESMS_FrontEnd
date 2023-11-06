@@ -70,28 +70,28 @@ const SalaryLec_Desktop = () => {
           </button>
           <div className="options3">
             <div className="exams-parent1">
-              <button className="exams12">
+              <Link className="exams12" to={"/examscheduleLec"}>
                 <div className="exams-inner2">
                   <div className="icon-parent4">
                     <img className="icon6" alt="" src="/icon21.svg" />
                     <div className="exams13">Exams</div>
                   </div>
                 </div>
-              </button>
+              </Link>
               {/* <button className="profile7">
                 <div className="homeoutline-container">
                   <img className="icon6" alt="" src="/homeoutline.svg" />
                   <div className="profile8">Profile</div>
                 </div>
               </button> */}
-              <button className="exams12">
+              <Link className="exams12" to={"/profileLe"}>
                 <div className="exams-inner2">
                   <div className="icon-parent4">
                     <img className="icon6" alt="" src="/homeoutline.svg" />
                     <div className="exams13">Profile</div>
                   </div>
                 </div>
-              </button>
+              </Link>
               {/* <button className="profile7">
                 <div className="homeoutline-container">
                   <img
@@ -110,7 +110,7 @@ const SalaryLec_Desktop = () => {
                   </div>
                 </div>
               </button>
-              <button className="salary7">
+              <Link className="salary7" to={"/salary"}>
                 <div className="exams-inner2">
                   <div className="template-parent7">
                     <img
@@ -122,7 +122,7 @@ const SalaryLec_Desktop = () => {
                     <div className="frame-child16" />
                   </div>
                 </div>
-              </button>
+              </Link>
               {/* <button className="exams12">
                 <div className="exams-inner2">
                   <div className="icon-parent4">

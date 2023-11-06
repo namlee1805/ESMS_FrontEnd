@@ -68,7 +68,7 @@ const ExscheduleLec = () => {
             </div>
           </button>
           <div className="register-parent">
-            <button className="register">
+            <Link className="register" to={"/examscheduleLec"}>
               <div className="register-inner">
                 <div className="icon-container">
                   <img className="icon2" alt="" src="/icon2.svg" />
@@ -76,8 +76,8 @@ const ExscheduleLec = () => {
                   <div className="frame-item" />
                 </div>
               </div>
-            </button>
-            <button className="profile3">
+            </Link>
+            <Link className="profile3" to={"/profileLe"}>
               <div className="homeoutline-parent">
                 <img
                   className="homeoutline-icon"
@@ -86,7 +86,7 @@ const ExscheduleLec = () => {
                 />
                 <div className="profile4">Profile</div>
               </div>
-            </button>
+            </Link>
             <button className="profile3">
               <div className="homeoutline-parent">
                 <img
@@ -97,7 +97,7 @@ const ExscheduleLec = () => {
                 <div className="profile4">Register</div>
               </div>
             </button>
-            <button className="salary">
+            <Link className="salary" to={"/salary"}>
               <div className="register-inner">
                 <div className="fidollar-sign-parent">
                   <img
@@ -108,7 +108,7 @@ const ExscheduleLec = () => {
                   <div className="profile4">Salary</div>
                 </div>
               </div>
-            </button>
+            </Link>
             <button className="salary">
               <div className="register-inner">
                 <div className="fidollar-sign-parent">
