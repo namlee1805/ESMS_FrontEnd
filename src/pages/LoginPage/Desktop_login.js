@@ -56,8 +56,7 @@ const Desktop_login = () => {
     if(emailDomain === "fpt.edu.vn") {
       navigate('/examscheduleStu');
     }else if (emailDomain === "gmail.com"){
-      //navigate("/createDataEx");
-      navigate("/profileLe");
+      navigate("/examscheduleLec");
     }
   },[user]);
 

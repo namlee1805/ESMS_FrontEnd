@@ -110,7 +110,7 @@ const Exschedulestu = () => {
                                 <img
                                     className="upward-trend-icon"
                                     alt=""
-                                    src="/upward-trend.svg"
+                                    src="/icon1.svg"
                                 />
                                 <div className="profile4">Reports</div>
                             </div>
