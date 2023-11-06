@@ -54,9 +54,9 @@ const Desktop_login = () => {
   //Authorization 
   useEffect(() => {
     if(emailDomain === "fpt.edu.vn") {
-      navigate('/profileSt');
+      navigate('/examscheduleStu');
     }else if (emailDomain === "gmail.com"){
-      navigate("/ExscheduleLec");
+      navigate("/examscheduleLec");
     }
   },[user]);
 

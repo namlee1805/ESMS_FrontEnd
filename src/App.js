@@ -14,6 +14,7 @@ import SalaryLec_Desktop from "./pages/SalaryLec/SalaryLec_Desktop";
 import CreateDataEx_Desktop from "./pages/CreateDataEx/CreateDataEx_Desktop";
 
 import ExscheduleLec from "./pages/ExScheLec/ExscheduleLec";
+import Exschedulestu from "./pages/ExScheStu/Exschedulestu";
 
 
 function App() {
@@ -118,9 +119,16 @@ function App() {
           }
           />
 
-          < Route path="/examscheduleStu" element={
+          < Route path="/examscheduleLec" element={
             <Proctected>
               <ExscheduleLec />
+            </Proctected>
+          }
+          />
+
+          < Route path="/examscheduleStu" element={
+            <Proctected>
+              <Exschedulestu />
             </Proctected>
           }
           />
