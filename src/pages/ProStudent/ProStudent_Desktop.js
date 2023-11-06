@@ -106,8 +106,8 @@ const ProStudent_Desktop = () => {
                     <div className="exams1">Exams</div>
                   </div>
                 </div>
-              </button>
-              <button className="profile" onClick={onProStuClick}>
+              </Link>
+              {/* <button className="profile" onClick={onProStuClick}>
                 <div className="exams-inner">
                   <div className="template-parent">
                     <img className="template-icon" alt="" src="/template.svg" />
@@ -146,40 +146,40 @@ const ProStudent_Desktop = () => {
               </b>
             </div>
           </button> */}
-          <button onClick={handleSignOut} className="logout">
-            Logout
-          </button>
-        </div>
-        <div className="body">
-          <b className="profile2">Profile</b>
-          <div className="student-id">Student ID:</div>
-          <div className="se173049-wrapper">
-            <div className="se173049">{loading ? 'Loading...' : studentData?.studentID}</div>
+            <button onClick={handleSignOut} className="logout">
+              Logout
+            </button>
           </div>
-          <div className="full-name">Full Name:</div>
-          <div className="se173049-wrapper">
-            <div className="on-nh-tn">{loading ? 'Loading...' : studentData?.studentName}</div>
-          </div>
-          <div className="student-id">Email:</div>
-          <div className="tinddse173049fpteduvn-wrapper">
-            <div className="tinddse173049fpteduvn">
-              {loading ? 'Loading...' : studentData?.studentEmail}
+          <div className="body2">
+            <b className="profile2">Profile</b>
+            <div className="student-id">Student ID:</div>
+            <div className="se173049-wrapper">
+              <div className="se173049">{loading ? 'Loading...' : studentData?.student_id}</div>
+            </div>
+            <div className="full-name">Full Name:</div>
+            <div className="se173049-wrapper">
+              <div className="on-nh-tn">{loading ? 'Loading...' : studentData?.student_name}</div>
+            </div>
+            <div className="student-id">Email:</div>
+            <div className="tinddse173049fpteduvn-wrapper">
+              <div className="tinddse173049fpteduvn">
+                {loading ? 'Loading...' : studentData?.student_email}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="bot">
-        <div className="report">
-          <button className="report-child" onClick={onReportStuClick}/>
-          <div className="report1">Report</div>
-          <div className="image-1-wrapper">
-            <img className="image-1-icon" alt="" src="/image-1@2x.png" />
+        <div className="bot">
+          <div className="report">
+            <button className="report-child" onClick={onReportStuClick} />
+            <div className="report1">Report</div>
+            <div className="image-1-wrapper">
+              <img className="image-1-icon" alt="" src="/image-1@2x.png" />
+            </div>
           </div>
+          <img className="logofpt-icon" alt="" src="/logofpt@2x.png" />
         </div>
-        <img className="logofpt-icon" alt="" src="/logofpt@2x.png" />
       </div>
-    </div>
-  );
+      );
 };
 
       export default ProStudent_Desktop;
