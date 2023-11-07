@@ -12,6 +12,7 @@ import CreateDataEx_Desktop from "./pages/CreateDataEx/CreateDataEx_Desktop";
 import ExscheduleLec from "./pages/ExScheLec/ExscheduleLec";
 import Exschedulestu from "./pages/ExScheStu/Exschedulestu";
 import EditExamina from "./pages/EditExami/EditExamina";
+import RegisLec from "./pages/RegistLec/RegisLec";
 
 
 function App() {
@@ -88,6 +89,13 @@ function App() {
           < Route path="/createDataEx" element={
             <Proctected>
               <CreateDataEx_Desktop />
+            </Proctected>
+          }
+          />
+
+          < Route path="/registerLec" element={
+            <Proctected>
+              < RegisLec />
             </Proctected>
           }
           />
