@@ -125,7 +125,7 @@ const Desktop_login = () => {
               </div>
               <div className="social-buttons-columns">
 
-                <GoogleButton onClick={handleGoogleSignIn}/>
+                <GoogleButton className="googlebtn" onClick={handleGoogleSignIn}/>
               </div>
             </div>
             <img className="logo-long-2-icon" alt="" src="/logolong-2@2x.png" />

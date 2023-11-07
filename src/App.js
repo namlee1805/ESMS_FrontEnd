@@ -11,6 +11,7 @@ import CreateDataEx_Desktop from "./pages/CreateDataEx/CreateDataEx_Desktop";
 
 import ExscheduleLec from "./pages/ExScheLec/ExscheduleLec";
 import Exschedulestu from "./pages/ExScheStu/Exschedulestu";
+import EditExamina from "./pages/EditExami/EditExamina";
 
 
 function App() {
@@ -69,7 +70,7 @@ function App() {
   }, [pathname]);
 
   //Conditionally render the appropriate component based on screen width
- 
+
 
 
   return (
@@ -105,9 +106,24 @@ function App() {
           }
           />
 
+
+          < Route path="/editExamina" element={
+            <Proctected>
+              <EditExamina />
+            </Proctected>
+          }
+          />
+
           < Route path="/profileSt" element={
             <Proctected>
               <ProStudent_Desktop />
+            </Proctected>
+          }
+          />
+
+          < Route path="/exscheduleExami" element={
+            <Proctected>
+              <ExscheduleLec />
             </Proctected>
           }
           />

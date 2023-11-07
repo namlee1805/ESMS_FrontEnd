@@ -57,7 +57,7 @@ const ProStudent_Desktop = () => {
 
   //use Google report => change link
   const onReportStuClick = useCallback(() => {
-    window.open('http://localhost:3000/ProStudent');
+    window.open('https://forms.gle/fCCNqjzx7UHx5X8Y6');
   }, []);
 
   //logout => redirect login page
