@@ -57,7 +57,7 @@ const ProStudent_Desktop = () => {
 
   //use Google report => change link
   const onReportStuClick = useCallback(() => {
-    window.open('http://localhost:3000/ProStudent');
+    window.open('https://forms.gle/fCCNqjzx7UHx5X8Y6');
   }, []);
 
   //logout => redirect login page
@@ -66,44 +66,44 @@ const ProStudent_Desktop = () => {
   }, []);
 
   return (
-    <div className="prostudent">
-      <div className="navbar">
-        <div className="fpt">
-          <div className="fpt-child" />
-          <div className="fpt-item" />
-          <div className="frame">
-            <div className="exam-schedule">Exam schedule management system</div>
-            <div className="fpt-university">FPT UNIVERSITY</div>
+    <div className="vprostudent">
+      <div className="vnavbar">
+        <div className="vfpt">
+          <div className="vfpt-child" />
+          <div className="vfpt-item" />
+          <div className="vframe">
+            <div className="vexam-schedule">Exam schedule management system</div>
+            <div className="vfpt-university">FPT UNIVERSITY</div>
           </div>
         </div>
-        <button className="avatar" onClick={onAvatarProClick}>
-          <img className="avt-icon" alt="" src={user?.photoURL} referrerPolicy="no-referrer" />
-          <div className="student-name">
-            <p className="student">{user?.displayName}</p>
+        <button className="vavatar" onClick={onAvatarProClick}>
+          <img className="vavt-icon" alt="" src={user?.photoURL} referrerPolicy="no-referrer" />
+          <div className="vstudent-name">
+            <p className="vstudent">{user?.displayName}</p>
           </div>
         </button>
       </div>
-      <div className="row">
-        <div className="menu">
-          <button className="user-profile" onClick={onUserProClick}>
+      <div className="vrow">
+        <div className="vmenu">
+          <button className="vuser-profile" onClick={onUserProClick}>
             <img
-              className="profile-image-icon"
+              className="vprofile-image-icon"
               alt=""
               src={user?.photoURL}
               referrerPolicy="no-referrer"
             />
-            <div className="name-parent">
-              <b className="name1">{user?.displayName}</b>
-              <div className="tittle">{user?.email}</div>
+            <div className="vname-parent">
+              <b className="vname1">{user?.displayName}</b>
+              <div className="vtittle">{user?.email}</div>
             </div>
           </button>
-          <div className="options">
-            <div className="exams-parent">
-              <Link className="exams" to={"/examscheduleStu"}>
-                <div className="exams-inner">
-                  <div className="icon-parent">
-                    <img className="icon" alt="" src="/icon.svg" />
-                    <div className="exams1">Exams</div>
+          <div className="voptions">
+            <div className="vexams-parent">
+              <Link className="vexams" to={"/examscheduleStu"}>
+                <div className="vexams-inner">
+                  <div className="vicon-parent">
+                    <img className="vicon" alt="" src="/icon.svg" />
+                    <div className="vexams1">Exams</div>
                   </div>
                 </div>
               </Link>
@@ -118,20 +118,20 @@ const ProStudent_Desktop = () => {
               </button> */}
 
 
-                <Link className="register" to="/profileSt">
-                  <div className="register-inner">
-                    <div className="icon-container">
-                      <img className="icon2" alt="" src="/homeoutline.svg" />
-                      <div className="exams2">Profile</div>
-                      <div className="frame-item" />
+                <Link className="vregister" to="/profileSt">
+                  <div className="vregister-inner">
+                    <div className="vicon-container">
+                      <img className="vicon2" alt="" src="/homeoutline.svg" />
+                      <div className="vexams2">Profile</div>
+                      <div className="vframe-item" />
                     </div>
                   </div>
                 </Link>
-                <Link className="reports" to={"/reportSt"}>
-                  <div className="exams-inner">
-                    <div className="icon-group">
-                      <img className="icon1" alt="" src="/icon1.svg" />
-                      <div className="reports1">Reports</div>
+                <Link className="vreports" to={"/reportSt"}>
+                  <div className="vexams-inner">
+                    <div className="vicon-group">
+                      <img className="vicon1" alt="" src="/icon1.svg" />
+                      <div className="vreports1">Reports</div>
                     </div>
                   </div>
                 </Link>
@@ -146,37 +146,37 @@ const ProStudent_Desktop = () => {
               </b>
             </div>
           </button> */}
-            <button onClick={handleSignOut} className="logout">
+            <button onClick={handleSignOut} className="vlogout">
               Logout
             </button>
           </div>
-          <div className="body2">
-            <b className="profile2">Profile</b>
-            <div className="student-id">Student ID:</div>
-            <div className="se173049-wrapper">
-              <div className="se173049">{loading ? 'Loading...' : studentData?.student_id}</div>
+          <div className="vbody2">
+            <b className="vprofile2">Profile</b>
+            <div className="vstudent-id">Student ID:</div>
+            <div className="vse173049-wrapper">
+              <div className="vse173049">{loading ? 'Loading...' : studentData?.student_id}</div>
             </div>
-            <div className="full-name">Full Name:</div>
-            <div className="se173049-wrapper">
-              <div className="on-nh-tn">{loading ? 'Loading...' : studentData?.student_name}</div>
+            <div className="vfull-name">Full Name:</div>
+            <div className="vse173049-wrapper">
+              <div className="von-nh-tn">{loading ? 'Loading...' : studentData?.student_name}</div>
             </div>
-            <div className="student-id">Email:</div>
-            <div className="tinddse173049fpteduvn-wrapper">
-              <div className="tinddse173049fpteduvn">
+            <div className="vstudent-id">Email:</div>
+            <div className="vtinddse173049fpteduvn-wrapper">
+              <div className="vtinddse173049fpteduvn">
                 {loading ? 'Loading...' : studentData?.student_email}
               </div>
             </div>
           </div>
         </div>
-        <div className="bot">
-          <div className="report">
-            <button className="report-child" onClick={onReportStuClick} />
-            <div className="report1">Report</div>
-            <div className="image-1-wrapper">
-              <img className="image-1-icon" alt="" src="/image-1@2x.png" />
+        <div className="vbot">
+          <div className="vreport">
+            <button className="vreport-child" onClick={onReportStuClick} />
+            <div className="vreport1">Report</div>
+            <div className="vimage-1-wrapper">
+              <img className="vimage-1-icon" alt="" src="/image-1@2x.png" />
             </div>
           </div>
-          <img className="logofpt-icon" alt="" src="/logofpt@2x.png" />
+          <img className="vlogofpt-icon" alt="" src="/logofpt@2x.png" />
         </div>
       </div>
       );

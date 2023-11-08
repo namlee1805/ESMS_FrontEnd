@@ -41,45 +41,45 @@ const Exschedulestu = () => {
 
 
     return (
-        <div className="exschedulelec">
-            <div className="navbar1">
-                <div className="fpt1">
-                    <div className="fpt-inner" />
-                    <div className="rectangle-div" />
-                    <div className="frame">
-                        <div className="exam-schedule1">
+        <div className="fexschedulelec">
+            <div className="fnavbar1">
+                <div className="ffpt1">
+                    <div className="ffpt-inner" />
+                    <div className="frectangle-div" />
+                    <div className="fframe">
+                        <div className="fexam-schedule1">
                             Exam schedule management system
                         </div>
-                        <div className="fpt-university1">FPT UNIVERSITY</div>
+                        <div className="ffpt-university1">FPT UNIVERSITY</div>
                     </div>
                 </div>
-                <button className="avatar1">
-                    <img className="avt-icon" alt="" src={user?.photoURL} referrerPolicy="no-referrer" />
-                    <div className="student-name">
-                        <p className="student">{user?.displayName}</p>
+                <button className="favatar1">
+                    <img className="favt-icon" alt="" src={user?.photoURL} referrerPolicy="no-referrer" />
+                    <div className="fstudent-name">
+                        <p className="fstudent">{user?.displayName}</p>
                     </div>
                 </button>
             </div>
-            <div className="row">
-                <div className="menu">
-                    <button className="user-profile1">
+            <div className="frow">
+                <div className="fmenu">
+                    <button className="fuser-profile1">
                         <img
-                            className="profile-image-icon1"
+                            className="fprofile-image-icon1"
                             alt=""
                             src={user?.photoURL} referrerPolicy="no-referrer"
                         />
-                        <div className="name-group">
-                            <b className="name1">{user?.displayName}</b>
-                            <div className="tittle1">{user?.email}</div>
+                        <div className="fname-group">
+                            <b className="fname1">{user?.displayName}</b>
+                            <div className="ftittle1">{user?.email}</div>
                         </div>
                     </button>
-                    <div className="exam-parent">
-                        <Link className="register" to={"/examscheduleStu"}>
-                            <div className="register-inner">
-                                <div className="icon-container">
-                                    <img className="icon2" alt="" src="/icon2.svg" />
-                                    <div className="exams2">Exams</div>
-                                    <div className="frame-item" />
+                    <div className="fexam-parent">
+                        <Link className="fregister" to={"/examscheduleStu"}>
+                            <div className="fregister-inner">
+                                <div className="ficon-container">
+                                    <img className="ficon2" alt="" src="/icon2.svg" />
+                                    <div className="fexams2">Exams</div>
+                                    <div className="fframe-item" />
                                 </div>
                             </div>
                         </Link>
@@ -94,25 +94,25 @@ const Exschedulestu = () => {
                             </div>
                         </button> */}
 
-                        <Link className="profile3" to={"/profileSt"}>
-                            <div className="homeoutline-parent">
+                        <Link className="fprofile3" to={"/profileSt"}>
+                            <div className="fhomeoutline-parent">
                                 <img
-                                    className="homeoutline-icon"
+                                    className="fhomeoutline-icon"
                                     alt=""
                                     src="/homeoutline.svg"
                                 />
-                                <div className="profile4">Profile</div>
+                                <div className="fprofile4">Profile</div>
                             </div>
                         </Link>
 
-                        <Link className="profile3" to={"/reportSt"}>
-                            <div className="homeoutline-parent">
+                        <Link className="fprofile3" to={"/reportSt"}>
+                            <div className="fhomeoutline-parent">
                                 <img
-                                    className="upward-trend-icon"
+                                    className="fupward-trend-icon"
                                     alt=""
                                     src="/icon1.svg"
                                 />
-                                <div className="profile4">Reports</div>
+                                <div className="fprofile4">Reports</div>
                             </div>
                         </Link>
                     </div>
@@ -123,20 +123,20 @@ const Exschedulestu = () => {
                             </b>
                         </div>
                     </button> */}
-                    <button onClick={handleSignOut} className="logout3">
-                        <p className="logout5">
+                    <button onClick={handleSignOut} className="flogout3">
+                        <p className="flogout5">
                         Logout
                         </p>
                     </button>
                 </div>
-                <div className="body">
-                    <b className="exam-schedule2">Exam Schedule</b>
-                    <div className="courses-parent">
-                        <div className="courses">Courses</div>
-                        <div className="room">Room</div>
-                        <div className="date">Date</div>
-                        <div className="slot">Slot</div>
-                        <div className="status">Status</div>
+                <div className="fbody">
+                    <b className="fexam-schedule2">Exam Schedule</b>
+                    <div className="fcourses-parent">
+                        <div className="fcourses">Courses</div>
+                        <div className="froom">Room</div>
+                        <div className="fdate">Date</div>
+                        <div className="fslot">Slot</div>
+                        <div className="fstatus">Status</div>
                     </div>
                     {/* <div className="rectangle-parent">
                         <div className="frame-inner" />
@@ -211,18 +211,18 @@ const Exschedulestu = () => {
             {/* Render danh sách khuôn mẫu */}
             {studentData && studentData.length > 0 ? (
               studentData.map((studentData, index) => (
-                <div className="rectangle-parent" key={index}>
-                  <div className="frame-inner" />
-                  <div className="csd201-parent">
-                    <div className="csd201">{loading ? 'Loading...' : studentData.stuexschCourse}</div>
-                    <div className="div">{loading ? 'Loading...' : studentData.stuexschRoom}</div>
-                    <div className="div1">{loading ? 'Loading...' : studentData.stuexschDate}</div>
-                    <div className="div2">{loading ? 'Loading...' : studentData.stuexschTime}</div>
-                    <button className="vector-wrapper">
-                      <img className="vector-icon" alt="" src="/vector.svg" />
+                <div className="frectangle-parent" key={index}>
+                  <div className="fframe-inner" />
+                  <div className="fcsd201-parent">
+                    <div className="fcsd201">{loading ? 'Loading...' : studentData.stuexschCourse}</div>
+                    <div className="fdiv">{loading ? 'Loading...' : studentData.stuexschRoom}</div>
+                    <div className="fdiv1">{loading ? 'Loading...' : studentData.stuexschDate}</div>
+                    <div className="fdiv2">{loading ? 'Loading...' : studentData.stuexschTime}</div>
+                    <button className="fvector-wrapper">
+                      <img className="fvector-icon" alt="" src="/vector.svg" />
                     </button>
-                    <button className="vector-container">
-                      <img className="vector-icon1" alt="" src="/vector1.svg" />
+                    <button className="fvector-container">
+                      <img className="fvector-icon1" alt="" src="/vector1.svg" />
                     </button>
                   </div>
                   </div>
@@ -233,15 +233,15 @@ const Exschedulestu = () => {
                     </div>
                 </div>
             </div>
-            <div className="bot">
-                <div className="report2">
-                    <button className="report-item" />
-                    <div className="report3">Report</div>
-                    <div className="image-1-container">
-                        <img className="image-1-icon1" alt="" src="/image-1@2x.png" />
+            <div className="fbot">
+                <div className="freport2">
+                    <button className="freport-item" />
+                    <div className="freport3">Report</div>
+                    <div className="fimage-1-container">
+                        <img className="fimage-1-icon1" alt="" src="/image-1@2x.png" />
                     </div>
                 </div>
-                <img className="logofpt-icon" alt="" src="/logolong-1@2x.png" />
+                <img className="flogofpt-icon" alt="" src="/logolong-1@2x.png" />
             </div>
         </div>
     );

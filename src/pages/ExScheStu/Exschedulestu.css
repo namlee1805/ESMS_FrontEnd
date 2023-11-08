@@ -1,5 +1,5 @@
-.fpt-inner,
-.rectangle-div {
+.ffpt-inner,
+.frectangle-div {
   position: absolute;
   top: 106.7px;
   left: -60px;
@@ -9,14 +9,14 @@
   transform: rotate(-30deg);
   transform-origin: 0 0;
 }
-.rectangle-div {
+.frectangle-div {
   top: 90.3px;
   left: 117.3px;
   width: 229.9px;
   height: 9.4px;
 }
-.exam-schedule1,
-.fpt-university1 {
+.fexam-schedule1,
+.ffpt-university1 {
   position: absolute;
   top: 18px;
   left: 306px;
@@ -24,7 +24,7 @@
   width: 349px;
   height: 25px;
 }
-.fpt-university1 {
+.ffpt-university1 {
   top: 0;
   left: 0;
   font-size: var(--font-size-17xl);
@@ -32,7 +32,7 @@
   width: 296px;
   height: 38px;
 }
-.frame {
+.fframe {
   position: absolute;
   top: 15px;
   left: 12px;
@@ -40,36 +40,36 @@
   height: 43px;
   overflow: hidden;
 }
-.avt-icon,
-.fpt1 {
+.favt-icon,
+.ffpt1 {
   position: relative;
 }
-.fpt1 {
+.ffpt1 {
   width: 667px;
   height: 75px;
   overflow: hidden;
   flex-shrink: 0;
 }
-.avt-icon {
+.favt-icon {
   width: 50px;
   height: 50px;
   object-fit: cover;
 }
-.avt-icon:hover {
+.favt-icon:hover {
   box-shadow: 0 4px 4px #bebebe;
 }
-.student-name {
+.fstudent-name {
   position: relative;
   font-size: var(--font-size-xs);
   font-family: var(--font-inter);
   color: var(--color-white);
   text-align: left;
 }
-.student-name:active,
-.student-name:hover {
+.fstudent-name:active,
+.fstudent-name:hover {
   color: var(--color-silver-100);
 }
-.avt-parent {
+.favt-parent {
   width: 271px;
   display: flex;
   flex-direction: row;
@@ -77,13 +77,13 @@
   justify-content: center;
   gap: 18px;
 }
-.avatar1,
-.navbar1 {
+.favatar1,
+.fnavbar1 {
   overflow: hidden;
   display: flex;
   box-sizing: border-box;
 }
-.avatar1 {
+.favatar1 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-3xs);
@@ -95,7 +95,7 @@
   align-items: flex-start;
   justify-content: center;
 }
-.navbar1 {
+.fnavbar1 {
   background-color: var(--color-tomato-100);
   /* width: 1512px; */
   flex-direction: row;
@@ -103,18 +103,18 @@
   justify-content: space-between;
   padding: var(--padding-3xs) var(--padding-13xl);
 }
-.profile-image-icon1 {
+.fprofile-image-icon1 {
   position: relative;
   border-radius: 50%;
   width: 92px;
   height: 92px;
   object-fit: cover;
 }
-.profile-image-icon1:hover {
+.fprofile-image-icon1:hover {
   box-shadow: 0 4px 4px #bebebe;
 }
-.name1,
-.tittle1 {
+.fname1,
+.ftittle1 {
   position: relative;
   font-size: var(--font-size-5xl);
   line-height: 100%;
@@ -122,32 +122,32 @@
   color: var(--color-white);
   text-align: left;
 }
-.name1:hover {
+.fname1:hover {
   color: var(--color-silver-200);
 }
-.name1:active {
+.fname1:active {
   color: var(--color-silver-100);
 }
-.tittle1 {
+.ftittle1 {
   font-size: var(--font-size-sm);
   font-family: var(--font-inter);
   color: var(--color-gray-100);
 }
-.tittle1:hover {
+.ftittle1:hover {
   color: var(--color-silver-200);
 }
-.tittle1:active {
+.ftittle1:active {
   color: var(--color-silver-100);
 }
-.name-group,
-.user-profile1 {
+.fname-group,
+.fuser-profile1 {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   gap: var(--gap-base);
 }
-.user-profile1 {
+.fuser-profile1 {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -155,18 +155,18 @@
   width: 205.5px;
   gap: var(--gap-xl);
 }
-.exams2,
-.icon2 {
+.fexams2,
+.ficon2 {
   position: relative;
   flex-shrink: 0;
 }
-.icon2 {
+.ficon2 {
   width: 24px;
   height: 24px;
   overflow: hidden;
   z-index: 0;
 }
-.exams2 {
+.fexams2 {
   font-size: var(--font-size-base);
   font-family: var(--font-poppins);
   color: var(--color-white);
@@ -176,7 +176,7 @@
   height: 22px;
   z-index: 1;
 }
-.frame-item {
+.fframe-item {
   position: absolute;
   margin: 0 !important;
   top: -0.1px;
@@ -187,20 +187,20 @@
   height: 22px;
   z-index: 2;
 }
-.icon-container {
+.ficon-container {
   width: 105px;
   position: relative;
   gap: var(--gap-base);
 }
-.exam,
-.exam-inner,
-.icon-container {
+.fexam,
+.fexam-inner,
+.ficon-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
 }
-.exam {
+.fexam {
   cursor: pointer;
   border: 0;
   padding: var(--padding-xs) 0 var(--padding-xs) var(--padding-xs);
@@ -211,18 +211,18 @@
   align-items: flex-start;
   box-sizing: border-box;
 }
-.exam:active,
-.exam:hover {
+.fexam:active,
+.fexam:hover {
   background-color: var(--color-gray-400);
 }
-.homeoutline-icon {
+.fhomeoutline-icon {
   position: relative;
   width: 24px;
   height: 24px;
   overflow: hidden;
   flex-shrink: 0;
 }
-.profile3 {
+.fprofile3 {
   position: relative;
   font-size: var(--font-size-base);
   line-height: 100%;
@@ -230,17 +230,17 @@
   color: var(--color-lightgray-200);
   text-align: left;
 }
-.discover,
-.homeoutline-parent {
+.fdiscover,
+.fhomeoutline-parent {
   display: flex;
   justify-content: flex-start;
 }
-.homeoutline-parent {
+.fhomeoutline-parent {
   flex-direction: row;
   align-items: center;
   gap: var(--gap-base);
 }
-.discover {
+.fdiscover {
   cursor: pointer;
   border: 0;
   padding: var(--padding-xs) var(--padding-51xl) var(--padding-xs)
@@ -251,27 +251,27 @@
   align-items: flex-start;
   box-sizing: border-box;
 }
-.discover:hover {
+.fdiscover:hover {
   background-color: var(--color-gray-500);
 }
-.discover:active {
+.fdiscover:active {
   background-color: var(--color-gray-300);
 }
-.frame-div {
+.fframe-div {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: var(--gap-base);
 }
-.exam-parent,
-.inbox {
+.fexam-parent,
+.finbox {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.inbox {
+.finbox {
   cursor: pointer;
   border: 0;
   padding: var(--padding-xs) var(--padding-5xs) var(--padding-xs)
@@ -280,20 +280,20 @@
   width: 237px;
   box-sizing: border-box;
 }
-.inbox:hover {
+.finbox:hover {
   background-color: var(--color-gray-500);
 }
-.inbox:active {
+.finbox:active {
   background-color: var(--color-gray-300);
 }
-.exam-parent {
+.fexam-parent {
   height: 479px;
   gap: var(--gap-3xs);
 }
-.logout5 {
+.flogout5 {
   margin: 0;
 }
-.logout4 {
+.flogout4 {
   position: absolute;
   top: -4px;
   left: 0;
@@ -306,18 +306,18 @@
   width: 52px;
   height: 16px;
 }
-.logout-container {
+.flogout-container {
   position: relative;
   width: 52px;
   height: 18px;
 }
-.logout3,
-.menu {
+.flogout3,
+.fmenu {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.logout3 {
+.flogout3 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-3xs);
@@ -330,13 +330,13 @@
   justify-content: flex-end;
   box-sizing: border-box;
 }
-.logout3:hover {
+.flogout3:hover {
   background-color: var(--color-tomato-300);
 }
-.logout3:active {
+.flogout3:active {
   background-color: var(--color-tomato-200);
 }
-.menu {
+.fmenu {
   border-radius: var(--br-base);
   background-color: var(--color-gray-200);
   justify-content: center;
@@ -344,7 +344,7 @@
     19.92724609375px;
   gap: var(--gap-9xs);
 }
-.exam-schedule2 {
+.fexam-schedule2 {
   position: relative;
   font-size: var(--font-size-8xl);
   display: inline-block;
@@ -354,12 +354,12 @@
   height: 36px;
   flex-shrink: 0;
 }
-.courses,
-.room {
+.fcourses,
+.froom {
   display: flex;
   align-items: center;
 }
-.courses {
+.fcourses {
   /* align-self: stretch; */
   position: relative;
   line-height: 49px;
@@ -367,35 +367,35 @@
   width: 81px;
   flex-shrink: 0;
 }
-.room {
+.froom {
   width: 83px;
   height: 43px;
 }
-.date,
-.room,
-.slot {
+.fdate,
+.froom,
+.fslot {
   position: relative;
   line-height: 49px;
   justify-content: center;
   flex-shrink: 0;
 }
-.date {
+.fdate {
   display: flex;
   align-items: center;
   width: 93px;
   height: 48px;
 }
-.slot {
+.fslot {
   width: 67px;
   height: 43px;
 }
-.courses-parent,
-.slot,
-.status {
+.fcourses-parent,
+.fslot,
+.fstatus {
   display: flex;
   align-items: center;
 }
-.status {
+.fstatus {
   position: relative;
   line-height: 49px;
   justify-content: center;
@@ -403,7 +403,7 @@
   height: 30px;
   flex-shrink: 0;
 }
-.courses-parent {
+.fcourses-parent {
   width: 924px;
   overflow: hidden;
   flex-direction: row;
@@ -414,13 +414,13 @@
   text-align: center;
   font-size: var(--font-size-xl);
 }
-.frame-inner {
+.fframe-inner {
   position: relative;
   background-color: var(--color-black);
   width: 940px;
   height: 1px;
 }
-.csd201 {
+.fcsd201 {
   position: relative;
   font-size: var(--font-size-mini);
   line-height: 49px;
@@ -428,33 +428,33 @@
   width: 117px;
   flex-shrink: 0;
 }
-.div {
+.fdiv {
   width: 67px;
 }
-.div,
-.div1,
-.div2,
-.done {
+.fdiv,
+.fdiv1,
+.fdiv2,
+.fdone {
   position: relative;
   line-height: 49px;
   display: inline-block;
   flex-shrink: 0;
 }
-.div1 {
+.fdiv1 {
   font-size: var(--font-size-mini);
   text-align: right;
   width: 104px;
 }
-.div2,
-.done {
+.fdiv2,
+.fdone {
   text-align: center;
   width: 129px;
 }
-.done {
+.fdone {
   color: var(--color-tomato-100);
   width: 89px;
 }
-.csd201-parent {
+.fcsd201-parent {
   width: 924px;
   height: 49px;
   display: flex;
@@ -465,7 +465,7 @@
   box-sizing: border-box;
   gap: var(--gap-53xl);
 }
-.rectangle-parent {
+.frectangle-parent {
   align-self: stretch;
   overflow: hidden;
   flex-direction: row;
@@ -473,14 +473,14 @@
   justify-content: center;
   gap: var(--gap-3xs);
 }
-.body,
-.not-yet,
-.rectangle-parent,
-.row {
+.fbody,
+.fnot-yet,
+.frectangle-parent,
+.frow {
   display: flex;
   align-items: center;
 }
-.not-yet {
+.fnot-yet {
   position: relative;
   line-height: 49px;
   color: #a8aab1;
@@ -489,11 +489,11 @@
   width: 89px;
   flex-shrink: 0;
 }
-.body,
-.row {
+.fbody,
+.frow {
   gap: var(--gap-xl);
 }
-.body {
+.fbody {
   align-self: stretch;
   border-radius: var(--br-xl);
   background-color: var(--color-white);
@@ -503,7 +503,7 @@
   justify-content: flex-start;
   padding: var(--padding-3xs) var(--padding-32xl);
 }
-.row {
+.frow {
   width: 1287px;
   height: 724px;
   flex-direction: row;
@@ -512,7 +512,7 @@
   color: var(--color-black);
   font-family: var(--font-roboto);
 }
-.report-item {
+.freport-item {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -524,13 +524,13 @@
   width: 210px;
   height: 46px;
 }
-.report-item:hover {
+.freport-item:hover {
   background-color: var(--color-tomato-300);
 }
-.report-item:active {
+.freport-item:active {
   background-color: var(--color-tomato-400);
 }
-.report3 {
+.freport3 {
   position: absolute;
   top: 62px;
   left: 0;
@@ -538,17 +538,17 @@
   width: 251px;
   height: 43px;
 }
-.report3:active,
-.report3:hover {
+.freport3:active,
+.freport3:hover {
   color: var(--color-silver-100);
 }
-.image-1-icon1 {
+.fimage-1-icon1 {
   position: relative;
   width: 57px;
   height: 57px;
   object-fit: cover;
 }
-.image-1-container {
+.fimage-1-container {
   position: absolute;
   top: 0;
   left: 140px;
@@ -558,14 +558,14 @@
   justify-content: flex-start;
   padding: var(--padding-3xs);
 }
-.report2 {
+.freport2 {
   position: absolute;
   top: 0;
   right: 76px;
   width: 251px;
   height: 105px;
 }
-.logofpt-icon {
+.flogofpt-icon {
   position: absolute;
   top: 31px;
   left: 82px;
@@ -573,20 +573,20 @@
   height: 104px;
   object-fit: cover;
 }
-.bot,
-.exschedulestu {
+.fbot,
+.fexschedulestu {
   position: relative;
   background-color: var(--color-white);
   overflow: hidden;
 }
-.bot {
+.fbot {
   align-self: stretch;
   height: 135px;
   flex-shrink: 0;
   font-size: var(--font-size-13xl);
   font-family: var(--font-inika);
 }
-.exschedulestu {
+.fexschedulestu {
   width: 100%;
   height: 1003.2px;
   display: flex;
@@ -614,8 +614,8 @@
 } */
 
 
-.fpt-inner,
-.rectangle-div {
+.ffpt-inner,
+.frectangle-div {
   position: absolute;
   top: 106.7px;
   left: -60px;
@@ -625,21 +625,21 @@
   transform: rotate(-30deg);
   transform-origin: 0 0;
 }
-.rectangle-div {
+.frectangle-div {
   top: 90.3px;
   left: 117.3px;
   width: 229.9px;
   height: 9.4px;
 }
-.exam-schedule2{
+.fexam-schedule2{
   top: 0;
   left: 0;
 }
-.frame-inner{
+.fframe-inner{
   left: 0;
 }
-.exam-schedule1,
-.fpt-university1 {
+.fexam-schedule1,
+.ffpt-university1 {
   position: absolute;
   top: 18px;
   left: 306px;
@@ -647,7 +647,7 @@
   width: 349px;
   height: 25px;
 }
-.fpt-university1 {
+.ffpt-university1 {
   top: 0;
   left: 0;
   font-size: var(--font-size-17xl);
@@ -655,7 +655,7 @@
   width: 296px;
   height: 38px;
 }
-.frame {
+.fframe {
   position: absolute;
   top: 15px;
   left: 12px;
@@ -663,29 +663,29 @@
   height: 43px;
   overflow: hidden;
 }
-.avt-icon,
-.fpt1 {
+.favt-icon,
+.ffpt1 {
   position: relative;
 }
-.fpt1 {
+.ffpt1 {
   width: 667px;
   height: 75px;
   overflow: hidden;
   flex-shrink: 0;
 }
-.avt-icon {
+.favt-icon {
   width: 50px;
   height: 50px;
   object-fit: cover;
   z-index: 0;
 }
-.avt-icon:hover {
+.favt-icon:hover {
   box-shadow: 0 4px 4px #bebebe;
 }
-.student {
+.fstudent {
   margin: 0;
 }
-.student-name {
+.fstudent-name {
   position: absolute;
   margin: 0 !important;
   top: 15.5px;
@@ -696,16 +696,16 @@
   text-align: left;
   z-index: 1;
 }
-.student-name:active,
-.student-name:hover {
+.fstudent-name:active,
+.fstudent-name:hover {
   color: var(--color-silver-100);
 }
-.avatar1,
-.navbar1 {
+.favatar1,
+.fnavbar1 {
   overflow: hidden;
   display: flex;
 }
-.avatar1 {
+.favatar1 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-3xs);
@@ -720,7 +720,7 @@
   position: relative;
   gap: var(--gap-3xs);
 }
-.navbar1 {
+.fnavbar1 {
   align-self: stretch;
   background-color: var(--color-tomato-100);
   flex-direction: row;
@@ -728,18 +728,18 @@
   justify-content: space-between;
   padding: var(--padding-3xs) var(--padding-13xl);
 }
-.profile-image-icon1 {
+.fprofile-image-icon1 {
   position: relative;
   border-radius: 50%;
   width: 92px;
   height: 92px;
   object-fit: cover;
 }
-.profile-image-icon1:hover {
+.fprofile-image-icon1:hover {
   box-shadow: 0 4px 4px #bebebe;
 }
 .name2,
-.tittle1 {
+.ftittle1 {
   position: relative;
   font-size: var(--font-size-5xl);
   line-height: 100%;
@@ -747,32 +747,32 @@
   color: var(--color-white);
   text-align: left;
 }
-.name2:hover {
+.fname2:hover {
   color: var(--color-silver-200);
 }
-.name2:active {
+.fname2:active {
   color: var(--color-silver-100);
 }
-.tittle1 {
+.ftittle1 {
   font-size: var(--font-size-sm);
   font-family: var(--font-inter);
   color: var(--color-gray-100);
 }
-.tittle1:hover {
+.ftittle1:hover {
   color: var(--color-silver-200);
 }
-.tittle1:active {
+.ftittle1:active {
   color: var(--color-silver-100);
 }
-.name-group,
-.user-profile1 {
+.fname-group,
+.fuser-profile1 {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   gap: var(--gap-base);
 }
-.user-profile1 {
+.fuser-profile1 {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -780,18 +780,18 @@
   width: 205.5px;
   gap: var(--gap-xl);
 }
-.exams2,
-.icon2 {
+.fexams2,
+.ficon2 {
   position: relative;
   flex-shrink: 0;
 }
-.icon2 {
+.ficon2 {
   width: 24px;
   height: 24px;
   overflow: hidden;
   z-index: 0;
 }
-.exams2 {
+.fexams2 {
   font-size: var(--font-size-base);
   font-family: var(--font-poppins);
   color: var(--color-white);
@@ -801,7 +801,7 @@
   height: 22px;
   z-index: 1;
 }
-.frame-item {
+.fframe-item {
   position: absolute;
   margin: 0 !important;
   top: -0.1px;
@@ -812,20 +812,20 @@
   height: 22px;
   z-index: 2;
 }
-.icon-container {
+.ficon-container {
   width: 105px;
   position: relative;
   gap: var(--gap-base);
 }
-.icon-container,
-.register,
-.register-inner {
+.ficon-container,
+.fregister,
+.fregister-inner {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
 }
-.register {
+.fregister {
   cursor: pointer;
   border: 0;
   padding: var(--padding-xs) 0 var(--padding-xs) var(--padding-xs);
@@ -836,21 +836,21 @@
   align-items: flex-start;
   box-sizing: border-box;
 }
-.register:hover {
+.fregister:hover {
   background-color: var(--color-gray-400);
 }
-.profile3:hover,
-.register:active {
+.fprofile3:hover,
+.fregister:active {
   background-color: var(--color-gray-500);
 }
-.homeoutline-icon {
+.fhomeoutline-icon {
   position: relative;
   width: 24px;
   height: 24px;
   overflow: hidden;
   flex-shrink: 0;
 }
-.profile4 {
+.fprofile4 {
   position: relative;
   font-size: var(--font-size-base);
   line-height: 100%;
@@ -858,17 +858,17 @@
   color: var(--color-lightgray-100);
   text-align: left;
 }
-.homeoutline-parent,
-.profile3 {
+.fhomeoutline-parent,
+.fprofile3 {
   display: flex;
   justify-content: flex-start;
 }
-.homeoutline-parent {
+.fhomeoutline-parent {
   flex-direction: row;
   align-items: center;
   gap: var(--gap-base);
 }
-.profile3 {
+.fprofile3 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-xs) var(--padding-51xl) var(--padding-xs)
@@ -879,32 +879,32 @@
   align-items: flex-start;
   box-sizing: border-box;
 }
-.profile3:active {
+.fprofile3:active {
   background-color: var(--color-gray-300);
 }
-.upward-trend-icon {
+.fupward-trend-icon {
   position: relative;
   width: 24.8px;
   height: 26.2px;
   overflow: hidden;
   flex-shrink: 0;
 }
-.fidollar-sign-parent {
+.ffidollar-sign-parent {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: var(--gap-base);
 }
-.register-parent,
-.salary {
+.fregister-parent,
+.fsalary {
   width: 233px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.salary {
+.fsalary {
   cursor: pointer;
   border: 0;
   padding: var(--padding-xs) var(--padding-5xs) var(--padding-xs)
@@ -912,17 +912,17 @@
   background-color: transparent;
   box-sizing: border-box;
 }
-.salary:hover {
+.fsalary:hover {
   background-color: var(--color-gray-500);
 }
-.salary:active {
+.fsalary:active {
   background-color: var(--color-gray-300);
 }
-.register-parent {
+.fregister-parent {
   height: 402px;
   gap: var(--gap-3xs);
 }
-.logout4 {
+.flogout4 {
   position: absolute;
   top: -4px;
   left: 0;
@@ -935,18 +935,18 @@
   width: 52px;
   height: 16px;
 }
-.logout-container {
+.flogout-container {
   position: relative;
   width: 52px;
   height: 18px;
 }
-.logout3,
-.menu {
+.flogout3,
+.fmenu {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.logout3 {
+.flogout3 {
   cursor: pointer;
   border: 0;
   padding: var(--padding-3xs);
@@ -959,13 +959,13 @@
   justify-content: flex-end;
   box-sizing: border-box;
 }
-.logout3:hover {
+.flogout3:hover {
   background-color: var(--color-tomato-300);
 }
-.logout3:active {
+.flogout3:active {
   background-color: var(--color-tomato-200);
 }
-.menu {
+.fmenu {
   border-radius: var(--br-base);
   background-color: var(--color-gray-200);
   justify-content: center;
@@ -973,7 +973,7 @@
     19.92724609375px;
   gap: var(--gap-9xs);
 }
-.exam-schedule2 {
+.fexam-schedule2 {
   position: relative;
   font-size: var(--font-size-8xl);
   display: inline-block;
@@ -983,7 +983,7 @@
   height: 36px;
   flex-shrink: 0;
 }
-.courses {
+.fcourses {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -991,13 +991,13 @@
   height: 70px;
   flex-shrink: 0;
 }
-.courses,
-.date,
-.room {
+.fcourses,
+.fdate,
+.froom {
   position: relative;
   line-height: 49px;
 }
-.room {
+.froom {
   color: #d1d1d1;
   text-align: left;
   display: flex;
@@ -1006,26 +1006,26 @@
   height: 70px;
   flex-shrink: 0;
 }
-.date {
+.fdate {
   justify-content: center;
   width: 68px;
   height: 78px;
 }
-.courses-parent,
-.date,
-.slot {
+.fcourses-parent,
+.fdate,
+.fslot {
   flex-shrink: 0;
   display: flex;
   align-items: center;
 }
-.slot {
+.fslot {
   position: relative;
   line-height: 49px;
   justify-content: center;
   width: 49px;
   height: 69.8px;
 }
-.courses-parent {
+.fcourses-parent {
   width: 883px;
   height: 46px;
   overflow: hidden;
@@ -1037,42 +1037,42 @@
   text-align: center;
   font-size: var(--font-size-xl);
 }
-.frame-inner {
+.fframe-inner {
   position: relative;
   background-color: var(--color-black);
   width: 940px;
   height: 1px;
 }
-.csd201 {
+.fcsd201 {
   width: 117px;
 }
-.csd201,
-.div,
-.div1,
-.div2 {
+.fcsd201,
+.fdiv,
+.fdiv1,
+.fdiv2 {
   position: relative;
   line-height: 49px;
   display: inline-block;
   flex-shrink: 0;
 }
-.div {
+.fdiv {
   font-size: var(--font-size-sm);
   width: 66px;
 }
-.div1,
-.div2 {
+.fdiv1,
+.fdiv2 {
   width: 94px;
 }
-.div2 {
+.fdiv2 {
   font-size: var(--font-size-sm);
   width: 89px;
 }
-.vector-icon {
+.fvector-icon {
   position: relative;
   width: 25px;
   height: 22.2px;
 }
-.vector-wrapper {
+.fvector-wrapper {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -1082,12 +1082,12 @@
   align-items: center;
   justify-content: center;
 }
-.vector-icon1 {
+.fvector-icon1 {
   position: relative;
   width: 18.8px;
   height: 25px;
 }
-.vector-container {
+.fvector-container {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -1095,32 +1095,32 @@
   display: flex;
   align-items: center;
 }
-.csd201-parent,
-.rectangle-parent,
-.vector-container {
+.fcsd201-parent,
+.frectangle-parent,
+.fvector-container {
   flex-direction: row;
   justify-content: center;
 }
-.csd201-parent {
+.fcsd201-parent {
   flex: 1;
   display: flex;
   align-items: center;
   padding: 0 var(--padding-31xl) 0 0;
   gap: var(--gap-43xl);
 }
-.rectangle-parent {
+.frectangle-parent {
   align-self: stretch;
   overflow: hidden;
   flex-wrap: wrap;
   gap: var(--gap-3xs);
 }
-.body,
-.rectangle-parent,
-.row {
+.fbody,
+.frectangle-parent,
+.frow {
   display: flex;
   align-items: center;
 }
-.body {
+.fbody {
   border-radius: var(--br-xl);
   background-color: var(--color-white);
   box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
@@ -1132,7 +1132,7 @@
   box-sizing: border-box;
   gap: var(--gap-3xs);
 }
-.row {
+.frow {
   width: 1281.9px;
   flex-direction: row;
   justify-content: center;
@@ -1141,7 +1141,7 @@
   color: var(--color-black);
   font-family: var(--font-roboto);
 }
-.report-item {
+.freport-item {
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -1153,13 +1153,13 @@
   width: 210px;
   height: 46px;
 }
-.report-item:hover {
+.freport-item:hover {
   background-color: var(--color-tomato-300);
 }
-.report-item:active {
+.freport-item:active {
   background-color: var(--color-tomato-400);
 }
-.report3 {
+.freport3 {
   position: absolute;
   top: 62px;
   left: 0;
@@ -1167,17 +1167,17 @@
   width: 251px;
   height: 43px;
 }
-.report3:active,
-.report3:hover {
+.freport3:active,
+.freport3:hover {
   color: var(--color-silver-100);
 }
-.image-1-icon1 {
+.fimage-1-icon1 {
   position: relative;
   width: 57px;
   height: 57px;
   object-fit: cover;
 }
-.image-1-container {
+.fimage-1-container {
   position: absolute;
   top: 0;
   left: 140px;
@@ -1187,14 +1187,14 @@
   justify-content: flex-start;
   padding: var(--padding-3xs);
 }
-.report2 {
+.freport2 {
   position: absolute;
   top: 0;
   right: 76px;
   width: 251px;
   height: 105px;
 }
-.logofpt-icon {
+.flogofpt-icon {
   position: absolute;
   top: 31px;
   left: 82px;
@@ -1202,20 +1202,20 @@
   height: 104px;
   object-fit: cover;
 }
-.bot,
-.exschedulelec {
+.fbot,
+.fexschedulelec {
   position: relative;
   background-color: var(--color-white);
   overflow: hidden;
 }
-.bot {
+.fbot {
   align-self: stretch;
   height: 135px;
   flex-shrink: 0;
   font-size: var(--font-size-13xl);
   font-family: var(--font-inika);
 }
-.exschedulelec {
+.fexschedulelec {
   width: 100%;
   height: 1003.2px;
   display: flex;
@@ -1229,23 +1229,39 @@
   font-family: var(--font-inter);
 }
 
-.exams2{
+.fexams2{
   padding: 0;
+}
+.fregister{
+  text-decoration: none;
+}
+.fregister:hover{
+  text-decoration: none;
+}
+.fprofile4{
+  text-decoration: none;
+}
+.fprofile4:hover{
+  text-decoration: none;
+}.fprofile3{
+  text-decoration: none;
+}
+.fprofile3:hover{
+  text-decoration: none;
 }
 
 
 
 
-
 @media screen and (max-width: 1200px) {
-  .courses-parent {
+  .fcourses-parent {
     width: 856px;
   }
-  .body {
+  .fbody {
     width: 600px;
   }
 
-  .exschedulelec{
+  .fexschedulelec{
     width: 1200px;
     align-items: center;
     justify-content: center;
@@ -1253,7 +1269,7 @@
 }
 @media screen and (max-width: 960px) {
 
-  .exschedulelec {
+  .fexschedulelec {
     width: 960px;
   }
 }

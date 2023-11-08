@@ -35,85 +35,85 @@ const ExscheduleLec = () => {
   }, []);
 
   return (
-    <div className="exschedulelec">
-      <div className="navbar1">
-        <div className="fpt1">
-          <div className="fpt-inner" />
-          <div className="rectangle-div" />
-          <div className="frame">
-            <div className="exam-schedule1">
+    <div className="cexschedulelec">
+      <div className="cnavbar1">
+        <div className="cfpt1">
+          <div className="cfpt-inner" />
+          <div className="crectangle-div" />
+          <div className="cframe">
+            <div className="cexam-schedule1">
               Exam schedule management system
             </div>
-            <div className="fpt-university1">FPT UNIVERSITY</div>
+            <div className="cfpt-university1">FPT UNIVERSITY</div>
           </div>
         </div>
-        <button className="avatar1">
-          <img className="avt-icon" alt="" src={user?.photoURL} referrerPolicy="no-referrer" />
-          <div className="student-name">
-            <p className="student">{user?.displayName}</p>
+        <button className="cavatar1">
+          <img className="cavt-icon" alt="" src={user?.photoURL} referrerPolicy="no-referrer" />
+          <div className="cstudent-name">
+            <p className="cstudent">{user?.displayName}</p>
           </div>
         </button>
       </div>
-      <div className="row">
-        <div className="menu">
-          <button className="user-profile1">
+      <div className="crow">
+        <div className="cmenu">
+          <button className="cuser-profile1">
             <img
-              className="profile-image-icon1"
+              className="cprofile-image-icon1"
               alt=""
               src={user?.photoURL} referrerPolicy="no-referrer"
             />
-            <div className="name-group">
-              <b className="name2">{user?.displayName}</b>
-              <div className="tittle1">{user?.email}</div>
+            <div className="cname-group">
+              <b className="cname2">{user?.displayName}</b>
+              <div className="ctittle1">{user?.email}</div>
             </div>
           </button>
-          <div className="register-parent">
-            <Link className="register" to={"/examscheduleLec"}>
-              <div className="register-inner">
-                <div className="icon-container">
-                  <img className="icon2" alt="" src="/icon2.svg" />
-                  <div className="exams2">Exams</div>
-                  <div className="frame-item" />
+          <div className="cregister-parent">
+            <Link className="cregister" to={"/examscheduleLec"}>
+              <div className="cregister-inner">
+                <div className="cicon-container">
+                  <img className="cicon2" alt="" src="/icon2.svg" />
+                  <div className="cexams2">Exams</div>
+                  <div className="cframe-item" />
                 </div>
               </div>
             </Link>
-            <Link className="profile3" to={"/profileLe"}>
-              <div className="homeoutline-parent">
+            <Link className="cprofile3" to={"/profileLe"}>
+              <div className="chomeoutline-parent">
                 <img
-                  className="homeoutline-icon"
+                  className="chomeoutline-icon"
                   alt=""
                   src="/homeoutline.svg"
                 />
-                <div className="profile4">Profile</div>
+                <div className="cprofile4">Profile</div>
               </div>
             </Link>
-            <Link className="profile3" to={"/registerLec"}>
-              <div className="homeoutline-parent">
+            <Link className="cprofile3" to={"/registerLec"}>
+              <div className="chomeoutline-parent">
                 <img
-                  className="upward-trend-icon"
+                  className="cupward-trend-icon"
                   alt=""
                   src="/upward-trend.svg"
                 />
-                <div className="profile4">Register</div>
+                <div className="cprofile4">Register</div>
               </div>
             </Link>
-            <Link className="salary" to={"/salary"}>
-              <div className="register-inner">
-                <div className="fidollar-sign-parent">
+            <Link className="csalary" to={"/salary"}>
+              <div className="cregister-inner">
+                <div className="cfidollar-sign-parent">
                   <img
-                    className="homeoutline-icon"
+                    className="chomeoutline-icon"
                     alt=""
                     src="/fidollarsign.svg"
                   />
-                  <div className="profile4">Salary</div>
+                  <div className="cprofile4">Salary</div>
                 </div>
               </div>
             </Link>
-            <Link className="salary" to={"/reportLec"}>
-              <div className="register-inner">
-                <div className="fidollar-sign-parent">
-                  <img className="homeoutline-icon" alt="" src="/icon3.svg" />
-                  <div className="profile4">Reports</div>
+            <Link className="csalary" to={"/reportLec"}>
+              <div className="cregister-inner">
+                <div className="cfidollar-sign-parent">
+                  <img className="chomeoutline-icon" alt="" src="/icon3.svg" />
+                  <div className="cprofile4">Reports</div>
                 </div>
               </div>
             </Link>
@@ -125,17 +125,17 @@ const ExscheduleLec = () => {
               </b>
             </div>
           </button> */}
-          <button onClick={handleSignOut} className="logout3">
-            <p className="student">Logout</p>
+          <button onClick={handleSignOut} className="clogout3">
+            <p className="cstudent">Logout</p>
           </button>
         </div>
-        <div className="body">
-          <b className="exam-schedule2">Exam Schedule</b>
-          <div className="courses-parent">
-            <div className="courses">Courses</div>
-            <div className="room">Room</div>
-            <div className="date">Date</div>
-            <div className="slot">Slot</div>
+        <div className="cbody">
+          <b className="cexam-schedule2">Exam Schedule</b>
+          <div className="ccourses-parent">
+            <div className="ccourses">Courses</div>
+            <div className="croom">Room</div>
+            <div className="cdate">Date</div>
+            <div className="cslot">Slot</div>
           </div>
           {/* <div className="rectangle-parent">
             <div className="frame-inner" />
@@ -247,18 +247,18 @@ const ExscheduleLec = () => {
             {/* Render danh sách khuôn mẫu */}
             {lecturerData && lecturerData.length > 0 ? (
               lecturerData.map((lecturerData, index) => (
-                <div className="rectangle-parent" key={index}>
-                  <div className="frame-inner" />
-                  <div className="csd201-parent">
-                    <div className="csd201">{loading ? 'Loading...' : lecturerData.lecexschCourse}</div>
-                    <div className="div">{loading ? 'Loading...' : lecturerData.lecexschRoom}</div>
-                    <div className="div1">{loading ? 'Loading...' : lecturerData.lecexschDate}</div>
-                    <div className="div2">{loading ? 'Loading...' : lecturerData.lecexschTime}</div>
-                    <button className="vector-wrapper">
-                      <img className="vector-icon" alt="" src="/vector.svg" />
+                <div className="crectangle-parent" key={index}>
+                  <div className="cframe-inner" />
+                  <div className="ccsd201-parent">
+                    <div className="ccsd201">{loading ? 'Loading...' : lecturerData.lecexschCourse}</div>
+                    <div className="cdiv">{loading ? 'Loading...' : lecturerData.lecexschRoom}</div>
+                    <div className="cdiv1">{loading ? 'Loading...' : lecturerData.lecexschDate}</div>
+                    <div className="cdiv2">{loading ? 'Loading...' : lecturerData.lecexschTime}</div>
+                    <button className="cvector-wrapper">
+                      <img className="cvector-icon" alt="" src="/vector.svg" />
                     </button>
-                    <button className="vector-container">
-                      <img className="vector-icon1" alt="" src="/vector1.svg" />
+                    <button className="cvector-container">
+                      <img className="cvector-icon1" alt="" src="/vector1.svg" />
                     </button>
                   </div>
                   </div>
@@ -270,15 +270,15 @@ const ExscheduleLec = () => {
 
         </div>
         </div>
-        <div className="bot">
-          <div className="report2">
-            <button className="report-item" />
-            <div className="report3">Report</div>
-            <div className="image-1-container">
-              <img className="image-1-icon1" alt="" src="/image-1111@2x.png" />
+        <div className="cbot">
+          <div className="creport2">
+            <button className="creport-item" />
+            <div className="creport3">Report</div>
+            <div className="cimage-1-container">
+              <img className="cimage-1-icon1" alt="" src="/image-1111@2x.png" />
             </div>
           </div>
-          <img className="logofpt-icon" alt="" src="/logofpt1@2x.png" />
+          <img className="clogofpt-icon" alt="" src="/logofpt1@2x.png" />
         </div>
       </div>
       );

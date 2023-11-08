@@ -102,68 +102,68 @@ const CreateDataEx_Desktop = () => {
   };
 
   return (
-    <div className="createdata">
-      <div className="navbar">
-        <div className="fpt">
-          <div className="fpt-child" />
-          <div className="fpt-item" />
-          <div className="frame">
-            <div className="exam-schedule">Exam schedule management system</div>
-            <div className="fpt-university">FPT UNIVERSITY</div>
+    <div className="qcreatedata">
+      <div className="qnavbar">
+        <div className="qfpt">
+          <div className="qfpt-child" />
+          <div className="qfpt-item" />
+          <div className="qframe">
+            <div className="qexam-schedule">Exam schedule management system</div>
+            <div className="qfpt-university">FPT UNIVERSITY</div>
           </div>
         </div>
-        <button className="avatar">
-          <img className="avt-icon" alt="" src={user?.photoURL} referrerPolicy="no-referrer" />
-          <div className="student-name">
-            <p className="student">{user?.displayName}</p>
+        <button className="qavatar">
+          <img className="qavt-icon" alt="" src={user?.photoURL} referrerPolicy="no-referrer" />
+          <div className="qstudent-name">
+            <p className="qstudent">{user?.displayName}</p>
           </div>
         </button>
       </div>
-      <div className="row">
-        <div className="menu">
-          <button className="user-profile">
+      <div className="qrow">
+        <div className="qmenu">
+          <button className="quser-profile">
             <img
-              className="profile-image-icon"
+              className="qprofile-image-icon"
               alt=""
               src={user?.photoURL} referrerPolicy="no-referrer" 
             />
-            <div className="name-parent">
-              <b className="name1">{user?.displayName}</b>
-              <div className="tittle">{user?.email}</div>
+            <div className="qname-parent">
+              <b className="qname1">{user?.displayName}</b>
+              <div className="qtittle">{user?.email}</div>
             </div>
           </button>
-          <div className="menu1">
-            <Link className="exams" to={"/examscheduleEx"}>
-              <div className="frame-parent">
-                <div className="template-parent">
-                  <img className="template-icon" alt="" src="/template.svg" />
-                  <div className="exams1">Exams</div>
+          <div className="qmenu1">
+            <Link className="qexams" to={"/exscheduleExami"}>
+              <div className="qframe-parent">
+                <div className="qtemplate-parent">
+                  <img className="qtemplate-icon" alt="" src="/template.svg" />
+                  <div className="qexams1">Exams</div>
                 </div>
               </div>
             </Link>
-            <Link className="create-exams" to={"/createExamEx"}>
-              <div className="upward-trend-parent">
+            <Link className="qcreate-exams" to={"/createExamEx"}>
+              <div className="qupward-trend-parent">
                 <img
-                  className="upward-trend-icon"
+                  className="qupward-trend-icon"
                   alt=""
                   src="/upward-trend.svg"
                 />
-                <div className="create-exams1">Create Exams</div>
+                <div className="qcreate-exams1">Create Exams</div>
               </div>
             </Link>
-            <Link className="createdata1" to={"/createDataEx"}>
-              <div className="createdata-inner">
-                <div className="template-group">
-                  <img className="template-icon1" alt="" src="/template1 copy.svg" />
-                  <div className="create-data">Create Data</div>
-                  <div className="frame-item" />
+            <Link className="qcreatedata1" to={"/createDataEx"}>
+              <div className="qcreatedata-inner">
+                <div className="qtemplate-group">
+                  <img className="qtemplate-icon1" alt="" src="/template1 copy.svg" />
+                  <div className="qcreate-data">Create Data</div>
+                  <div className="qframe-item" />
                 </div>
               </div>
             </Link>
-            <Link className="edit" to={"/editEx"}>
-              <div className="upward-trend-parent">
-                <img className="uedit-icon" alt="" src="/uedit.svg" />
-                <div className="create-exams1">Edit</div>
+            <Link className="qedit" to={"/editExamina"}>
+              <div className="qupward-trend-parent">
+                <img className="quedit-icon" alt="" src="/uedit.svg" />
+                <div className="qcreate-exams1">Edit</div>
               </div>
             </Link>
           </div>
@@ -176,19 +176,19 @@ const CreateDataEx_Desktop = () => {
               </b>
             </div>
           </button> */}
-          <button onClick={handleSignOut} className="logout">
+          <button onClick={handleSignOut} className="qlogout">
               Logout
           </button>
         </div>
-        <div className="body">
-          <b className="create-data1">Create Data</b>
+        <div className="qbody">
+          <b className="qcreate-data1">Create Data</b>
           
-          <div className="lecturer">
-      <div className="student-wrapper">
-        <div className="student2">Student :</div>
+          <div className="qlecturer">
+      <div className="qstudent-wrapper">
+        <div className="qstudent2">Student :</div>
       </div>
-      <div className="frame-group">
-        <div className="frame-wrapper">
+      <div className="qframe-group">
+        <div className="qframe-wrapper">
           <input
             type="file"
             id="studentFileInput" // Unique ID for student
@@ -196,36 +196,36 @@ const CreateDataEx_Desktop = () => {
             style={{ display: 'none' }}
             accept=".xls,.xlsx"
           />
-          <div className="frame-div">
-            <div className="frame-wrapper1" onClick={triggerFileInput('studentFileInput')}>
-              <button className="browser-wrapper">
-                <div className="browser">Browser</div>
+          <div className="qframe-div">
+            <div className="qframe-wrapper1" onClick={triggerFileInput('studentFileInput')}>
+              <button className="qbrowser-wrapper">
+                <div className="qbrowser">Browser</div>
               </button>
-              <div className="file-name">{studentFileName}</div>
+              <div className="qfile-name">{studentFileName}</div>
             </div>
           </div>
         </div>
-        <div className="uexport-parent" onClick={handleUpload(studentFile, 'student')}>
-          <button className="uexport-parent">
-            <img className="uedit-icon" alt="" src="/uexport.svg" />
-            <div className="browser">Upload</div>
+        <div className="quexport-parent" onClick={handleUpload(studentFile, 'student')}>
+          <button className="quexport-parent">
+            <img className="quedit-icon" alt="" src="/uexport.svg" />
+            <div className="qbrowser">Upload</div>
           </button>
         </div>
-        <div className="fidownload-parent" onClick={handleDownload('student')}>
-          <button className="fidownload-parent">
-            <img className="uedit-icon" alt="" src="/fidownload.svg" />
-            <div className="browser">Download</div>
+        <div className="qfidownload-parent" onClick={handleDownload('student')}>
+          <button className="qfidownload-parent">
+            <img className="quedit-icon" alt="" src="/fidownload.svg" />
+            <div className="qbrowser">Download</div>
           </button>
         </div>
       </div>
     </div>
 
-          <div className="lecturer">
-            <div className="student-wrapper">
-              <div className="student2">Lecturer :</div>
+          <div className="qlecturer">
+            <div className="qstudent-wrapper">
+              <div className="qstudent2">Lecturer :</div>
             </div>
-            <div className="frame-group">
-              <div className="frame-wrapper">
+            <div className="qframe-group">
+              <div className="qframe-wrapper">
                 <input
                   type="file"
                   id="lecturerFileInput"
@@ -233,37 +233,37 @@ const CreateDataEx_Desktop = () => {
                   style={{ display: 'none' }}
                   accept=".xls,.xlsx"
                 />
-                <div className="frame-div">
-                  <div className="frame-wrapper1" onClick={triggerFileInput('lecturerFileInput')}>
-                    <button className="browser-wrapper">
-                      <div className="browser">Browser</div>
+                <div className="qframe-div">
+                  <div className="qframe-wrapper1" onClick={triggerFileInput('lecturerFileInput')}>
+                    <button className="qbrowser-wrapper">
+                      <div className="qbrowser">Browser</div>
                     </button>
                   </div>
-                  <div className="file-name">{lecturerFileName}</div>
+                  <div className="qfile-name">{lecturerFileName}</div>
                 </div>
 
-                <div className="file-name">{lecturerFileName}</div> 
+                <div className="qfile-name">{lecturerFileName}</div> 
               </div>
-              <div className="uexport-parent" onClick={handleUpload(lecturerFile, 'lecturer')}>
-                <button className="uexport-parent">
-                  <img className="uedit-icon" alt="" src="/uexport.svg" />
-                  <div className="browser">Upload</div>
+              <div className="quexport-parent" onClick={handleUpload(lecturerFile, 'lecturer')}>
+                <button className="quexport-parent">
+                  <img className="quedit-icon" alt="" src="/uexport.svg" />
+                  <div className="qbrowser">Upload</div>
                 </button>
               </div>
-              <div className="fidownload-parent" onClick={handleDownload('lecturer')}>
-                <button className="fidownload-parent">
-                  <img className="uedit-icon" alt="" src="/fidownload.svg" />
-                  <div className="browser">Download</div>
+              <div className="qfidownload-parent" onClick={handleDownload('lecturer')}>
+                <button className="qfidownload-parent">
+                  <img className="quedit-icon" alt="" src="/fidownload.svg" />
+                  <div className="qbrowser">Download</div>
                 </button>
               </div>
             </div>
           </div>
-          <div className="lecturer">
-            <div className="student-wrapper">
-              <div className="student2">Course :</div>
+          <div className="qlecturer">
+            <div className="qstudent-wrapper">
+              <div className="qstudent2">Course :</div>
             </div>
-            <div className="frame-group">
-              <div className="frame-wrapper">
+            <div className="qframe-group">
+              <div className="qframe-wrapper">
                 <input
                   type="file"
                   id="courseFileInput"
@@ -271,35 +271,35 @@ const CreateDataEx_Desktop = () => {
                   style={{ display: 'none' }}
                   accept=".xls,.xlsx"
                 />
-                <div className="frame-div">
-                  <div className="frame-wrapper1" onClick={triggerFileInput('courseFileInput')}>
-                    <button className="browser-wrapper">
-                      <div className="browser">Browser</div>
+                <div className="qframe-div">
+                  <div className="qframe-wrapper1" onClick={triggerFileInput('courseFileInput')}>
+                    <button className="qbrowser-wrapper">
+                      <div className="qbrowser">Browser</div>
                     </button>
                   </div>
-                  <div className="file-name">{courseFileName}</div>
+                  <div className="qfile-name">{courseFileName}</div>
                 </div>
               </div>
-              <div className="uexport-parent" onClick={handleUpload(courseFile, 'course')}>
-                <button className="uexport-parent">
-                  <img className="uedit-icon" alt="" src="/uexport.svg" />
-                  <div className="browser">Upload</div>
+              <div className="quexport-parent" onClick={handleUpload(courseFile, 'course')}>
+                <button className="quexport-parent">
+                  <img className="quedit-icon" alt="" src="/uexport.svg" />
+                  <div className="qbrowser">Upload</div>
                 </button>
               </div>
-              <div className="fidownload-parent" onClick={handleDownload('course')}>
-                <button className="fidownload-parent">
-                  <img className="uedit-icon" alt="" src="/fidownload.svg" />
-                  <div className="browser">Download</div>
+              <div className="qfidownload-parent" onClick={handleDownload('course')}>
+                <button className="qfidownload-parent">
+                  <img className="quedit-icon" alt="" src="/fidownload.svg" />
+                  <div className="qbrowser">Download</div>
                 </button>
               </div>
             </div>
           </div>
-          <div className="lecturer">
-            <div className="student-wrapper">
-              <div className="student2">Room :</div>
+          <div className="qlecturer">
+            <div className="qstudent-wrapper">
+              <div className="qstudent2">Room :</div>
             </div>
-            <div className="frame-group">
-              <div className="frame-wrapper">
+            <div className="qframe-group">
+              <div className="qframe-wrapper">
                 <input
                   type="file"
                   id="roomFileInput"
@@ -307,25 +307,25 @@ const CreateDataEx_Desktop = () => {
                   style={{ display: 'none' }}
                   accept=".xls,.xlsx"
                 />
-                <div className="frame-div">
-                  <div className="frame-wrapper1" onClick={triggerFileInput('roomFileInput')}>
-                    <button className="browser-wrapper">
-                      <div className="browser">Browser</div>
+                <div className="qframe-div">
+                  <div className="qframe-wrapper1" onClick={triggerFileInput('roomFileInput')}>
+                    <button className="qbrowser-wrapper">
+                      <div className="qbrowser">Browser</div>
                     </button>
                   </div>
-                  <div className="file-name">{roomFileName}</div>
+                  <div className="qfile-name">{roomFileName}</div>
                 </div>
               </div>
-              <div className="uexport-parent" onClick={handleUpload(roomFile, 'room')}>
-                <button className="uexport-parent">
-                  <img className="uedit-icon" alt="" src="/uexport.svg" />
-                  <div className="browser">Upload</div>
+              <div className="quexport-parent" onClick={handleUpload(roomFile, 'room')}>
+                <button className="quexport-parent">
+                  <img className="quedit-icon" alt="" src="/uexport.svg" />
+                  <div className="qbrowser">Upload</div>
                 </button>
               </div>
-              <div className="fidownload-parent" onClick={handleDownload('room')}>
-                <button className="fidownload-parent">
-                  <img className="uedit-icon" alt="" src="/fidownload.svg" />
-                  <div className="browser">Download</div>
+              <div className="qfidownload-parent" onClick={handleDownload('room')}>
+                <button className="qfidownload-parent">
+                  <img className="quedit-icon" alt="" src="/fidownload.svg" />
+                  <div className="qbrowser">Download</div>
                 </button>
               </div>
             </div>
@@ -335,15 +335,15 @@ const CreateDataEx_Desktop = () => {
 
 
 
-      <div className="bot">
-        <div className="report">
-          <button className="report-child" />
-          <div className="report1">Report</div>
-          <div className="image-1-wrapper">
-            <img className="image-1-icon" alt="" src="/image-1@2x.png" />
+      <div className="qbot">
+        <div className="qreport">
+          <button className="qreport-child" />
+          <div className="qreport1">Report</div>
+          <div className="qimage-1-wrapper">
+            <img className="qimage-1-icon" alt="" src="/image-1@2x.png" />
           </div>
         </div>
-        <img className="logofpt-icon" alt="" src="/logofpt@2x.png" />
+        <img className="qlogofpt-icon" alt="" src="/logofpt@2x.png" />
       </div>
     </div>
   );

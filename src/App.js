@@ -14,6 +14,9 @@ import Exschedulestu from "./pages/ExScheStu/Exschedulestu";
 import ReportLec from "./pages/ReportLec/ReportLec";
 import ReportSt from "./pages/ReportSt/ReportSt";
 
+import EditExamina from "./pages/EditExami/EditExamina";
+import RegisLec from "./pages/RegistLec/RegisLec";
+import ExamExamina from "./pages/ExScheExam/ExamExamina";
 
 
 function App() {
@@ -72,7 +75,7 @@ function App() {
   }, [pathname]);
 
   //Conditionally render the appropriate component based on screen width
- 
+
 
 
   return (
@@ -94,6 +97,13 @@ function App() {
           }
           />
 
+          < Route path="/registerLec" element={
+            <Proctected>
+              < RegisLec />
+            </Proctected>
+          }
+          />
+
           < Route path="/examscheduleLec" element={
             <Proctected>
               <ExscheduleLec />
@@ -108,9 +118,24 @@ function App() {
           }
           />
 
+
+          < Route path="/editExamina" element={
+            <Proctected>
+              <EditExamina />
+            </Proctected>
+          }
+          />
+
           < Route path="/profileSt" element={
             <Proctected>
               <ProStudent_Desktop />
+            </Proctected>
+          }
+          />
+
+          < Route path="/exscheduleExami" element={
+            <Proctected>
+              <ExamExamina />
             </Proctected>
           }
           />

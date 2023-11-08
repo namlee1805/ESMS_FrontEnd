@@ -105,7 +105,7 @@ const ReportLec = () => {
               </button>
             </div>
           </div>
-          <button onClick={handleSignOut} className="logout3">
+          <button onClick={handleSignOut} className="relogout3">
             <div className="relogout-container">
               <b className="relogout4">
                 <p className="restudent">Logout</p>

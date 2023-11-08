@@ -108,7 +108,7 @@ const CreaExam = () => {
           </div>
         </button>
         <div className="creamenu1">
-          <Link className="creaexams" to={"/examscheduleEx"}>
+          <Link className="creaexams" to={"/exscheduleExami"}>
             <div className="creaframe-parent">
               <div className="createmplate-parent">
                 <img className="createmplate-icon" alt="" src="/template.svg" />
@@ -135,7 +135,7 @@ const CreaExam = () => {
               <div className="creacreate-data1">Create Data</div>
             </div> 
           </Link>
-          <Link className="creacreate-data" to={"/editEx"}>
+          <Link className="creacreate-data" to={"/editExamina"}>
             <div className="creaupward-trend-parent">
               <img className="creauedit-icon" alt="" src="/uedit copy.svg" />
               <div className="creaedit1">Edit</div>
