@@ -91,9 +91,7 @@ function App() {
           />
 
           < Route path="/createDataEx" element={
-            <Proctected>
               <CreateDataEx_Desktop />
-            </Proctected>
           }
           />
 
@@ -120,9 +118,7 @@ function App() {
 
 
           < Route path="/editExamina" element={
-            <Proctected>
               <EditExamina />
-            </Proctected>
           }
           />
 
@@ -134,9 +130,7 @@ function App() {
           />
 
           < Route path="/exscheduleExami" element={
-            <Proctected>
               <ExamExamina />
-            </Proctected>
           }
           />
 
@@ -147,9 +141,7 @@ function App() {
           }
           />
           < Route path="/createExamEx" element={
-            <Proctected>
               <CreaExam />
-            </Proctected>
           }
           />
           
