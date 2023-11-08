@@ -17,6 +17,28 @@ const EditExamina = () => {
         }
     }
 
+
+    const [examinaterData, setExaminaterData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    // const navigate = useNavigate();
+
+    useEffect(() => {
+        fetch('http://localhost:8088/students')
+            .then(response => response.json())
+            .then(data => {
+                setExaminaterData(data);
+                setLoading(false);
+            })
+            .catch(error => {
+                console.error('Error to call API:', error);
+                setLoading(false);
+            });
+    }, []);
+
+    const onReportClick = useCallback(() => {
+        window.open('https://forms.gle/fCCNqjzx7UHx5X8Y6');
+    }, []);
+
     return (
         <div className="aeditexamina">
             <div className="anavbar1">
@@ -51,7 +73,7 @@ const EditExamina = () => {
                         </div>
                     </button>
                     <div className="aexams-group">
-                        <button className="aexams2">
+                        <Link className="aexams2" to={"/exscheduleExami"}>
                             <div className="aframe-parent">
                                 <div className="atemplate-group">
                                     <img className="atemplate-icon1" alt="" src="/template1.svg" />
@@ -59,7 +81,7 @@ const EditExamina = () => {
                                 </div>
                                 <div className="aframe-item" />
                             </div>
-                        </button>
+                        </Link>
                         {/* <button className="createexams">
               <div className="upward-trend-parent">
                 <img
@@ -70,7 +92,7 @@ const EditExamina = () => {
                 <div className="create-exams">Create Exams</div>
               </div>
             </button> */}
-                        <button className="aexams2">
+                        <Link className="aexams2" to={"/createExamEx"}>
                             <div className="aframe-parent">
                                 <div className="atemplate-group">
                                     <img className="atemplate-icon1" alt="" src="/createexams.svg"
@@ -79,7 +101,7 @@ const EditExamina = () => {
                                 </div>
                                 <div className="aframe-item" />
                             </div>
-                        </button>
+                        </Link>
                         {/* <button className="create-data">
               <div className="upward-trend-parent">
                 <img
@@ -91,7 +113,7 @@ const EditExamina = () => {
               </div>
             </button> */}
 
-                        <button className="aexams2">
+                        <Link className="aexams2" to={"/createDataEx"}>
                             <div className="aframe-parent">
                                 <div className="atemplate-group">
 
@@ -102,9 +124,9 @@ const EditExamina = () => {
                                 </div>
                                 <div className="aframe-item" />
                             </div>
-                        </button>
+                        </Link>
 
-                        <button className="aedit">
+                        <Link className="aedit" to={"editExamina"}>
                             <div className="aedit-inner">
                                 <div className="atemplate-container">
                                     <img className="atemplate-icon2" alt="" src="/template2.svg" />
@@ -112,7 +134,7 @@ const EditExamina = () => {
                                     <div className="aframe-inner" />
                                 </div>
                             </div>
-                        </button>
+                        </Link>
                     </div>
 
 
@@ -127,9 +149,7 @@ const EditExamina = () => {
           </button> */}
 
                     <button className="alogout3" onClick={handleSignOut}>
-                        <p className="student">
-                            Logout
-                        </p>
+                        <p className="student">Logout</p>
                     </button>
                 </div>
                 <div className="abody5">
@@ -141,7 +161,7 @@ const EditExamina = () => {
                         <div className="aslot">Slot</div>
                         <div className="alecturer">Lecturer</div>
                     </div>
-                    <div className="arectangle-parent">
+                    {/* <div className="arectangle-parent">
                         <div className="aframe-child1" />
                         <div className="acsd201">CSD201</div>
                         <div className="adiv">302</div>
@@ -224,6 +244,28 @@ const EditExamina = () => {
                         <button className="aframe-button">
                             <img className="avector-icon1" alt="" src="/vector1.svg" />
                         </button>
+                    </div> */}
+                    <div>
+                        {examinaterData && examinaterData.length > 0 ? (
+                            examinaterData.map((examinaterData, index) => (
+                                <div className="arectangle-parent">
+                                <div className="aframe-child1" />
+                                <div className="acsd201">{loading ? 'Loading...' : examinaterData.examexschCourse}</div>
+                                <div className="adiv">{loading ? 'Loading...' : examinaterData.examexschRoom}</div>
+                                <div className="adiv1">{loading ? 'Loading...' : examinaterData.examexschDate}</div>
+                                <div className="adiv2">{loading ? 'Loading...' : examinaterData.examexschTime}</div>
+                                <div className="atruonglv">{loading ? 'Loading...' : examinaterData.examexschLec}</div>
+                                <button className="avector-wrapper">
+                                    <img className="avector-icon" alt="" src="/vector.svg" />
+                                </button>
+                                <button className="aframe-button">
+                                    <img className="avector-icon1" alt="" src="/vector1.svg" />
+                                </button>
+                            </div>
+                            )))
+                            : (
+                                <div>No data available</div>
+                            )}
                     </div>
                     <button className="abtn-save">
                         <div className="abtn-save-child" />
@@ -234,7 +276,7 @@ const EditExamina = () => {
             </div>
             <div className="abot">
                 <div className="areport2">
-                    <button className="areport-item" />
+                    <button className="areport-item" onClick={onReportClick} />
                     <div className="areport3">Report</div>
                     <div className="aimage-1-container">
                         <img className="aimage-1-icon1" alt="" src="/image-11@2x.png" />

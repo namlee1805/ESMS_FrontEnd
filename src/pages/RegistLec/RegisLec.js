@@ -51,7 +51,7 @@ const RegisLec = () => {
           </button>
           <div className="joptions1">
             <div className="jexams-group">
-              <button className="jexams2">
+              <Link className="jexams2" to={"/examscheduleLec"}>
                 <div className="jexams-child">
                   <div className="jicon-container">
                     <img
@@ -62,8 +62,8 @@ const RegisLec = () => {
                     <div className="jexams3">Exams</div>
                   </div>
                 </div>
-              </button>
-              <button className="jprofile3">
+              </Link>
+              <Link className="jprofile3" to={"/profileLe"}>
                 <div className="jhomeoutline-parent">
                   <img
                     className="jhomeoutline-icon"
@@ -72,8 +72,8 @@ const RegisLec = () => {
                   />
                   <div className="jprofile4">Profile</div>
                 </div>
-              </button>
-              <button className="jregister">
+              </Link>
+              <Link className="jregister" to={"/registerLec"}>
                 <div className="jexams-child">
                   <div className="jupward-trend-parent">
                     <img
@@ -85,8 +85,8 @@ const RegisLec = () => {
                     <div className="jframe-item" />
                   </div>
                 </div>
-              </button>
-              <button className="jsalary">
+              </Link>
+              <Link className="jsalary" to={"/salary"}>
                 <div className="jexams-child">
                   <div className="jicon-container">
                     <img
@@ -97,15 +97,15 @@ const RegisLec = () => {
                     <div className="jprofile4">Salary</div>
                   </div>
                 </div>
-              </button>
-              <button className="jexams2">
+              </Link>
+              <Link className="jexams2" to={"/reportLec"}>
                 <div className="jexams-child">
                   <div className="jicon-container">
                     <img className="jhomeoutline-icon" alt="" src="/icon5.svg"  />
                     <div className="jprofile4">Reports</div>
                   </div>
                 </div>
-              </button>
+              </Link>
             </div>
           </div>
           {/* <button className="logout3">

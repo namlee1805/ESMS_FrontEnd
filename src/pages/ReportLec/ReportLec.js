@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { UserAuth } from "../../context/AuthContext";
 
 const ReportLec = () => {
-    const { logOut, user } = UserAuth();
+  const { logOut, user } = UserAuth();
 
   const handleSignOut = async () => {
     try {
@@ -14,6 +14,9 @@ const ReportLec = () => {
       console.log(error);
     }
   }
+  const onReportClick = useCallback(() => {
+    window.open('https://forms.gle/fCCNqjzx7UHx5X8Y6');
+  }, []);
 
   return (
     <div className="rereportlec">
@@ -125,14 +128,14 @@ const ReportLec = () => {
             </div>
           </div>
           <img className="reimage-2-icon" alt="" src="/image-2@2x.png" />
-          <Link className="rebtn-report" to= {"/reportGoogle"}>
+          <Link className="rebtn-report" to={"https://forms.gle/fCCNqjzx7UHx5X8Y6"}>
             <img className="revector-icon" alt="" src="/vector.svg" />
           </Link>
         </div>
       </div>
       <div className="rebot">
         <div className="rereport2">
-          <button className="rereport-item" />
+          <button className="rereport-item" onClick={onReportClick} />
           <div className="rereport3">Report</div>
           <div className="reimage-1-container">
             <img className="reimage-1-icon1" alt="" src="/image-111@2x.png" />

@@ -57,9 +57,9 @@ const ProLec_Desktop = () => {
   }, []);
 
   //logout => redirect login page
-  const onLogoutBtnClick = useCallback(() => {
-    window.location.href('http://localhost:3000/');
-  }, []);
+  const onReportClick = useCallback(() => {
+    window.open('https://forms.gle/fCCNqjzx7UHx5X8Y6');
+}, []);
 
   return (
     <div className="prolecturer">
@@ -184,7 +184,7 @@ const ProLec_Desktop = () => {
       </div>
       <div className="bot8">
         <div className="report18">
-          <button className="report-child6" />
+          <button className="report-child6" onClick={onReportClick}/>
           <div className="report19">Report</div>
           <div className="image-1-wrapper7">
             <img className="image-1-icon9" alt="" src="/image-11@2x.png" />

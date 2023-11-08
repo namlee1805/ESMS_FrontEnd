@@ -39,6 +39,9 @@ const Exschedulestu = () => {
     //     navigate("/profileSt");
     //   }, []);
 
+    const onReportClick = useCallback(() => {
+        window.open('https://forms.gle/fCCNqjzx7UHx5X8Y6');
+    }, []);
 
     return (
         <div className="fexschedulelec">
@@ -88,7 +91,7 @@ const Exschedulestu = () => {
                                 <img
                                     className="homeoutline-icon"
                                     alt=""
-                                    src="/homeoutline.svg"
+                                    src="/hxomeoutline.svg"
                                 />
                                 <div className="profile4">Profile</div>
                             </div>
@@ -218,12 +221,7 @@ const Exschedulestu = () => {
                     <div className="fdiv">{loading ? 'Loading...' : studentData.stuexschRoom}</div>
                     <div className="fdiv1">{loading ? 'Loading...' : studentData.stuexschDate}</div>
                     <div className="fdiv2">{loading ? 'Loading...' : studentData.stuexschTime}</div>
-                    <button className="fvector-wrapper">
-                      <img className="fvector-icon" alt="" src="/vector.svg" />
-                    </button>
-                    <button className="fvector-container">
-                      <img className="fvector-icon1" alt="" src="/vector1.svg" />
-                    </button>
+                    <div className="done"></div>
                   </div>
                   </div>
                   )))
@@ -235,7 +233,7 @@ const Exschedulestu = () => {
             </div>
             <div className="fbot">
                 <div className="freport2">
-                    <button className="freport-item" />
+                    <button className="freport-item" onClick={onReportClick}/>
                     <div className="freport3">Report</div>
                     <div className="fimage-1-container">
                         <img className="fimage-1-icon1" alt="" src="/image-1@2x.png" />

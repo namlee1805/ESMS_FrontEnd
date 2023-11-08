@@ -70,122 +70,125 @@ const CreaExam = () => {
     }, 5000);
   };
 
+  const onReportClick = useCallback(() => {
+    window.open('https://forms.gle/fCCNqjzx7UHx5X8Y6');
+  }, []);
 
   return (
     <div className="creacreaexam">
-    {showNotification && (
-      <div className={`creanotification ${notificationType}`}>
-        {notification}
-      </div>
-    )}
-    <div className="creanavbar">
-      <div className="creafpt">
-        <div className="creafpt-child" />
-        <div className="creafpt-item" />
-        <div className="creaframe">
-          <div className="creaexam-schedule">Exam schedule management system</div>
-          <div className="creafpt-university">FPT UNIVERSITY</div>
+      {showNotification && (
+        <div className={`creanotification ${notificationType}`}>
+          {notification}
         </div>
-      </div>
-      <button className="creaavatar">
-        <img className="creaavt-icon" alt="" src={user?.photoURL} referrerPolicy="no-referrer"/>
-        <div className="creastudent-name">
-          <p className="crealecturer">{user?.displayName}</p>
-        </div>
-      </button>
-    </div>
-    <div className="crearow">
-      <div className="creamenu">
-        <button className="creauser-profile">
-          <img
-            className="creaprofile-image-icon"
-            alt=""
-            src={user?.photoURL} referrerPolicy="no-referrer"
-          />
-          <div className="creaname-parent">
-            <b className="creaname1">{user?.displayName}</b>
-            <div className="creatittle">{user?.email}</div>
+      )}
+      <div className="creanavbar">
+        <div className="creafpt">
+          <div className="creafpt-child" />
+          <div className="creafpt-item" />
+          <div className="creaframe">
+            <div className="creaexam-schedule">Exam schedule management system</div>
+            <div className="creafpt-university">FPT UNIVERSITY</div>
           </div>
-        </button>
-        <div className="creamenu1">
-          <Link className="creaexams" to={"/exscheduleExami"}>
-            <div className="creaframe-parent">
-              <div className="createmplate-parent">
-                <img className="createmplate-icon" alt="" src="/template.svg" />
-                <div className="creaexams1">Exams</div>
-              </div>
-            </div>
-          </Link>
-          <Link className="creacreateexams" to={"/createExamEx"}>
-            <div className="creacreateexams-inner">
-              <div className="createmplate-group">
-                <img className="createmplate-icon1" alt="" src="/template1 copy.svg" />
-                <div className="creacreate-exams">Create Exams</div>
-                <div className="creaframe-item" />
-              </div>
-            </div>
-          </Link>
-          <Link className="creacreate-data" to={"/createDataEx"}>
-            <div className="creaupward-trend-parent">
-              <img
-                className="creaupward-trend-icon"
-                alt=""
-                src="/upward-trend.svg"
-              />
-              <div className="creacreate-data1">Create Data</div>
-            </div> 
-          </Link>
-          <Link className="creacreate-data" to={"/editExamina"}>
-            <div className="creaupward-trend-parent">
-              <img className="creauedit-icon" alt="" src="/uedit copy.svg" />
-              <div className="creaedit1">Edit</div>
-            </div>
-          </Link>
         </div>
-        <button onClick={handleSignOut} className="crealogout">
-          <div className="crealogout-wrapper">
-            <b className="crealogout1">
-              <p className="crealecturer">Logout</p>
-            </b>
+        <button className="creaavatar">
+          <img className="creaavt-icon" alt="" src={user?.photoURL} referrerPolicy="no-referrer" />
+          <div className="creastudent-name">
+            <p className="crealecturer">{user?.displayName}</p>
           </div>
         </button>
       </div>
-      <div className="creabody">
-        <b className="creacreate-exam">Create Exam</b>
-        <form onSubmit={handleSubmit} className="creaexam-form">
-          <div className="creaform-group">
-            <label htmlFor="startDate">Start Date:</label>
-            <input 
-              type="date" 
-              id="startDate"
-              name="startDate"
-              value={examData.startDate}
-              onChange={handleInputChange}
-              className="creainput-style"
-              required
+      <div className="crearow">
+        <div className="creamenu">
+          <button className="creauser-profile">
+            <img
+              className="creaprofile-image-icon"
+              alt=""
+              src={user?.photoURL} referrerPolicy="no-referrer"
             />
-          </div>
-
-          
-          <button type="submit" className="creabtn-save">
-            <img className="creauedit-icon" alt="" src="/usave.svg" />
-            <b className="creasave">Save</b>
+            <div className="creaname-parent">
+              <b className="creaname1">{user?.displayName}</b>
+              <div className="creatittle">{user?.email}</div>
+            </div>
           </button>
-        </form>
-      </div>
-    </div>
-    <div className="creabot">
-      <div className="creareport">
-        <button className="creareport-child" />
-        <div className="creareport1">Report</div>
-        <div className="creaimage-1-wrapper">
-          <img className="creaimage-1-icon" alt="" src="/image-1@2x.png" />
+          <div className="creamenu1">
+            <Link className="creaexams" to={"/exscheduleExami"}>
+              <div className="creaframe-parent">
+                <div className="createmplate-parent">
+                  <img className="createmplate-icon" alt="" src="/template.svg" />
+                  <div className="creaexams1">Exams</div>
+                </div>
+              </div>
+            </Link>
+            <Link className="creacreateexams" to={"/createExamEx"}>
+              <div className="creacreateexams-inner">
+                <div className="createmplate-group">
+                  <img className="createmplate-icon1" alt="" src="/template1 copy.svg" />
+                  <div className="creacreate-exams">Create Exams</div>
+                  <div className="creaframe-item" />
+                </div>
+              </div>
+            </Link>
+            <Link className="creacreate-data" to={"/createDataEx"}>
+              <div className="creaupward-trend-parent">
+                <img
+                  className="creaupward-trend-icon"
+                  alt=""
+                  src="/upward-trend.svg"
+                />
+                <div className="creacreate-data1">Create Data</div>
+              </div>
+            </Link>
+            <Link className="creacreate-data" to={"/editExamina"}>
+              <div className="creaupward-trend-parent">
+                <img className="creauedit-icon" alt="" src="/uedit copy.svg" />
+                <div className="creaedit1">Edit</div>
+              </div>
+            </Link>
+          </div>
+          <button onClick={handleSignOut} className="crealogout">
+            <div className="crealogout-wrapper">
+              <b className="crealogout1">
+                <p className="crealecturer">Logout</p>
+              </b>
+            </div>
+          </button>
+        </div>
+        <div className="creabody">
+          <b className="creacreate-exam">Create Exam</b>
+          <form onSubmit={handleSubmit} className="creaexam-form">
+            <div className="creaform-group">
+              <label htmlFor="startDate">Start Date:</label>
+              <input
+                type="date"
+                id="startDate"
+                name="startDate"
+                value={examData.startDate}
+                onChange={handleInputChange}
+                className="creainput-style"
+                required
+              />
+            </div>
+
+
+            <button type="submit" className="creabtn-save">
+              <img className="creauedit-icon" alt="" src="/usave.svg" />
+              <b className="creasave">Save</b>
+            </button>
+          </form>
         </div>
       </div>
-      <img className="crealogofpt-icon" alt="" src="/logofpt@2x.png" />
+      <div className="creabot">
+        <div className="creareport">
+          <button className="creareport-child" onClick={onReportClick} />
+          <div className="creareport1">Report</div>
+          <div className="creaimage-1-wrapper">
+            <img className="creaimage-1-icon" alt="" src="/image-1@2x.png" />
+          </div>
+        </div>
+        <img className="crealogofpt-icon" alt="" src="/logofpt@2x.png" />
+      </div>
     </div>
-  </div>
-);
+  );
 };
 
 export default CreaExam;
