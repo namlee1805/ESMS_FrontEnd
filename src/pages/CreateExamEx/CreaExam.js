@@ -165,18 +165,8 @@ const CreaExam = () => {
               required
             />
           </div>
-          <div className="creaform-group">
-            <label htmlFor="endDate">End Date:</label>
-            <input 
-              type="date" 
-              id="endDate"
-              name="endDate"
-              value={examData.endDate}
-              onChange={handleInputChange}
-              className="creainput-style"
-              required
-            />
-          </div>
+
+          
           <button type="submit" className="creabtn-save">
             <img className="creauedit-icon" alt="" src="/usave.svg" />
             <b className="creasave">Save</b>
