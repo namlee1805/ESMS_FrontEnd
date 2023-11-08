@@ -133,16 +133,15 @@ const CreateDataEx_Desktop = () => {
             </div>
           </button>
           <div className="menu1">
-            <button className="exams">
+            <Link className="exams" to={"/examscheduleEx"}>
               <div className="frame-parent">
                 <div className="template-parent">
                   <img className="template-icon" alt="" src="/template.svg" />
                   <div className="exams1">Exams</div>
                 </div>
-                <div className="frame-child" />
               </div>
-            </button>
-            <button className="create-exams">
+            </Link>
+            <Link className="create-exams" to={"/createExamEx"}>
               <div className="upward-trend-parent">
                 <img
                   className="upward-trend-icon"
@@ -151,22 +150,22 @@ const CreateDataEx_Desktop = () => {
                 />
                 <div className="create-exams1">Create Exams</div>
               </div>
-            </button>
-            <button className="createdata1">
+            </Link>
+            <Link className="createdata1" to={"/createDataEx"}>
               <div className="createdata-inner">
                 <div className="template-group">
-                  <img className="template-icon1" alt="" src="/template1.svg" />
+                  <img className="template-icon1" alt="" src="/template1 copy.svg" />
                   <div className="create-data">Create Data</div>
                   <div className="frame-item" />
                 </div>
               </div>
-            </button>
-            <button className="edit">
+            </Link>
+            <Link className="edit" to={"/editEx"}>
               <div className="upward-trend-parent">
                 <img className="uedit-icon" alt="" src="/uedit.svg" />
                 <div className="create-exams1">Edit</div>
               </div>
-            </button>
+            </Link>
           </div>
           {/* <button className="logout">
             <div className="logout-wrapper">

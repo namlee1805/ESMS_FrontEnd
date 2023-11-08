@@ -690,6 +690,30 @@
   color: black;
 }
 
+.edit{
+  text-decoration: none;
+}
+.edit:hover{
+  text-decoration: none;
+}
+.createdata1{
+  text-decoration: none;
+}
+.createdata1:hover{
+  text-decoration: none;
+}.create-exams{
+  text-decoration: none;
+}
+.create-exams:hover{
+  text-decoration: none;
+}.exams{
+  text-decoration: none;
+}
+.exams:hover{
+  text-decoration: none;
+}
+
+
 @media screen and (max-width: 1200px) {
   .body {
     width: 900px;

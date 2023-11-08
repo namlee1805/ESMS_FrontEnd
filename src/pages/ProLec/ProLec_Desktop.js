@@ -117,7 +117,7 @@ const ProLec_Desktop = () => {
                   </div>
                 </div>
               </Link>
-              <button className="exams18">
+              <Link className="exams18" to={"/registerLec"}>
                 <div className="exams-inner5">
                   <div className="fidollar-sign-container">
                     <img
@@ -128,7 +128,7 @@ const ProLec_Desktop = () => {
                     <div className="exams19">Register</div>
                   </div>
                 </div>
-              </button>
+              </Link>
               <Link className="exams18" to={"/salary"}>
                 <div className="exams-inner5">
                   <div className="fidollar-sign-container">
@@ -137,14 +137,14 @@ const ProLec_Desktop = () => {
                   </div>
                 </div>
               </Link>
-              <button className="exams18">
+              <Link className="exams18" to={"/reportLec"}>
                 <div className="exams-inner5">
                   <div className="fidollar-sign-container">
                     <img className="icon12" alt="" src="/icon5.svg" />
                     <div className="salary16">Reports</div>
                   </div>
                 </div>
-              </button>
+              </Link>
             </div>
           </div>
           {/* <button className="logout27">

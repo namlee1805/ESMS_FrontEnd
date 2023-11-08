@@ -8,9 +8,12 @@ import ProLec_Desktop from "./pages/ProLec/ProLec_Desktop";
 import Proctected from "./components/Protected";
 import SalaryLec_Desktop from "./pages/SalaryLec/SalaryLec_Desktop";
 import CreateDataEx_Desktop from "./pages/CreateDataEx/CreateDataEx_Desktop";
-
+import CreaExam from "./pages/CreateExamEx/CreaExam";
 import ExscheduleLec from "./pages/ExScheLec/ExscheduleLec";
 import Exschedulestu from "./pages/ExScheStu/Exschedulestu";
+import ReportLec from "./pages/ReportLec/ReportLec";
+import ReportSt from "./pages/ReportSt/ReportSt";
+
 
 
 function App() {
@@ -118,6 +121,27 @@ function App() {
             </Proctected>
           }
           />
+          < Route path="/createExamEx" element={
+            <Proctected>
+              <CreaExam />
+            </Proctected>
+          }
+          />
+          
+          
+          < Route path="/reportLec" element={
+            <Proctected>
+              <ReportLec />
+            </Proctected>
+          }
+          />
+     < Route path="/reportSt" element={
+            <Proctected>
+              <ReportSt />
+            </Proctected>
+          }
+          />
+          
           {/* <Route path="/profile" element={isMobile ? <ProStudentMobile /> : (window.innerWidth >= 840 ? <ProStudentTablet /> : <ProStudentDesktop />)} /> */}
         </Routes>
       </AuthContextProvider>

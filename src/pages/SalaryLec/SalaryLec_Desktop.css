@@ -665,6 +665,23 @@
   color: var(--color-white);
   font-family: var(--font-inter);
 }
+
+.exams12{
+  text-decoration: none;
+}
+.exams12:hover{
+  text-decoration: none;
+}  .salary7{
+  text-decoration: none;
+}
+.salary7:hover{
+  text-decoration: none;
+}  .exams12{
+  text-decoration: none;
+}
+.exams12:hover{
+  text-decoration: none;
+}
 @media screen and (max-width: 1200px) {
   .date-container {
     width: 856px;

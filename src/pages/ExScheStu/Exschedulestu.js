@@ -105,7 +105,7 @@ const Exschedulestu = () => {
                             </div>
                         </Link>
 
-                        <button className="profile3">
+                        <Link className="profile3" to={"/reportSt"}>
                             <div className="homeoutline-parent">
                                 <img
                                     className="upward-trend-icon"
@@ -114,7 +114,7 @@ const Exschedulestu = () => {
                                 />
                                 <div className="profile4">Reports</div>
                             </div>
-                        </button>
+                        </Link>
                     </div>
                     {/* <button className="logout3">
                         <div className="logout-container">

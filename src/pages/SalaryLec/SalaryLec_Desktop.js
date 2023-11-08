@@ -102,14 +102,14 @@ const SalaryLec_Desktop = () => {
                   <div className="register5">Register</div>
                 </div>
               </button> */}
-              <button className="exams12">
+              <Link className="exams12" to={"/registerLec"}>
                 <div className="exams-inner2">
                   <div className="icon-parent4">
                     <img className="icon6" alt="" src="/upward-trend1.svg" />
                     <div className="exams13">Register</div>
                   </div>
                 </div>
-              </button>
+              </Link>
               <Link className="salary7" to={"/salary"}>
                 <div className="exams-inner2">
                   <div className="template-parent7">
@@ -131,14 +131,14 @@ const SalaryLec_Desktop = () => {
                   </div>
                 </div>
               </button> */}
-              <button className="exams12">
+              <Link className="exams12" to={"/reportLec"}>
                 <div className="exams-inner2">
                   <div className="icon-parent4">
                     <img className="icon6" alt="" src="/icon31.svg" />
                     <div className="exams13">Report</div>
                   </div>
                 </div>
-              </button>
+              </Link>
             </div>
           </div>
           {/* <button className="logout18">

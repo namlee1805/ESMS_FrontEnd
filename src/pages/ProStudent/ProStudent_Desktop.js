@@ -118,23 +118,23 @@ const ProStudent_Desktop = () => {
               </button> */}
 
 
-                <button className="register">
+                <Link className="register" to="/profileSt">
                   <div className="register-inner">
                     <div className="icon-container">
-                      <img className="icon2" alt="" src="/icon2.svg" />
+                      <img className="icon2" alt="" src="/homeoutline.svg" />
                       <div className="exams2">Profile</div>
                       <div className="frame-item" />
                     </div>
                   </div>
-                </button>
-                <button className="reports" onClick={onReportStuClick}>
+                </Link>
+                <Link className="reports" to={"/reportSt"}>
                   <div className="exams-inner">
                     <div className="icon-group">
                       <img className="icon1" alt="" src="/icon1.svg" />
                       <div className="reports1">Reports</div>
                     </div>
                   </div>
-                </button>
+                </Link>
               </div>
             </div>
             {/* <button className="logout" onClick={onLogoutBtnClick}>
