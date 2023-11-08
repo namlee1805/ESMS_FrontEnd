@@ -91,9 +91,9 @@ const CreaExam = () => {
           </div>
         </div>
         <button className="creaavatar">
-          <img className="creaavt-icon" alt="" src={user?.photoURL} referrerPolicy="no-referrer" />
+          <img className="creaavt-icon" alt="" src="avt@2x.png" />
           <div className="creastudent-name">
-            <p className="crealecturer">{user?.displayName}</p>
+            <p className="crealecturer">Admin</p>
           </div>
         </button>
       </div>
@@ -103,11 +103,11 @@ const CreaExam = () => {
             <img
               className="creaprofile-image-icon"
               alt=""
-              src={user?.photoURL} referrerPolicy="no-referrer"
+              src="avt@2x.png"
             />
             <div className="creaname-parent">
-              <b className="creaname1">{user?.displayName}</b>
-              <div className="creatittle">{user?.email}</div>
+              <b className="creaname1">Admin</b>
+              <div className="creatittle">Admin@fpt.edu.vn</div>
             </div>
           </button>
           <div className="creamenu1">

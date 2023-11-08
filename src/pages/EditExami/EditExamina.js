@@ -35,6 +35,25 @@ const EditExamina = () => {
             });
     }, []);
 
+    const fetchDataFromAPI = async () => {
+        try {
+          const response = await fetch("http://localhost:8088/students");
+          if (response.ok) {
+            const data = await response.json();
+            // Update the examinaterData state with the new data
+            setExaminaterData(data);
+          } else {
+            console.error("Failed to fetch data from API");
+          }
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        }
+      };
+
+      const handledSaveButtonClick= () => {
+          fetchDataFromAPI();
+      };
+
     const onReportClick = useCallback(() => {
         window.open('https://forms.gle/fCCNqjzx7UHx5X8Y6');
     }, []);
@@ -161,6 +180,58 @@ const EditExamina = () => {
                         <div className="aslot">Slot</div>
                         <div className="alecturer">Lecturer</div>
                     </div>
+
+                    <div>
+                        {examinaterData && examinaterData.length > 0 ? (
+                            examinaterData.map((examinaterData, index) => (
+                                <div className="arectangle-parent">
+                                <div className="aframe-child1" />
+                                <div className="acsd201">{loading ? 'Loading...' : examinaterData.examexschCourse}</div>
+                                <div className="adiv">{loading ? 'Loading...' : examinaterData.examexschRoom}</div>
+                                <div className="adiv1">{loading ? 'Loading...' : examinaterData.examexschDate}</div>
+                                <div className="adiv2">{loading ? 'Loading...' : examinaterData.examexschTime}</div>
+                                <div className="atruonglv">{loading ? 'Loading...' : examinaterData.examexschLec}</div>
+                                <button className="avector-wrapper">
+                                    <img className="avector-icon" alt="" src="/vector.svg" />
+                                </button>
+                                <button className="aframe-button">
+                                    <img className="avector-icon1" alt="" src="/vector1.svg" />
+                                </button>
+                            </div>
+                            )))
+                            : (
+                                <div>No data available</div>
+                            )}
+                    </div>
+                    <button className="abtn-save" onClick={handledSaveButtonClick}>
+                        <div className="abtn-save-child" />
+                        <b className="asave">Save</b>
+                        <img className="ausave-icon" alt="" src="/usave.svg" />
+                    </button>
+                </div>
+            </div>
+            <div className="abot">
+                <div className="areport2">
+                    <button className="areport-item" onClick={onReportClick} />
+                    <div className="areport3">Report</div>
+                    <div className="aimage-1-container">
+                        <img className="aimage-1-icon1" alt="" src="/image-11@2x.png" />
+                    </div>
+                </div>
+                <img className="alogofpt-icon" alt="" src="/logofpt@2x.png" />
+            </div>
+        </div>
+    );
+};
+
+export default EditExamina;
+
+
+
+
+
+
+
                     {/* <div className="arectangle-parent">
                         <div className="aframe-child1" />
                         <div className="acsd201">CSD201</div>
@@ -245,47 +316,3 @@ const EditExamina = () => {
                             <img className="avector-icon1" alt="" src="/vector1.svg" />
                         </button>
                     </div> */}
-                    <div>
-                        {examinaterData && examinaterData.length > 0 ? (
-                            examinaterData.map((examinaterData, index) => (
-                                <div className="arectangle-parent">
-                                <div className="aframe-child1" />
-                                <div className="acsd201">{loading ? 'Loading...' : examinaterData.examexschCourse}</div>
-                                <div className="adiv">{loading ? 'Loading...' : examinaterData.examexschRoom}</div>
-                                <div className="adiv1">{loading ? 'Loading...' : examinaterData.examexschDate}</div>
-                                <div className="adiv2">{loading ? 'Loading...' : examinaterData.examexschTime}</div>
-                                <div className="atruonglv">{loading ? 'Loading...' : examinaterData.examexschLec}</div>
-                                <button className="avector-wrapper">
-                                    <img className="avector-icon" alt="" src="/vector.svg" />
-                                </button>
-                                <button className="aframe-button">
-                                    <img className="avector-icon1" alt="" src="/vector1.svg" />
-                                </button>
-                            </div>
-                            )))
-                            : (
-                                <div>No data available</div>
-                            )}
-                    </div>
-                    <button className="abtn-save">
-                        <div className="abtn-save-child" />
-                        <b className="asave">Save</b>
-                        <img className="ausave-icon" alt="" src="/usave.svg" />
-                    </button>
-                </div>
-            </div>
-            <div className="abot">
-                <div className="areport2">
-                    <button className="areport-item" onClick={onReportClick} />
-                    <div className="areport3">Report</div>
-                    <div className="aimage-1-container">
-                        <img className="aimage-1-icon1" alt="" src="/image-11@2x.png" />
-                    </div>
-                </div>
-                <img className="alogofpt-icon" alt="" src="/logofpt@2x.png" />
-            </div>
-        </div>
-    );
-};
-
-export default EditExamina;
