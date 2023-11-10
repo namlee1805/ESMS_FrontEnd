@@ -57,9 +57,9 @@ const ProLec_Desktop = () => {
   }, []);
 
   //logout => redirect login page
-  const onLogoutBtnClick = useCallback(() => {
-    window.location.href('http://localhost:3000/');
-  }, []);
+  const onReportClick = useCallback(() => {
+    window.open('https://forms.gle/fCCNqjzx7UHx5X8Y6');
+}, []);
 
   return (
     <div className="prolecturer">
@@ -164,27 +164,27 @@ const ProLec_Desktop = () => {
           <b className="profile17">Profile</b>
           <div className="lecturer-id1">Lecturer ID:</div>
           <div className="se173049-wrapper1">
-            <div className="se1730493">{loading ? 'Loading...' : lecturerData?.lecturer_id}</div>
+            <div className="se1730493">{loading ? 'Loading...' : lecturerData?.id}</div>
           </div>
           <div className="full-name3">Full Name:</div>
           <div className="se173049-wrapper1">
-            <div className="on-nh-tn3">{loading ? 'Loading...' : lecturerData?.lecturer_name}</div>
+            <div className="on-nh-tn3">{loading ? 'Loading...' : lecturerData?.Name}</div>
           </div>
           <div className="lecturer-id1">Email:</div>
           <div className="tinddse173049fpteduvn-wrapper1">
             <div className="tinddse173049fpteduvn3">
-              {loading ? 'Loading...' : lecturerData?.lecturer_email}
+              {loading ? 'Loading...' : lecturerData?.Email}
             </div>
           </div>
           <div className="lecturer-id1">Phone:</div>
           <div className="tinddse173049fpteduvn-wrapper1">
-            <div className="tinddse173049fpteduvn3">{loading ? 'Loading...' : lecturerData?.lecturer_phone}</div>
+            <div className="tinddse173049fpteduvn3">{loading ? 'Loading...' : lecturerData?.Phone}</div>
           </div>
         </div>
       </div>
       <div className="bot8">
         <div className="report18">
-          <button className="report-child6" />
+          <button className="report-child6" onClick={onReportClick}/>
           <div className="report19">Report</div>
           <div className="image-1-wrapper7">
             <img className="image-1-icon9" alt="" src="/image-11@2x.png" />

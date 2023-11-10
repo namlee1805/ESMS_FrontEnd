@@ -676,6 +676,29 @@
   color: var(--color-white);
   font-family: var(--font-inter);
 }
+.bodyregisLec{
+  overflow: auto; /* hoặc 'scroll' */
+}
+/* Tùy chỉnh cho tất cả các thanh cuộn trong trang */
+::-webkit-scrollbar {
+  width: 10px; /* Độ rộng của thanh cuộn */
+}
+
+/* Xử lý cho phần trượt cuộn */
+::-webkit-scrollbar-thumb {
+  background: #F25F4C; /* Màu của trượt cuộn */
+  border-radius: 5px; /* Làm tròn góc */
+}
+
+/* Thay đổi màu khi hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #D94A43; /* Màu khi hover, một tông màu đậm hơn */
+}
+
+/* Tùy chỉnh cho phần nền của thanh cuộn */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Màu nền của thanh cuộn */
+}
 @media screen and (max-width: 1200px) {
   .jbody {
     width: 900px;

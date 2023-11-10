@@ -198,7 +198,7 @@ const SalaryLec_Desktop = () => {
             <div className="h3010">1h30</div>
           </div> */}
 
-          <div>
+          <div className="bodySala">
             {/* Render danh sách khuôn mẫu */}
             {lecturerData && lecturerData.length > 0 ? (
             lecturerData.map((lecturerData, index) => (

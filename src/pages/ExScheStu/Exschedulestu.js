@@ -22,9 +22,10 @@ const Exschedulestu = () => {
     // const [lecturerData, setLecturerData] = useState(null);
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
-
+    console.log(localStorage.getItem("email"));
+  const disable = localStorage.getItem("email");
     useEffect(() => {
-        fetch('http://localhost:8088/students')
+        fetch(`http://localhost:8888/viewexamstudent?email=${disable}`)
             .then(response => response.json())
             .then(data => {
                 setStudentData(data);
@@ -39,6 +40,9 @@ const Exschedulestu = () => {
     //     navigate("/profileSt");
     //   }, []);
 
+    const onReportClick = useCallback(() => {
+        window.open('https://forms.gle/fCCNqjzx7UHx5X8Y6');
+    }, []);
 
     return (
         <div className="fexschedulelec">
@@ -88,7 +92,7 @@ const Exschedulestu = () => {
                                 <img
                                     className="homeoutline-icon"
                                     alt=""
-                                    src="/homeoutline.svg"
+                                    src="/hxomeoutline.svg"
                                 />
                                 <div className="profile4">Profile</div>
                             </div>
@@ -207,23 +211,18 @@ const Exschedulestu = () => {
                             <div className="div2">7:30 - 9:00</div>
                             <div className="done">Done</div>
                         </div> */}
-                        <div>
+                        <div className="bodyexScheStu">
             {/* Render danh sách khuôn mẫu */}
             {studentData && studentData.length > 0 ? (
               studentData.map((studentData, index) => (
                 <div className="frectangle-parent" key={index}>
                   <div className="fframe-inner" />
                   <div className="fcsd201-parent">
-                    <div className="fcsd201">{loading ? 'Loading...' : studentData.stuexschCourse}</div>
-                    <div className="fdiv">{loading ? 'Loading...' : studentData.stuexschRoom}</div>
-                    <div className="fdiv1">{loading ? 'Loading...' : studentData.stuexschDate}</div>
-                    <div className="fdiv2">{loading ? 'Loading...' : studentData.stuexschTime}</div>
-                    <button className="fvector-wrapper">
-                      <img className="fvector-icon" alt="" src="/vector.svg" />
-                    </button>
-                    <button className="fvector-container">
-                      <img className="fvector-icon1" alt="" src="/vector1.svg" />
-                    </button>
+                    <div className="fcsd201">{loading ? 'Loading...' : studentData.course_id}</div>
+                    <div className="fdiv">{loading ? 'Loading...' : studentData.Room_id}</div>
+                    <div className="fdiv1">{loading ? 'Loading...' : studentData.Date}</div>
+                    <div className="fdiv2">{loading ? 'Loading...' : studentData.Time}</div>
+                    <div className="done"></div>
                   </div>
                   </div>
                   )))
@@ -235,7 +234,7 @@ const Exschedulestu = () => {
             </div>
             <div className="fbot">
                 <div className="freport2">
-                    <button className="freport-item" />
+                    <button className="freport-item" onClick={onReportClick}/>
                     <div className="freport3">Report</div>
                     <div className="fimage-1-container">
                         <img className="fimage-1-icon1" alt="" src="/image-1@2x.png" />

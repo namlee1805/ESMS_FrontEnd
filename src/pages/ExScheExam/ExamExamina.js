@@ -17,6 +17,26 @@ const ExamExamina = () => {
     }
   }
 
+  const [examinaterData, setExaminaterData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  // const navigate = useNavigate();
+
+  useEffect(() => {
+    fetch('http://localhost:8888/viewexamimater')
+        .then(response => response.json())
+        .then(data => {
+            setExaminaterData(data);
+            setLoading(false);
+        })
+        .catch(error => {
+            console.error('Error to call API:', error);
+            setLoading(false);
+        });
+}, []);
+
+  const onReportClick = useCallback(() => {
+    window.open('https://forms.gle/fCCNqjzx7UHx5X8Y6');
+  }, []);
 
   return (
     <div className="uexamexamina">
@@ -32,7 +52,7 @@ const ExamExamina = () => {
           </div>
         </div>
         <button className="uavatar1">
-          <img className="uavt-icon" alt=""  src="avt@2x.png" />
+          <img className="uavt-icon" alt="" src="avt@2x.png" />
           <div className="ustudent-name">
             <p className="ustudent">Admin</p>
           </div>
@@ -52,7 +72,7 @@ const ExamExamina = () => {
             </div>
           </button>
           <div className="umenu1">
-            <button className="ucreatedata">
+            <Link className="ucreatedata" to={"/exscheduleExami"}>
               <div className="ucreatedata-inner">
                 <div className="utemplate-group">
                   <img className="utemplate-icon1" alt="" src="/template1.svg" />
@@ -60,8 +80,8 @@ const ExamExamina = () => {
                   <div className="uframe-item" />
                 </div>
               </div>
-            </button>
-            <button className="ucreate-exams">
+            </Link>
+            <Link className="ucreate-exams" to={"/createExamEx"}>
               <div className="uupward-trend-parent">
                 <img
                   className="uupward-trend-icon"
@@ -70,8 +90,8 @@ const ExamExamina = () => {
                 />
                 <div className="ucreate-exams1">Create Exams</div>
               </div>
-            </button>
-            <button className="ucreate-data">
+            </Link>
+            <Link className="ucreate-data" to={"/createDataEx"}>
               <div className="uupward-trend-parent">
                 <img
                   className="uupward-trend-icon1"
@@ -80,13 +100,13 @@ const ExamExamina = () => {
                 />
                 <div className="ucreate-data1">Create Data</div>
               </div>
-            </button>
-            <button className="ucreate-data">
+            </Link>
+            <Link className="ucreate-data" to={"/editExamina"}>
               <div className="uupward-trend-parent">
                 <img className="uuedit-icon" alt="" src="/uedit.svg" />
                 <div className="ucreate-exams1">Edit</div>
               </div>
-            </button>
+            </Link>
           </div>
           {/* <button className="logout3">
             <div className="logout-container">
@@ -95,9 +115,9 @@ const ExamExamina = () => {
               </b>
             </div>
           </button> */}
-          <button className="ulogout3" onClick={handleSignOut}>
-              <p className="ustudent">Logout</p>
-          </button>
+          <Link className="ulogout3" onClick={handleSignOut} to={"/"}>
+            <p className="ustudent">Logout</p>
+          </Link>
         </div>
         <div className="ubody">
           <b className="uexam-schedule2">Exam Schedule</b>
@@ -108,7 +128,7 @@ const ExamExamina = () => {
             <div className="uslot">Slot</div>
             <div className="ulecturer">Lecturer</div>
           </div>
-          <div className="urectangle-parent">
+          {/* <div className="urectangle-parent">
             <div className="uframe-inner" />
             <div className="ucsd201-parent">
               <div className="ucsd201">CSD201</div>
@@ -169,10 +189,30 @@ const ExamExamina = () => {
             </div>
           </div>
         </div>
+      </div> */}
+      <div className ="bodyExExami">
+        {examinaterData && examinaterData.length > 0 ? (
+          examinaterData.map((examinaterData, index) => (
+            <div className="urectangle-parent">
+            <div className="uframe-inner" />
+            <div className="ucsd201-parent">
+              <div className="ucsd201">{loading ? 'Loading...' : examinaterData.course_id}</div>
+              <div className="udiv">{loading ? 'Loading...' : examinaterData.Room_id}</div>
+              <div className="udiv1">{loading ? 'Loading...' : examinaterData.Date}</div>
+              <div className="udiv2">{loading ? 'Loading...' : examinaterData.Time}</div>
+              <div className="utruonglv">{loading ? 'Loading...' : examinaterData.lecture_id}</div>
+            </div>
+          </div>
+          )))
+        : (
+          <div>No data available</div>
+        )}
+      </div>
+      </div>
       </div>
       <div className="ubot">
         <div className="ureport2">
-          <button className="ureport-item" />
+          <button className="ureport-item" onClick={onReportClick}/>
           <div className="ureport3">Report</div>
           <div className="uimage-1-container">
             <img className="uimage-1-icon1" alt="" src="/image-1111@2x.png" />

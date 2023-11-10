@@ -154,16 +154,16 @@ const ProStudent_Desktop = () => {
             <b className="vprofile2">Profile</b>
             <div className="vstudent-id">Student ID:</div>
             <div className="vse173049-wrapper">
-              <div className="vse173049">{loading ? 'Loading...' : studentData?.student_id}</div>
+              <div className="vse173049">{loading ? 'Loading...' : studentData?.id}</div>
             </div>
             <div className="vfull-name">Full Name:</div>
             <div className="vse173049-wrapper">
-              <div className="von-nh-tn">{loading ? 'Loading...' : studentData?.student_name}</div>
+              <div className="von-nh-tn">{loading ? 'Loading...' : studentData?.name}</div>
             </div>
             <div className="vstudent-id">Email:</div>
             <div className="vtinddse173049fpteduvn-wrapper">
               <div className="vtinddse173049fpteduvn">
-                {loading ? 'Loading...' : studentData?.student_email}
+                {loading ? 'Loading...' : studentData?.email}
               </div>
             </div>
           </div>

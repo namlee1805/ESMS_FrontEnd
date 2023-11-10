@@ -3,6 +3,8 @@ import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { UserAuth } from "../../context/AuthContext";
 import "./CreaExam.css";
+import axios from "axios";
+
 
 const CreaExam = () => {
 
@@ -16,9 +18,12 @@ const CreaExam = () => {
     }
   }
 
+
+
+
+
   const [examData, setExamData] = useState({
     startDate: '',
-    endDate: ''
   });
 
   const [notification, setNotification] = useState('');
@@ -27,49 +32,73 @@ const CreaExam = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setExamData({ ...examData, [name]: value });
+    setExamData({ [name]: value });
   };
+
+  function formatDate(inputDate) {
+    const date = new Date(inputDate);
+    
+    const day = date.getDate();
+    const month = date.getMonth() + 1; // Lưu ý rằng tháng trong JavaScript bắt đầu từ 0, nên cần cộng thêm 1
+    const year = date.getFullYear();
+  
+    // Đảm bảo rằng ngày và tháng luôn có 2 chữ số
+    const formattedDay = day < 10 ? `0${day}` : day;
+    const formattedMonth = month < 10 ? `0${month}` : month;
+  
+    return `${formattedDay}/${formattedMonth}/${year}`;
+  }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // Replace 'YOUR_API_ENDPOINT' with your actual endpoint
+    console.log(formatDate(examData.startDate));
+    const dataStart = formatDate(examData.startDate);
+    console.log(dataStart);
+    // try {
+    //   const response = await axios.post("http://localhost:8888/generate", {
+    //     dataStart
+    //   });
     try {
-      const response = await fetch('YOUR_API_ENDPOINT', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(examData),
-      });
+      // const response = await fetch('http://localhost:8888/generate', {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify({ startDate: dataStart }),
+      // });
+      fetch(`http://localhost:8888/generate?email=${dataStart}`)
+        .then(response => response.json())
+        .then(data => {
+          setStudentData(data);
 
-      if (response.ok) {
-        setNotification('Exam data submitted successfully');
-        setNotificationType('success');
-        setShowNotification(true);
-        // Reset form
-        setExamData({
-          startDate: '',
-          endDate: ''
+        })
+        .catch(error => {
+
         });
-      } else {
-        // If the response is not ok, we assume it's an error
-        setNotification('Failed to submit exam data');
-        setNotificationType('error');
-        setShowNotification(true);
-      }
-    } catch (error) {
-      // If there is an exception during the fetch, it's also an error
-      setNotification(error.message || 'An error occurred while submitting the data');
-      setNotificationType('error');
-      setShowNotification(true);
-    }
 
-    // Hide notification after a while
-    setTimeout(() => {
-      setShowNotification(false);
-    }, 5000);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.json();
+      //setNotification('Exam data submitted successfully');
+      //setNotificationType('success');
+
+      setExamData({
+        startDate: '',
+        endDate: ''
+      });
+    } catch (error) {
+      //setNotification(error.message || 'An error occurred while submitting the data');
+      //setNotificationType('error');
+  
+    } finally {
+
+    }
   };
 
+  const onReportClick = useCallback(() => {
+    window.open('https://forms.gle/fCCNqjzx7UHx5X8Y6');
+  }, []);
 
   return (
     <div className="creacreaexam">
@@ -175,13 +204,13 @@ const CreaExam = () => {
       </div>
     </div>
     <div className="creabot">
-      <div className="creareport">
-        <button className="creareport-child" />
-        <div className="creareport1">Report</div>
-        <div className="creaimage-1-wrapper">
-          <img className="creaimage-1-icon" alt="" src="/image-1@2x.png" />
+        <div className="creareport">
+          <button className="creareport-child" onClick={onReportClick} />
+          <div className="creareport1">Report</div>
+          <div className="creaimage-1-wrapper">
+            <img className="creaimage-1-icon" alt="" src="/image-1@2x.png" />
+          </div>
         </div>
-      </div>
       <img className="crealogofpt-icon" alt="" src="/logofpt@2x.png" />
     </div>
   </div>

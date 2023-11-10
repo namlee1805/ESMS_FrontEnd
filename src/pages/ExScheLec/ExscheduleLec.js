@@ -21,8 +21,10 @@ const ExscheduleLec = () => {
   // const [lecturerData, setLecturerData] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  console.log(localStorage.getItem("email"));
+  const disable = localStorage.getItem("email");
   useEffect(() => {
-    fetch('http://localhost:8088/students')
+    fetch(`http://localhost:8888/viewexamlecturer?email=${disable}`)
       .then(response => response.json())
       .then(data => {
         setLecturerData(data);
@@ -243,17 +245,17 @@ const ExscheduleLec = () => {
             </div>
           </div> */}
 
-          <div>
+          <div className="bodyexScheLec">
             {/* Render danh sách khuôn mẫu */}
             {lecturerData && lecturerData.length > 0 ? (
               lecturerData.map((lecturerData, index) => (
                 <div className="crectangle-parent" key={index}>
                   <div className="cframe-inner" />
                   <div className="ccsd201-parent">
-                    <div className="ccsd201">{loading ? 'Loading...' : lecturerData.lecexschCourse}</div>
-                    <div className="cdiv">{loading ? 'Loading...' : lecturerData.lecexschRoom}</div>
-                    <div className="cdiv1">{loading ? 'Loading...' : lecturerData.lecexschDate}</div>
-                    <div className="cdiv2">{loading ? 'Loading...' : lecturerData.lecexschTime}</div>
+                    <div className="ccsd201">{loading ? 'Loading...' : lecturerData.course_id}</div>
+                    <div className="cdiv">{loading ? 'Loading...' : lecturerData.Room_id}</div>
+                    <div className="cdiv1">{loading ? 'Loading...' : lecturerData.Date}</div>
+                    <div className="cdiv2">{loading ? 'Loading...' : lecturerData.Time}</div>
                     <button className="cvector-wrapper">
                       <img className="cvector-icon" alt="" src="/vector.svg" />
                     </button>
