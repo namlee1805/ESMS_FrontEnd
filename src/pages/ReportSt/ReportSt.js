@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { UserAuth } from "../../context/AuthContext";
 
 const ReportSt = () => {
-    const { logOut, user } = UserAuth();
+  const { logOut, user } = UserAuth();
 
   const handleSignOut = async () => {
     try {
@@ -14,6 +14,10 @@ const ReportSt = () => {
       console.log(error);
     }
   }
+
+  const onReportClick = useCallback(() => {
+    window.open('https://forms.gle/fCCNqjzx7UHx5X8Y6');
+  }, []);
 
   return (
     <div className="zxreportstu">
@@ -97,14 +101,14 @@ const ReportSt = () => {
             </div>
           </div>
           <img className="zximage-2-icon" alt="" src="/image-2@2x.png" />
-          <Link className="zxbtn-report" to={"/reportGoogle"}>
+          <Link className="zxbtn-report" to={"https://forms.gle/fCCNqjzx7UHx5X8Y6"}>
             <img className="zxvector-icon" alt="" src="/vector.svg" />
           </Link>
         </div>
       </div>
       <div className="zxbot">
         <div className="zxreport2">
-          <button className="zxreport-item" />
+          <button className="zxreport-item" onClick={onReportClick} />
           <div className="zxreport3">Report</div>
           <div className="zximage-1-container">
             <img className="zximage-1-icon1" alt="" src="/image-111@2x.png" />

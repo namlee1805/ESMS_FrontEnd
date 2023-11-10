@@ -91,9 +91,13 @@ function App() {
           />
 
           < Route path="/createDataEx" element={
+<<<<<<< HEAD
            // <Proctected>
               <CreateDataEx_Desktop />
            // </Proctected>
+=======
+              <CreateDataEx_Desktop />
+>>>>>>> 515832a5961b269fb0d7a68b901e3bef8dfa9d48
           }
           />
 
@@ -120,9 +124,13 @@ function App() {
 
 
           < Route path="/editExamina" element={
+<<<<<<< HEAD
             //<Proctected>
               <EditExamina />
             //</Proctected>
+=======
+              <EditExamina />
+>>>>>>> 515832a5961b269fb0d7a68b901e3bef8dfa9d48
           }
           />
 
@@ -134,9 +142,13 @@ function App() {
           />
 
           < Route path="/exscheduleExami" element={
+<<<<<<< HEAD
             //<Proctected>
               <ExamExamina />
             //</Proctected>
+=======
+              <ExamExamina />
+>>>>>>> 515832a5961b269fb0d7a68b901e3bef8dfa9d48
           }
           />
 
@@ -147,9 +159,13 @@ function App() {
           }
           />
           < Route path="/createExamEx" element={
+<<<<<<< HEAD
             //<Proctected>
               <CreaExam />
             //</Proctected>
+=======
+              <CreaExam />
+>>>>>>> 515832a5961b269fb0d7a68b901e3bef8dfa9d48
           }
           />
           

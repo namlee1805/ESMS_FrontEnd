@@ -218,10 +218,17 @@ const Exschedulestu = () => {
                 <div className="frectangle-parent" key={index}>
                   <div className="fframe-inner" />
                   <div className="fcsd201-parent">
+<<<<<<< HEAD
                     <div className="fcsd201">{loading ? 'Loading...' : studentData.course_id}</div>
                     <div className="fdiv">{loading ? 'Loading...' : studentData.Room_id}</div>
                     <div className="fdiv1">{loading ? 'Loading...' : studentData.Date}</div>
                     <div className="fdiv2">{loading ? 'Loading...' : studentData.Time}</div>
+=======
+                    <div className="fcsd201">{loading ? 'Loading...' : studentData.stuexschCourse}</div>
+                    <div className="fdiv">{loading ? 'Loading...' : studentData.stuexschRoom}</div>
+                    <div className="fdiv1">{loading ? 'Loading...' : studentData.stuexschDate}</div>
+                    <div className="fdiv2">{loading ? 'Loading...' : studentData.stuexschTime}</div>
+>>>>>>> 515832a5961b269fb0d7a68b901e3bef8dfa9d48
                     <div className="done"></div>
                   </div>
                   </div>

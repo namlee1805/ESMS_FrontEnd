@@ -104,6 +104,10 @@ const CreateDataEx_Desktop = () => {
     window.open('https://forms.gle/fCCNqjzx7UHx5X8Y6');
   }, []);
 
+  const onReportClick = useCallback(() => {
+    window.open('https://forms.gle/fCCNqjzx7UHx5X8Y6');
+  }, []);
+
   return (
     <div className="qcreatedata">
       <div className="qnavbar">
@@ -200,10 +204,17 @@ const CreateDataEx_Desktop = () => {
                 </div>
               </div>
               <div className="quexport-parent" onClick={handleUpload(studentFile, 'student')}>
+<<<<<<< HEAD
                 <Link className="quexport-parent" to={'http://localhost:8888/upFullStudent'}>
                   <img className="quedit-icon" alt="" src="/uexport.svg" />
                   <div className="qbrowser">Upload</div>
                 </Link>
+=======
+                <button className="quexport-parent">
+                  <img className="quedit-icon" alt="" src="/uexport.svg" />
+                  <div className="qbrowser">Upload</div>
+                </button>
+>>>>>>> 515832a5961b269fb0d7a68b901e3bef8dfa9d48
               </div>
               <div className="qfidownload-parent" onClick={handleDownload('student')}>
                 <button className="qfidownload-parent">
@@ -330,7 +341,11 @@ const CreateDataEx_Desktop = () => {
 
 
       <div className="qbot">
+<<<<<<< HEAD
       <div className="qreport">
+=======
+        <div className="qreport">
+>>>>>>> 515832a5961b269fb0d7a68b901e3bef8dfa9d48
           <button className="qreport-child" onClick={onReportClick}/>
           <div className="qreport1">Report</div>
           <div className="qimage-1-wrapper">

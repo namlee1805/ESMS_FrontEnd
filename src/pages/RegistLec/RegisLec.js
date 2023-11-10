@@ -34,11 +34,17 @@ const RegisLec = () => {
 
   const handleButtonClick = async () => {
     setLoading(true);
+<<<<<<< HEAD
     console.log(localStorage.getItem("email"));
     console.log(lecturerData.lecSlotID);
 
     try {
       const response = await fetch('http://localhost:8888/viewexamlecturer', {
+=======
+
+    try {
+      const response = await fetch('http://localhost:8088/students', {
+>>>>>>> 515832a5961b269fb0d7a68b901e3bef8dfa9d48
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -66,7 +72,11 @@ const RegisLec = () => {
 
 
   useEffect(() => {
+<<<<<<< HEAD
     fetch('http://localhost:8888/viewexamadmin')
+=======
+    fetch('http://localhost:8088/students')
+>>>>>>> 515832a5961b269fb0d7a68b901e3bef8dfa9d48
       .then(response => response.json())
       .then(data => {
         setLecturerData(data);
@@ -286,21 +296,35 @@ const RegisLec = () => {
           </div> */}
 
 
+<<<<<<< HEAD
           <div className="bodyregisLec">
+=======
+          <div>
+>>>>>>> 515832a5961b269fb0d7a68b901e3bef8dfa9d48
             {lecturerData && lecturerData.length > 0 ? (
               lecturerData.map((lecturerData, index) => (
                 <div className="jop1" key={index}>
                   <div className="jrectangle-parent">
                     <div className="jframe-inner" />
                     <div className="jframe-child1" />
+<<<<<<< HEAD
                     <div className="jdiv">{loading ? 'Loading...' : lecturerData.Date}</div>
                     <div className="jdiv1">{loading ? 'Loading...' : lecturerData.Time}</div>
                     <div className="jh30">{loading ? 'Loading...' : lecturerData.Hour}</div>
+=======
+                    <div className="jdiv">{loading ? 'Loading...' : lecturerData.lecDate}</div>
+                    <div className="jdiv1">{loading ? 'Loading...' : lecturerData.lecTime}</div>
+                    <div className="jh30">{loading ? 'Loading...' : lecturerData.lecHour}</div>
+>>>>>>> 515832a5961b269fb0d7a68b901e3bef8dfa9d48
                     <button className="jellipse-parent"
                       onClick={() => handleChooseClick(index)}>
                       <div className="jgroup-child" />
                       <div className="jgroup-item" />
+<<<<<<< HEAD
                       <button className="jchoose" onClick={() => handleChooseClick(index)}>Choose</button>
+=======
+                      <b className="jchoose">Choose</b>
+>>>>>>> 515832a5961b269fb0d7a68b901e3bef8dfa9d48
                       <img className="jvector-icon" alt="" src="/choose.svg" />
                     </button>
                   </div>

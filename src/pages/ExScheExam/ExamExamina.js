@@ -22,7 +22,11 @@ const ExamExamina = () => {
   // const navigate = useNavigate();
 
   useEffect(() => {
+<<<<<<< HEAD
     fetch('http://localhost:8888/viewexamimater')
+=======
+    fetch('http://localhost:8088/students')
+>>>>>>> 515832a5961b269fb0d7a68b901e3bef8dfa9d48
         .then(response => response.json())
         .then(data => {
             setExaminaterData(data);
@@ -115,9 +119,15 @@ const ExamExamina = () => {
               </b>
             </div>
           </button> */}
+<<<<<<< HEAD
           <Link className="ulogout3" onClick={handleSignOut} to={"/"}>
             <p className="ustudent">Logout</p>
           </Link>
+=======
+          <button className="ulogout3" onClick={handleSignOut}>
+            <p className="ustudent">Logout</p>
+          </button>
+>>>>>>> 515832a5961b269fb0d7a68b901e3bef8dfa9d48
         </div>
         <div className="ubody">
           <b className="uexam-schedule2">Exam Schedule</b>
@@ -190,17 +200,29 @@ const ExamExamina = () => {
           </div>
         </div>
       </div> */}
+<<<<<<< HEAD
       <div className ="bodyExExami">
+=======
+      <div>
+>>>>>>> 515832a5961b269fb0d7a68b901e3bef8dfa9d48
         {examinaterData && examinaterData.length > 0 ? (
           examinaterData.map((examinaterData, index) => (
             <div className="urectangle-parent">
             <div className="uframe-inner" />
             <div className="ucsd201-parent">
+<<<<<<< HEAD
               <div className="ucsd201">{loading ? 'Loading...' : examinaterData.course_id}</div>
               <div className="udiv">{loading ? 'Loading...' : examinaterData.Room_id}</div>
               <div className="udiv1">{loading ? 'Loading...' : examinaterData.Date}</div>
               <div className="udiv2">{loading ? 'Loading...' : examinaterData.Time}</div>
               <div className="utruonglv">{loading ? 'Loading...' : examinaterData.lecture_id}</div>
+=======
+              <div className="ucsd201">{loading ? 'Loading...' : examinaterData.examexschCourse}</div>
+              <div className="udiv">{loading ? 'Loading...' : examinaterData.examexschRoom}</div>
+              <div className="udiv1">{loading ? 'Loading...' : examinaterData.examexschDate}</div>
+              <div className="udiv2">{loading ? 'Loading...' : examinaterData.examexschTime}</div>
+              <div className="utruonglv">{loading ? 'Loading...' : examinaterData.examexschLec}</div>
+>>>>>>> 515832a5961b269fb0d7a68b901e3bef8dfa9d48
             </div>
           </div>
           )))
