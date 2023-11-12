@@ -1,6 +1,6 @@
 import { async } from "@firebase/util";
 import React, { useState, useEffect, useCallback } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { UserAuth } from "../../context/AuthContext";
 import "./CreaExam.css";
 import axios from "axios";
@@ -8,18 +8,20 @@ import axios from "axios";
 
 const CreaExam = () => {
 
+  const navigate = useNavigate();
   const { logOut, user } = UserAuth();
 
   const handleSignOut = async () => {
     try {
-      await logOut();
+      localStorage.removeItem("loginAdmin");
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
   }
 
 
-
+ const navigator = useNavigate();
 
 
   const [examData, setExamData] = useState({
@@ -66,15 +68,17 @@ const CreaExam = () => {
       //   },
       //   body: JSON.stringify({ startDate: dataStart }),
       // });
+      alert("Please wait show notification Create Success");
       fetch(`http://localhost:8888/generate?email=${dataStart}`)
-        .then(response => response.json())
         .then(data => {
-          setStudentData(data);
-
+          alert("Create Successfully");
+          navigator("/exscheduleExami");
         })
         .catch(error => {
-
+          console.log("Error:" + error);
         });
+        
+       
 
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -117,9 +121,9 @@ const CreaExam = () => {
         </div>
       </div>
       <button className="creaavatar">
-        <img className="creaavt-icon" alt="" src={user?.photoURL} referrerPolicy="no-referrer"/>
+        <img className="creaavt-icon" alt="" src="avt@2x.png"/>
         <div className="creastudent-name">
-          <p className="crealecturer">{user?.displayName}</p>
+          <p className="crealecturer">Admin</p>
         </div>
       </button>
     </div>
@@ -129,11 +133,11 @@ const CreaExam = () => {
           <img
             className="creaprofile-image-icon"
             alt=""
-            src={user?.photoURL} referrerPolicy="no-referrer"
+             src="avt@2x.png"
           />
           <div className="creaname-parent">
-            <b className="creaname1">{user?.displayName}</b>
-            <div className="creatittle">{user?.email}</div>
+            <b className="creaname1">Admin</b>
+            <div className="creatittle">admin@fpt.edu.vn</div>
           </div>
         </button>
         <div className="creamenu1">
@@ -171,12 +175,17 @@ const CreaExam = () => {
             </div>
           </Link>
         </div>
-        <button onClick={handleSignOut} className="crealogout">
+        {/* <button onClick={handleSignOut} className="crealogout">
           <div className="crealogout-wrapper">
             <b className="crealogout1">
               <p className="crealecturer">Logout</p>
             </b>
           </div>
+        </button> */}
+        <button onClick={handleSignOut}  className="crealogout">
+          <p className="crealecturer">
+            Logout
+          </p>
         </button>
       </div>
       <div className="creabody">

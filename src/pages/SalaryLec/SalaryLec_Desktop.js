@@ -20,11 +20,27 @@ const SalaryLec_Desktop = () => {
   // const [lecturerData, setLecturerData] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  console.log(localStorage.getItem("email"));
+  const disable = localStorage.getItem("email");
   useEffect(() => {
-    fetch('http://localhost:8088/students')
+    fetch(`http://localhost:8888/viewexamlecturerchoose?email=${disable}`)
       .then(response => response.json())
       .then(data => {
         setLecturerData(data);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error('Error to call API:', error);
+        setLoading(false);
+      });
+  }, []);
+
+  const [salary, salaryData] = useState([]);
+  useEffect(() => {
+    fetch(`http://localhost:8888/salary?email=${disable}`)
+      .then(response => response.json())
+      .then(data => {
+        salaryData(data);
         setLoading(false);
       })
       .catch(error => {
@@ -205,9 +221,9 @@ const SalaryLec_Desktop = () => {
               <div className="rectangle-parent8" key={index}>
                 <div className="frame-child17" />
                 <div className="wrapper11">
-                  <div className="div14">{loading ? 'Loading...' : lecturerData.lecDate}</div>
+                  <div className="div14">{loading ? 'Loading...' : lecturerData.Date}</div>
                 </div>
-                <div className="h3010">{loading ? 'Loading...' : lecturerData.lecTime}</div>
+                <div className="h3010">{loading ? 'Loading...' : lecturerData.Hour}</div>
               </div>
             )))
           : (
@@ -222,7 +238,7 @@ const SalaryLec_Desktop = () => {
             <img className="icon6" alt="" src="/uclock.svg" />
             <div className="totalhours2">
               <div className="div19">
-                {loading ? 'Loading...' : lecturerData?.lecTotalSlot}
+                {loading ? 'Loading...' : salary?.hour}
                 {/* 6 */}
                 </div>
             </div>
@@ -230,7 +246,7 @@ const SalaryLec_Desktop = () => {
             <img className="icon6" alt="" src="/umoneywithdrawal.svg" />
             <div className="wrapper16">
               <div className="div20">
-                {loading ? 'Loading...' : lecturerData?.lecTotalSalary}
+                {loading ? 'Loading...' : salary?.salary}
                 {/* 180.000 */}
                 </div>
             </div>

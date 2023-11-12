@@ -140,7 +140,7 @@ const Exschedulestu = () => {
                         <div className="froom">Room</div>
                         <div className="fdate">Date</div>
                         <div className="fslot">Slot</div>
-                        <div className="fstatus">Status</div>
+                        {/* <div className="fstatus">Status</div> */}
                     </div>
                     {/* <div className="rectangle-parent">
                         <div className="frame-inner" />

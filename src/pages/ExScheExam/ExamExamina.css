@@ -384,6 +384,7 @@
 }
 .uroom {
   width: 59px;
+  padding-left: 10px;
 }
 .udate,
 .uroom,
@@ -401,12 +402,14 @@
 .uslot {
   text-align: right;
   width: 36px;
+  padding-left: 35px;
 }
 .ulecturer,
 .uname3,
 .uslot {
   display: flex;
   align-items: center;
+  padding-left: 40px;
 }
 .uecturer {
   position: relative;
@@ -417,10 +420,10 @@
 }
 .uname3 {
   width: 926px;
-  overflow: hidden;
+  /* overflow: hidden; */
   flex-direction: row;
   justify-content: center;
-  padding: 0 52px 0 var(--padding-31xl);
+  padding: 0 52px 0 25px;
   box-sizing: border-box;
   gap: 100px;
   text-align: center;
@@ -464,7 +467,7 @@
   font-size: var(--font-size-sm);
   text-align: center;
   display: inline-block;
-  width: 66px;
+  width: 150px;
 }
 .utruonglv {
   font-size: var(--font-size-mid);

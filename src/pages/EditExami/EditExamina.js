@@ -1,6 +1,6 @@
 import { async } from "@firebase/util";
 import React, { useState, useEffect, useCallback } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../../context/AuthContext";
 import "./EditExamina.css";
 
@@ -8,10 +8,12 @@ const EditExamina = () => {
 
     const { logOut, user } = UserAuth();
 
+    const navigate = useNavigate();
 
     const handleSignOut = async () => {
         try {
-            await logOut();
+            localStorage.removeItem("loginAdmin");
+            navigate("/");
         } catch (error) {
             console.log(error);
         }
@@ -23,7 +25,7 @@ const EditExamina = () => {
     // const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('http://localhost:8088/students')
+        fetch('http://localhost:8888/viewexamimater')
             .then(response => response.json())
             .then(data => {
                 setExaminaterData(data);
@@ -34,6 +36,41 @@ const EditExamina = () => {
                 setLoading(false);
             });
     }, []);
+
+
+    const [exam, setExamData] = useState([]);
+    const handleDeleteClick = async (index) => {
+        try {
+          // Giả sử cấu trúc dữ liệu có Slot_id và lecturer_Email
+          const examina = examinaterData[index];
+      
+          console.log(examina.Room_id);
+          console.log(examina.slot_id);
+          console.log(examina.course_id);
+
+          fetch(`http://localhost:8888/editexam?room=${examina.Room_id}&slotId=${examina.slot_id}&courseId=${examina.course_id}`)
+            // .then(response => response.text())
+            .then(data => {
+              setExamData(data);
+
+            })
+            .catch(error => {
+                console.error('loi:', error);
+            });
+                // Xóa phần tử tại vị trí index khỏi mảng lecturerData
+
+            const updatedData = [...examinaterData];
+            updatedData.splice(index, 1);
+            setExaminaterData(updatedData);
+            alert("Delete Successfully");   
+
+        } catch (error) {
+          console.error('Đã xảy ra lỗi:', error);
+        }
+        
+      };
+
+
 
     const onReportClick = useCallback(() => {
         window.open('https://forms.gle/fCCNqjzx7UHx5X8Y6');
@@ -126,7 +163,7 @@ const EditExamina = () => {
                             </div>
                         </Link>
 
-                        <Link className="aedit" to={"editExamina"}>
+                        <Link className="aedit">
                             <div className="aedit-inner">
                                 <div className="atemplate-container">
                                     <img className="atemplate-icon2" alt="" src="/template2.svg" />
@@ -148,9 +185,12 @@ const EditExamina = () => {
             </div>
           </button> */}
 
-                    <Link className="alogout3" onClick={handleSignOut} to={"/"}>
+                    {/* <Link className="alogout3" onClick={handleSignOut} to={"/"}>
                         <p className="student">Logout</p>
-                    </Link>
+                    </Link> */}
+                    <button className="alogout3" onClick={handleSignOut}>
+                        <p className="astudent">Logout</p>
+                    </button>
                 </div>
                 <div className="abody5">
                     <b className="aedit-schedule">Edit Schedule</b>
@@ -248,17 +288,17 @@ const EditExamina = () => {
                     <div className="bodyedit">
                         {examinaterData && examinaterData.length > 0 ? (
                             examinaterData.map((examinaterData, index) => (
-                                <div className="arectangle-parent">
+                                <div className="arectangle-parent" key={index}>
                                 <div className="aframe-child1" />
-                                <div className="acsd201">{loading ? 'Loading...' : examinaterData.examexschCourse}</div>
-                                <div className="adiv">{loading ? 'Loading...' : examinaterData.examexschRoom}</div>
-                                <div className="adiv1">{loading ? 'Loading...' : examinaterData.examexschDate}</div>
-                                <div className="adiv2">{loading ? 'Loading...' : examinaterData.examexschTime}</div>
-                                <div className="atruonglv">{loading ? 'Loading...' : examinaterData.examexschLec}</div>
-                                <button className="avector-wrapper">
+                                <div className="acsd201">{loading ? 'Loading...' : examinaterData.course_id}</div>
+                                <div className="adiv">{loading ? 'Loading...' : examinaterData.Room_id}</div>
+                                <div className="adiv1">{loading ? 'Loading...' : examinaterData.Date}</div>
+                                <div className="adiv2">{loading ? 'Loading...' : examinaterData.Time}</div>
+                                <div className="atruonglv">{loading ? 'Loading...' : examinaterData.lecture_id}</div>
+                                {/* <button className="avector-wrapper">
                                     <img className="avector-icon" alt="" src="/vector.svg" />
-                                </button>
-                                <button className="aframe-button">
+                                </button> */}
+                                <button className="aframe-button" onClick={() => handleDeleteClick(index)}>
                                     <img className="avector-icon1" alt="" src="/vector1.svg" />
                                 </button>
                             </div>

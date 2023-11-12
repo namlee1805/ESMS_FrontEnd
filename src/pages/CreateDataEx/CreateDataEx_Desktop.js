@@ -1,21 +1,32 @@
 import { async } from "@firebase/util";
 import React, { useState, useEffect, useCallback } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../../context/AuthContext";
 import axios from 'axios';
 import './CreateDataEx_Desktop.css';
 
 const CreateDataEx_Desktop = () => {
 
+  const navigate = useNavigate();
   const { logOut, user } = UserAuth();
 
   const handleSignOut = async () => {
     try {
-      await logOut();
+      localStorage.removeItem("loginAdmin");
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
   }
+
+
+  // States for loading
+const [studentLoading, setStudentLoading] = useState(false);
+const [lecturerLoading, setLecturerLoading] = useState(false);
+const [courseLoading, setCourseLoading] = useState(false);
+const [roomLoading, setRoomLoading] = useState(false);
+  
+
 
   // States for Student
   const [studentFile, setStudentFile] = useState(null);
@@ -57,18 +68,82 @@ const CreateDataEx_Desktop = () => {
 
     const formData = new FormData();
     formData.append('file', file);
+  // console.log(formData.get('file'));
 
-    try {
+
+
+  switch(role){
+    case 'FullStudent':
+      setStudentLoading(true);
+      break;
+    case 'Lecturer':
+      setLecturerLoading(true);
+      break;
+    case 'Course':
+      setCourseLoading(true);
+      break;
+    case 'Room':
+      setRoomLoading(true);
+      break;
+    default:
+      break;
+  }
+
+
+    // try {
       // Replace with your backend endpoint for the respective role
-      const response = await axios.post(`your-backend-endpoint/${role}`, formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      });
-      alert(`File for ${role} uploaded successfully: ` + response.data.message);
-    } catch (error) {
-      alert(`Error uploading file for ${role}: ` + error.message);
-    }
+      // fetch(`http://localhost:8888/uploadFullStudent`, {
+      //  method: 'POST',
+      //  body: formData,
+      //  })
+      //  .then(response => response.json())
+      // .then(data => {
+      //  setLecturerData(data);
+      //  })
+      //  .catch(error => {
+      //  console.error('Error calling API:', error);
+      //   });
+      // alert(`File for ${role} uploaded successfully: ` + response.data.message);
+      
+      try {
+        if(role == "FullStudent"){
+          alert("Please wait show notifications Upload Student Success");
+        }
+        const response = await fetch(`http://localhost:8888/upload${role}`, {
+          method: 'POST',
+          body: formData,
+        });
+    
+        if (response.ok) {
+          const data = await response.text();
+          console.log(data); // Handle success response
+          
+          alert(data);
+        } else {
+          throw new Error('Network response was not ok');
+        }
+      } catch (error) {
+        console.error('Error calling API:', error);
+        alert('Error uploading file: ' + error.message);
+      }finally{
+        switch(role){
+          case 'FullStudent':
+            setStudentLoading(false);
+            break;
+          case 'Lecturer':
+            setLecturerLoading(false);
+            break;
+          case 'Course':
+            setCourseLoading(false);
+            break;
+          case 'Room':
+            setRoomLoading(false);
+            break;
+          default:
+            break;
+        }
+      }
+    
   };
 
   // Common function to handle file download
@@ -116,9 +191,9 @@ const CreateDataEx_Desktop = () => {
           </div>
         </div>
         <button className="qavatar">
-          <img className="qavt-icon" alt="" src={user?.photoURL} referrerPolicy="no-referrer" />
+          <img className="qavt-icon" alt=""  src="avt@2x.png" />
           <div className="qstudent-name">
-            <p className="qstudent">{user?.displayName}</p>
+            <p className="qstudent">Admin</p>
           </div>
         </button>
       </div>
@@ -128,11 +203,11 @@ const CreateDataEx_Desktop = () => {
             <img
               className="qprofile-image-icon"
               alt=""
-              src={user?.photoURL} referrerPolicy="no-referrer"
+              src="avt@2x.png"
             />
             <div className="qname-parent">
-              <b className="qname1">{user?.displayName}</b>
-              <div className="qtittle">{user?.email}</div>
+              <b className="qname1">Admin</b>
+              <div className="qtittle">admin@fpt.edu.vn</div>
             </div>
           </button>
           <div className="qmenu1">
@@ -199,11 +274,13 @@ const CreateDataEx_Desktop = () => {
                   </div>
                 </div>
               </div>
-              <div className="quexport-parent" onClick={handleUpload(studentFile, 'student')}>
-                <Link className="quexport-parent" to={'http://localhost:8888/upFullStudent'}>
+              <div className="quexport-parent" 
+              onClick={handleUpload(studentFile, 'FullStudent')}
+              disabled={studentLoading}>
+                <button className="quexport-parent" >
                   <img className="quedit-icon" alt="" src="/uexport.svg" />
                   <div className="qbrowser">Upload</div>
-                </Link>
+                </button>
               </div>
               <div className="qfidownload-parent" onClick={handleDownload('student')}>
                 <button className="qfidownload-parent">
@@ -238,11 +315,12 @@ const CreateDataEx_Desktop = () => {
 
                 <div className="qfile-name">{lecturerFileName}</div>
               </div>
-              <div className="quexport-parent" onClick={handleUpload(lecturerFile, 'lecturer')}>
-              <Link className="quexport-parent" to={"http://localhost:8888/upLecturer"}>
+              <div className="quexport-parent" onClick={handleUpload(lecturerFile, 'Lecturer')}
+              disabled={lecturerLoading}>
+              <button className="quexport-parent" to={"http://localhost:8888/upLecturer"}>
                   <img className="quedit-icon" alt="" src="/uexport.svg" />
                   <div className="qbrowser">Upload</div>
-                </Link>
+                </button>
               </div>
               <div className="qfidownload-parent" onClick={handleDownload('lecturer')}>
                 <button className="qfidownload-parent">
@@ -274,11 +352,11 @@ const CreateDataEx_Desktop = () => {
                   <div className="qfile-name">{courseFileName}</div>
                 </div>
               </div>
-              <div className="quexport-parent" onClick={handleUpload(courseFile, 'course')}>
-              <Link className="quexport-parent" to={"http://localhost:8888/upCourse"}>
+              <div className="quexport-parent" onClick={handleUpload(courseFile, 'Course')}>
+              <button className="quexport-parent" >
                   <img className="quedit-icon" alt="" src="/uexport.svg" />
                   <div className="qbrowser">Upload</div>
-                </Link>
+                </button>
               </div>
               <div className="qfidownload-parent" onClick={handleDownload('course')}>
                 <button className="qfidownload-parent">
@@ -310,11 +388,11 @@ const CreateDataEx_Desktop = () => {
                   <div className="qfile-name">{roomFileName}</div>
                 </div>
               </div>
-              <div className="quexport-parent" onClick={handleUpload(roomFile, 'room')}>
-              <Link className="quexport-parent" to={"http://localhost:8888/upRoom"}>
+              <div className="quexport-parent" onClick={handleUpload(roomFile, 'Room')}>
+              <button className="quexport-parent" to={"http://localhost:8888/upRoom"}>
                   <img className="quedit-icon" alt="" src="/uexport.svg" />
                   <div className="qbrowser">Upload</div>
-                </Link>
+                </button>
               </div>
               <div className="qfidownload-parent" onClick={handleDownload('room')}>
                 <button className="qfidownload-parent">

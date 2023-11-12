@@ -22,13 +22,13 @@ const Desktop_login = () => {
         username: username,
         password: password,
       });
-
+      localStorage.setItem("loginAdmin",res.data.message);
       console.log(res.data);
 
       if (res.data.message === "Username not exists") {
         alert("Email not exists");
       } else if (res.data.message === "Login Success") {
-        navigate("/examschex");
+        navigate("/exscheduleExami");
       } else {
         alert("Incorrect Email and Password not match");
       }
@@ -56,7 +56,7 @@ const Desktop_login = () => {
     if(emailDomain === "fpt.edu.vn") {
       navigate('/examscheduleStu');
     }else if (emailDomain === "gmail.com"){
-      navigate("/reportLec");
+      navigate("/examscheduleLec");
     }
   },[user]);
 
@@ -125,7 +125,7 @@ const Desktop_login = () => {
               </div>
               <div className="social-buttons-columns">
 
-                <GoogleButton onClick={handleGoogleSignIn}/>
+                <GoogleButton onClick={handleGoogleSignIn} className="loginGoogle"/>
               </div>
             </div>
             <img className="logo-long-2-icon" alt="" src="/logolong-2@2x.png" />

@@ -125,7 +125,7 @@ const ReportLec = () => {
             </div>
           </div>
           <img className="reimage-2-icon" alt="" src="/image-2@2x.png" />
-          <Link className="rebtn-report" to= {"/reportGoogle"}>
+          <Link className="rebtn-report" to= {"https://docs.google.com/forms/d/e/1FAIpQLSfP_FU4ybNTlmokrrryIzmeUzwU_8O7ConH7upMyXYZjKt4zQ/viewform"}>
             <img className="revector-icon" alt="" src="/vector.svg" />
           </Link>
         </div>

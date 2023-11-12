@@ -1,17 +1,18 @@
 import { async } from "@firebase/util";
 import React, { useState, useEffect, useCallback } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../../context/AuthContext";
 import "./ExamExamina.css";
 
 const ExamExamina = () => {
 
   const { logOut, user } = UserAuth();
-
+ const navigate = useNavigate();
 
   const handleSignOut = async () => {
     try {
-      await logOut();
+      localStorage.removeItem("loginAdmin");
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
@@ -64,7 +65,7 @@ const ExamExamina = () => {
             <img
               className="uprofile-image-icon1"
               alt=""
-              src={user?.photoURL} referrerPolicy="no-referrer"
+              src="avt@2x.png"
             />
             <div className="uname-group">
               <b className="uname2">Admin</b>
@@ -115,9 +116,12 @@ const ExamExamina = () => {
               </b>
             </div>
           </button> */}
-          <Link className="ulogout3" onClick={handleSignOut} to={"/"}>
+          {/* <Link className="ulogout3" onClick={handleSignOut} to={"/"}>
             <p className="ustudent">Logout</p>
-          </Link>
+          </Link> */}
+          <button className="ulogout3" onClick={handleSignOut}>
+            <p className="ustudent">Logout</p>
+          </button>
         </div>
         <div className="ubody">
           <b className="uexam-schedule2">Exam Schedule</b>
