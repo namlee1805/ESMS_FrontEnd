@@ -11,7 +11,8 @@ const EditExamina = () => {
 
     const handleSignOut = async () => {
         try {
-            await logOut();
+            localStorage.removeItem("loginAdmin");
+            navigate("/");
         } catch (error) {
             console.log(error);
         }
@@ -255,9 +256,6 @@ const EditExamina = () => {
                                 <div className="adiv1">{loading ? 'Loading...' : examinaterData.examexschDate}</div>
                                 <div className="adiv2">{loading ? 'Loading...' : examinaterData.examexschTime}</div>
                                 <div className="atruonglv">{loading ? 'Loading...' : examinaterData.examexschLec}</div>
-                                <button className="avector-wrapper">
-                                    <img className="avector-icon" alt="" src="/vector.svg" />
-                                </button>
                                 <button className="aframe-button">
                                     <img className="avector-icon1" alt="" src="/vector1.svg" />
                                 </button>

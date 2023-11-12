@@ -212,7 +212,7 @@ const Exschedulestu = () => {
                             <div className="done">Done</div>
                         </div> */}
                         <div className="bodyexScheStu">
-            {/* Render danh sách khuôn mẫu */}
+            {/* Render danh sÃ¡ch khuÃ´n máº«u */}
             {studentData && studentData.length > 0 ? (
               studentData.map((studentData, index) => (
                 <div className="frectangle-parent" key={index}>

@@ -8,12 +8,14 @@ const Proctected = ({ children }) => {
     const emailDomain = user?.email?.split("@")[1]; // Extracting domain from email
 
 
-    if(!user){
-        return <Navigate to ='/' />;
-    }else if(emailDomain === "fpt.edu.vn"){
+    if(emailDomain === "fpt.edu.vn"){
         return children;
     }else if(emailDomain === "gmail.com"){
         return children;
+    }else if(localStorage.getItem("loginAdmin") === "Login Success"){
+        return children;
+    }else if (!user){
+        return <Navigate to ='/' />;
     }
 
 

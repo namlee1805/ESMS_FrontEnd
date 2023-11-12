@@ -13,7 +13,6 @@ import ExscheduleLec from "./pages/ExScheLec/ExscheduleLec";
 import Exschedulestu from "./pages/ExScheStu/Exschedulestu";
 import ReportLec from "./pages/ReportLec/ReportLec";
 import ReportSt from "./pages/ReportSt/ReportSt";
-
 import EditExamina from "./pages/EditExami/EditExamina";
 import RegisLec from "./pages/RegistLec/RegisLec";
 import ExamExamina from "./pages/ExScheExam/ExamExamina";
@@ -91,9 +90,9 @@ function App() {
           />
 
           < Route path="/createDataEx" element={
-           // <Proctected>
+           <Proctected>
               <CreateDataEx_Desktop />
-           // </Proctected>
+           </Proctected>
           }
           />
 
@@ -120,9 +119,9 @@ function App() {
 
 
           < Route path="/editExamina" element={
-            //<Proctected>
+            <Proctected>
               <EditExamina />
-            //</Proctected>
+            </Proctected>
           }
           />
 
@@ -134,9 +133,9 @@ function App() {
           />
 
           < Route path="/exscheduleExami" element={
-            //<Proctected>
+            <Proctected>
               <ExamExamina />
-            //</Proctected>
+            </Proctected>
           }
           />
 
@@ -147,9 +146,9 @@ function App() {
           }
           />
           < Route path="/createExamEx" element={
-            //<Proctected>
+            <Proctected>
               <CreaExam />
-            //</Proctected>
+            </Proctected>
           }
           />
           

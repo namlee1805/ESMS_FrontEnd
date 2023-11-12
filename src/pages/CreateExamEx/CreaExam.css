@@ -570,28 +570,25 @@
   border: none;
   box-shadow: none;
   outline: none;
-  width: 100%; /* Đảm bảo input chiếm toàn bộ chiều rộng của div bên ngoài */
-  padding: 15px; /* Thêm padding nếu cần để căn chỉnh với div bên ngoài */
-  /* Thêm các styles khác của bạn ở đây */
+  width: 100%; 
+  padding: 15px; 
    position: absolute;
   
-  left: 5px; /* Điều chỉnh giá trị này để căn chỉnh label theo chiều ngang */
-  background: #fff; /* Màu nền giống với div bên ngoài hoặc màu nền của body */
+  left: 5px; 
+  background: #fff; 
   padding: 1 5px; 
   position: relative;
   
 }
 .creanotification {
-  /* Các thuộc tính khác giữ nguyên */
-  position: fixed; /* Đặt thông báo cố định trên màn hình */
-  top: 20px; /* Khoảng cách từ đỉnh trang */
-  left: 50%; /* Đặt ở giữa theo chiều ngang */
-  transform: translateX(-50%); /* Điều chỉnh để căn giữa chính xác */
-  z-index: 1050; /* Đảm bảo thông báo nằm trên cùng của các phần tử khác */
+  position: fixed;
+  top: 20px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  z-index: 1050; 
 }
 .creanotification {
-  /* Các thuộc tính khác giữ nguyên */
-  top: 70px; /* Điều chỉnh này phụ thuộc vào chiều cao của navbar */
+  top: 70px;
 }
 .creanotification {
   padding: 10px;

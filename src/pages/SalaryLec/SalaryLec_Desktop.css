@@ -683,27 +683,27 @@
   text-decoration: none;
 }
 .bodySala{
-  overflow: auto; /* hoặc 'scroll' */
+  overflow: auto; /* hoáº·c 'scroll' */
 }
-/* Tùy chỉnh cho tất cả các thanh cuộn trong trang */
+/* TÃ¹y chá»‰nh cho táº¥t cáº£ cÃ¡c thanh cuá»™n trong trang */
 ::-webkit-scrollbar {
-  width: 10px; /* Độ rộng của thanh cuộn */
+  width: 10px; /* Äá»™ rá»™ng cá»§a thanh cuá»™n */
 }
 
-/* Xử lý cho phần trượt cuộn */
+/* Xá»­ lÃ½ cho pháº§n trÆ°á»£t cuá»™n */
 ::-webkit-scrollbar-thumb {
-  background: #F25F4C; /* Màu của trượt cuộn */
-  border-radius: 5px; /* Làm tròn góc */
+  background: #F25F4C; /* MÃ u cá»§a trÆ°á»£t cuá»™n */
+  border-radius: 5px; /* LÃ m trÃ²n gÃ³c */
 }
 
-/* Thay đổi màu khi hover */
+/* Thay Ä‘á»•i mÃ u khi hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #D94A43; /* Màu khi hover, một tông màu đậm hơn */
+  background: #D94A43; /* MÃ u khi hover, má»™t tÃ´ng mÃ u Ä‘áº­m hÆ¡n */
 }
 
-/* Tùy chỉnh cho phần nền của thanh cuộn */
+/* TÃ¹y chá»‰nh cho pháº§n ná»n cá»§a thanh cuá»™n */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Màu nền của thanh cuộn */
+  background: #f1f1f1; /* MÃ u ná»n cá»§a thanh cuá»™n */
 }
 @media screen and (max-width: 1200px) {
   .date-container {

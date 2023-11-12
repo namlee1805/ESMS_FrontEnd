@@ -16,6 +16,54 @@ const ExscheduleLec = () => {
     }
   }
 
+  const handleDeleteClick = async (index) => {
+    try {
+      // Giáº£ sá»­ cáº¥u trÃºc dá»¯ liá»‡u cÃ³ Slot_id vÃ  lecturer_Email
+      const selectedLecturer = lecturerData[index];
+  
+      console.log(localStorage.getItem("email"));
+     console.log(selectedLecturer.slot_id);
+      // Gá»i API Ä‘á»ƒ láº¥y thÃªm thÃ´ng tin
+      // const response = await fetch('http://localhost:8888/selectLecture', {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify({
+      //     Slot_id: selectedLecturer.slot_id,
+      //     lecturer_Email: localStorage.getItem("email"),
+      //   }),
+      // });
+      fetch(`http://localhost:8888/deleteLecture?emailLecture=${localStorage.getItem("email")}&slotId=${selectedLecturer.slot_id}`)
+        .then(response => response.json())
+        .then(data => {
+          setStudentData(data);
+
+        })
+        .catch(error => {
+
+        });
+            // XÃ³a pháº§n tá»­ táº¡i vá»‹ trÃ­ index khá»i máº£ng lecturerData
+
+        const updatedData = [...lecturerData];
+        updatedData.splice(index, 1);
+        setLecturerData(updatedData);
+  
+    //   if (response.ok) {
+    //     const responseData = await response.json();
+    //     console.log('Slot_id:', responseData.Slot_id);
+    //     console.log('lecturer_Email:', responseData.lecturer_Email);
+  
+    //     // BÃ¢y giá» báº¡n cÃ³ Slot_id vÃ  lecturer_Email, báº¡n cÃ³ thá»ƒ sá»­ dá»¥ng chÃºng theo nhu cáº§u
+    //   } else {
+    //     console.error('Lá»—i khi gá»i API:', response.statusText);
+    //   }
+    } catch (error) {
+      console.error('ÄÃ£ xáº£y ra lá»—i:', error);
+    }
+    
+  };
+
 
   const [lecturerData, setLecturerData] = useState([]);
   // const [lecturerData, setLecturerData] = useState(null);
@@ -24,7 +72,7 @@ const ExscheduleLec = () => {
   console.log(localStorage.getItem("email"));
   const disable = localStorage.getItem("email");
   useEffect(() => {
-    fetch(`http://localhost:8888/viewexamlecturer?email=${disable}`)
+    fetch(`http://localhost:8888/viewexamlecturerchoose?email=${disable}`)
       .then(response => response.json())
       .then(data => {
         setLecturerData(data);
@@ -246,7 +294,7 @@ const ExscheduleLec = () => {
           </div> */}
 
           <div className="bodyexScheLec">
-            {/* Render danh sách khuôn mẫu */}
+            {/* Render danh sÃ¡ch khuÃ´n máº«u */}
             {lecturerData && lecturerData.length > 0 ? (
               lecturerData.map((lecturerData, index) => (
                 <div className="crectangle-parent" key={index}>
@@ -259,7 +307,7 @@ const ExscheduleLec = () => {
                     <button className="cvector-wrapper">
                       <img className="cvector-icon" alt="" src="/vector.svg" />
                     </button>
-                    <button className="cvector-container">
+                    <button className="cvector-container"  onClick={() => handleDeleteClick(index)}>
                       <img className="cvector-icon1" alt="" src="/vector1.svg" />
                     </button>
                   </div>

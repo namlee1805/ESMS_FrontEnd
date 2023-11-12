@@ -681,12 +681,11 @@
 }
 .qframe-div {
   display: flex;
-  align-items: center; /* CÄƒn giá»¯a cÃ¡c pháº§n tá»­ theo chiá»u dá»c */
-  justify-content: space-between; /* CÄƒn cÃ¡c pháº§n tá»­ theo chiá»u ngang */
+  align-items: center; 
+  justify-content: space-between; 
 }
 .qfile-name {
-  /* Äiá»u chá»‰nh CSS cho tÃªn file náº¿u cáº§n */
-  margin-right: 0px; /* ThÃªm khoáº£ng cÃ¡ch giá»¯a nÃºt vÃ  tÃªn file náº¿u cáº§n */
+  margin-right: 0px;
   color: black;
 }
 

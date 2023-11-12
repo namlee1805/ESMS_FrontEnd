@@ -199,7 +199,7 @@ const SalaryLec_Desktop = () => {
           </div> */}
 
           <div className="bodySala">
-            {/* Render danh sách khuôn mẫu */}
+            {/* Render danh sÃ¡ch khuÃ´n máº«u */}
             {lecturerData && lecturerData.length > 0 ? (
             lecturerData.map((lecturerData, index) => (
               <div className="rectangle-parent8" key={index}>

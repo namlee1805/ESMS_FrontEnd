@@ -11,7 +11,8 @@ const ExamExamina = () => {
 
   const handleSignOut = async () => {
     try {
-      await logOut();
+      localStorage.removeItem("loginAdmin");
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
@@ -64,7 +65,7 @@ const ExamExamina = () => {
             <img
               className="uprofile-image-icon1"
               alt=""
-              src={user?.photoURL} referrerPolicy="no-referrer"
+              src="avt@2x.png"
             />
             <div className="uname-group">
               <b className="uname2">Admin</b>

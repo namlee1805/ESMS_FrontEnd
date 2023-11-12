@@ -1,4 +1,3 @@
-
 import { async } from "@firebase/util";
 import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
@@ -16,13 +15,61 @@ const RegisLec = () => {
     }
   }
 
-  const handleChooseClick = (index) => {
-    // Xóa phần tử tại vị trí index khỏi mảng lecturerData
-    const updatedData = [...lecturerData];
-    updatedData.splice(index, 1);
-    setLecturerData(updatedData);
-  };
+  // const handleChooseClick = (index) => {
+  //   // XÃ³a pháº§n tá»­ táº¡i vá»‹ trÃ­ index khá»i máº£ng lecturerData
+  //   const updatedData = [...lecturerData];
+  //   updatedData.splice(index, 1);
+  //   setLecturerData(updatedData);
+  // };
 
+
+  const handleChooseClick = async (index) => {
+    try {
+      // Giáº£ sá»­ cáº¥u trÃºc dá»¯ liá»‡u cÃ³ Slot_id vÃ  lecturer_Email
+      const selectedLecturer = lecturerData[index];
+
+      console.log(localStorage.getItem("email"));
+      console.log(selectedLecturer.slot_id);
+
+      // const response = await fetch('http://localhost:8888/selectLecture', {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify({
+      //     Slot_id: selectedLecturer.slot_id,
+      //     lecturer_Email: localStorage.getItem("email"),
+      //   }),
+      // });
+      fetch(`http://localhost:8888/selectLecture?emailLecture=${localStorage.getItem("email")}&slotId=${selectedLecturer.slot_id}`)
+        .then(response => response.json())
+        .then(data => {
+          setStudentData(data);
+
+        })
+        .catch(error => {
+
+        });
+
+
+      const updatedData = [...lecturerData];
+      updatedData.splice(index, 1);
+      setLecturerData(updatedData);
+
+      //   if (response.ok) {
+      //     const responseData = await response.json();
+      //     console.log('Slot_id:', responseData.Slot_id);
+      //     console.log('lecturer_Email:', responseData.lecturer_Email);
+
+      //     // BÃ¢y giá» báº¡n cÃ³ Slot_id vÃ  lecturer_Email, báº¡n cÃ³ thá»ƒ sá»­ dá»¥ng chÃºng theo nhu cáº§u
+      //   } else {
+      //     console.error('Lá»—i khi gá»i API:', response.statusText);
+      //   }
+    } catch (error) {
+      console.error('ÄÃ£ xáº£y ra lá»—i:', error);
+    }
+
+  };
 
 
 
@@ -32,41 +79,43 @@ const RegisLec = () => {
 
 
 
-  const handleButtonClick = async () => {
-    setLoading(true);
-    console.log(localStorage.getItem("email"));
-    console.log(lecturerData.lecSlotID);
+  // const handleButtonClick = async () => {
+  //   setLoading(true);
+  //   console.log(localStorage.getItem("email"));
+  //   console.log(lecturerData?.lecSlotID);
 
-    try {
-      const response = await fetch('http://localhost:8888/viewexamlecturer', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          displayName: user?.displayName,
-          lecSlotID: lecturerData?.lecSlotID,
-        }),
-      });
+  //   try {
+  //     const response = await fetch('http://localhost:8888/selectLecture', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({
+  //         displayName: user?.displayName,
+  //         lecSlotID: lecturerData?.lecSlotID,
+  //       }),
+  //     });
 
-      if (response.ok) {
-        console.log('Dữ liệu đã được gửi đến API thành công.');
-        // Thực hiện các hành động khi gửi dữ liệu thành công (nếu cần)
-      } else {
-        console.error('Gửi dữ liệu đến API không thành công.');
-        // Thực hiện các hành động khi gửi dữ liệu không thành công (nếu cần)
-      }
-    } catch (error) {
-      console.error('Lỗi khi gửi dữ liệu đến API:', error);
-      // Thực hiện các hành động khi xảy ra lỗi (nếu cần)
-    } finally {
-      setLoading(false);
-    }
-  };
+  //     if (response.ok) {
+  //       console.log('Dá»¯ liá»‡u Ä‘Ã£ Ä‘Æ°á»£c gá»­i Ä‘áº¿n API thÃ nh cÃ´ng.');
+  //       // Thá»±c hiá»‡n cÃ¡c hÃ nh Ä‘á»™ng khi gá»­i dá»¯ liá»‡u thÃ nh cÃ´ng (náº¿u cáº§n)
+  //     } else {
+  //       console.error('Gá»­i dá»¯ liá»‡u Ä‘áº¿n API khÃ´ng thÃ nh cÃ´ng.');
+  //       // Thá»±c hiá»‡n cÃ¡c hÃ nh Ä‘á»™ng khi gá»­i dá»¯ liá»‡u khÃ´ng thÃ nh cÃ´ng (náº¿u cáº§n)
+  //     }
+  //   } catch (error) {
+  //     console.error('Lá»—i khi gá»­i dá»¯ liá»‡u Ä‘áº¿n API:', error);
+  //     // Thá»±c hiá»‡n cÃ¡c hÃ nh Ä‘á»™ng khi xáº£y ra lá»—i (náº¿u cáº§n)
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+
 
 
   useEffect(() => {
-    fetch('http://localhost:8888/viewexamadmin')
+    fetch(`http://localhost:8888/viewexamlecturer?email=${localStorage.getItem("email")}`)
       .then(response => response.json())
       .then(data => {
         setLecturerData(data);
@@ -194,7 +243,62 @@ const RegisLec = () => {
             <div className="jslot">Slot</div>
             <div className="jhour">Hour</div>
           </div>
-          {/* <div className="jop1">
+
+          <div className="bodyregisLec">
+            {lecturerData && lecturerData.length > 0 ? (
+              lecturerData.map((lecturerData, index) => (
+                <div className="jop1" key={index}>
+                  <div className="jrectangle-parent">
+                    <div className="jframe-inner" />
+                    <div className="jframe-child1" />
+                    <div className="jdiv">{loading ? 'Loading...' : lecturerData.Date}</div>
+                    <div className="jdiv1">{loading ? 'Loading...' : lecturerData.Time}</div>
+                    <div className="jh30">{loading ? 'Loading...' : lecturerData.Hour}</div>
+                    <button className="jellipse-parent"
+                      onClick={() => handleChooseClick(index)}>
+                      <div className="jgroup-child" />
+                      <div className="jgroup-item" />
+                      {/* <button className="jchoose" onClick={() => handleChooseClick(index)}>Choose</button>
+                      <img className="jvector-icon" alt="" src="/choose.svg" /> */}
+                      <button className="jellipse-parent" onClick={() => handleChooseClick(index)}>
+                        <b className="jchoose" className>Choose</b>
+                        <img className="jvector-icon" alt="" src="/choose.svg" />
+                      </button>
+                    </button>
+                  </div>
+                </div>
+              )))
+              : (
+                <div>No data available</div>
+              )}
+          </div>
+
+          {/* <button className="jbtn-submit" onClick={handleButtonClick} disabled={loading}>
+            <div className="jjoin-today">{loading ? 'Loading...' : 'Submit'}</div>
+          </button> */}
+
+        </div>
+      </div>
+      <div className="jbot">
+        <div className="jreport2">
+          <button className="jreport-item" onClick={onReportClick} />
+          <div className="jreport3">Report</div>
+          <div className="jimage-1-container">
+            <img className="jimage-1-icon1" alt="" src="/image-11@2x.png" />
+          </div>
+        </div>
+        <img className="jlogofpt-icon" alt="" src="/logolong-11@2x.png" />
+      </div>
+    </div>
+  );
+};
+
+export default RegisLec;
+
+
+
+
+{/* <div className="jop1">
             <div className="jrectangle-parent">
               <div className="jframe-inner" />
               <div className="jframe-child1" />
@@ -284,51 +388,3 @@ const RegisLec = () => {
               </button>
             </div>
           </div> */}
-
-
-          <div className="bodyregisLec">
-            {lecturerData && lecturerData.length > 0 ? (
-              lecturerData.map((lecturerData, index) => (
-                <div className="jop1" key={index}>
-                  <div className="jrectangle-parent">
-                    <div className="jframe-inner" />
-                    <div className="jframe-child1" />
-                    <div className="jdiv">{loading ? 'Loading...' : lecturerData.Date}</div>
-                    <div className="jdiv1">{loading ? 'Loading...' : lecturerData.Time}</div>
-                    <div className="jh30">{loading ? 'Loading...' : lecturerData.Hour}</div>
-                    <button className="jellipse-parent"
-                      onClick={() => handleChooseClick(index)}>
-                      <div className="jgroup-child" />
-                      <div className="jgroup-item" />
-                      <button className="jchoose" onClick={() => handleChooseClick(index)}>Choose</button>
-                      <img className="jvector-icon" alt="" src="/choose.svg" />
-                    </button>
-                  </div>
-                </div>
-              )))
-              : (
-                <div>No data available</div>
-              )}
-          </div>
-
-          <button className="jbtn-submit" onClick={handleButtonClick} disabled={loading}>
-            <div className="jjoin-today">{loading ? 'Loading...' : 'Submit'}</div>
-          </button>
-
-        </div>
-      </div>
-      <div className="jbot">
-        <div className="jreport2">
-          <button className="jreport-item" onClick={onReportClick} />
-          <div className="jreport3">Report</div>
-          <div className="jimage-1-container">
-            <img className="jimage-1-icon1" alt="" src="/image-11@2x.png" />
-          </div>
-        </div>
-        <img className="jlogofpt-icon" alt="" src="/logolong-11@2x.png" />
-      </div>
-    </div>
-  );
-};
-
-export default RegisLec;
