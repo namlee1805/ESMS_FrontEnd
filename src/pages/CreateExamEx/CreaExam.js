@@ -20,6 +20,7 @@ const CreaExam = () => {
   }
 
 
+  const navigator = useNavigate();
 
 
 
