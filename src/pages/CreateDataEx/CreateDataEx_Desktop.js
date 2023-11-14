@@ -258,37 +258,37 @@ const [roomLoading, setRoomLoading] = useState(false);
         <div className="qbody">
           <b className="qcreate-data1">Create Data</b>
 
+          
+
           <div className="qlecturer">
             <div className="qstudent-wrapper">
-              <div className="qstudent2">Student :</div>
+              <div className="qstudent2">Course :</div>
             </div>
             <div className="qframe-group">
               <div className="qframe-wrapper">
                 <input
                   type="file"
-                  id="studentFileInput" // Unique ID for student
-                  onChange={handleFileChange(setStudentFile, setStudentFileName)}
+                  id="courseFileInput"
+                  onChange={handleFileChange(setCourseFile, setCourseFileName)}
                   style={{ display: 'none' }}
                   accept=".xls,.xlsx"
                 />
                 <div className="qframe-div">
-                  <div className="qframe-wrapper1" onClick={triggerFileInput('studentFileInput')}>
+                  <div className="qframe-wrapper1" onClick={triggerFileInput('courseFileInput')}>
                     <button className="qbrowser-wrapper">
                       <div className="qbrowser">Browser</div>
                     </button>
-                    <div className="qfile-name">{studentFileName}</div>
                   </div>
+                  <div className="qfile-name">{courseFileName}</div>
                 </div>
               </div>
-              <div className="quexport-parent" 
-              onClick={handleUpload(studentFile, 'FullStudent')}
-              disabled={studentLoading}>
-                <button className="quexport-parent" >
+              <div className="quexport-parent" onClick={handleUpload(courseFile, 'Course')}>
+              <button className="quexport-parent" >
                   <img className="quedit-icon" alt="" src="/uexport.svg" />
                   <div className="qbrowser">Upload</div>
                 </button>
               </div>
-              <div className="qfidownload-parent" onClick={handleDownload('student')}>
+              <div className="qfidownload-parent" onClick={handleDownload('course')}>
                 <button className="qfidownload-parent">
                   <img className="quedit-icon" alt="" src="/fidownload.svg" />
                   <div className="qbrowser">Download</div>
@@ -336,35 +336,38 @@ const [roomLoading, setRoomLoading] = useState(false);
               </div>
             </div>
           </div>
+
           <div className="qlecturer">
             <div className="qstudent-wrapper">
-              <div className="qstudent2">Course :</div>
+              <div className="qstudent2">Student :</div>
             </div>
             <div className="qframe-group">
               <div className="qframe-wrapper">
                 <input
                   type="file"
-                  id="courseFileInput"
-                  onChange={handleFileChange(setCourseFile, setCourseFileName)}
+                  id="studentFileInput" // Unique ID for student
+                  onChange={handleFileChange(setStudentFile, setStudentFileName)}
                   style={{ display: 'none' }}
                   accept=".xls,.xlsx"
                 />
                 <div className="qframe-div">
-                  <div className="qframe-wrapper1" onClick={triggerFileInput('courseFileInput')}>
+                  <div className="qframe-wrapper1" onClick={triggerFileInput('studentFileInput')}>
                     <button className="qbrowser-wrapper">
                       <div className="qbrowser">Browser</div>
                     </button>
+                    <div className="qfile-name">{studentFileName}</div>
                   </div>
-                  <div className="qfile-name">{courseFileName}</div>
                 </div>
               </div>
-              <div className="quexport-parent" onClick={handleUpload(courseFile, 'Course')}>
-              <button className="quexport-parent" >
+              <div className="quexport-parent" 
+              onClick={handleUpload(studentFile, 'FullStudent')}
+              disabled={studentLoading}>
+                <button className="quexport-parent" >
                   <img className="quedit-icon" alt="" src="/uexport.svg" />
                   <div className="qbrowser">Upload</div>
                 </button>
               </div>
-              <div className="qfidownload-parent" onClick={handleDownload('course')}>
+              <div className="qfidownload-parent" onClick={handleDownload('student')}>
                 <button className="qfidownload-parent">
                   <img className="quedit-icon" alt="" src="/fidownload.svg" />
                   <div className="qbrowser">Download</div>
@@ -372,6 +375,7 @@ const [roomLoading, setRoomLoading] = useState(false);
               </div>
             </div>
           </div>
+          
           <div className="qlecturer">
             <div className="qstudent-wrapper">
               <div className="qstudent2">Room :</div>
