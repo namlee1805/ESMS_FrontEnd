@@ -68,16 +68,47 @@ const CreaExam = () => {
       //   },
       //   body: JSON.stringify({ startDate: dataStart }),
       // });
-      alert("Please wait show notification Create Success");
-      fetch(`http://localhost:8888/generate?email=${dataStart}`)
-        .then(data => {
-          alert("Create Successfully");
-          navigator("/exscheduleExami");
-        })
-        .catch(error => {
-          console.log("Error:" + error);
-        });
+      //alert("Please wait show notification Create Success");
+      // fetch(`http://localhost:8888/download?date=${dataStart}`)
+      //   .then(data => {
+      //     //alert("Create Successfully");
+      //     //navigator("/exscheduleExami");
+      //   })
+      //   .catch(error => {
+      //     console.log("Error:" + error);
+      //   });
         
+      //alert("Please wait show notification Create Success");
+      // fetch(`http://localhost:8888/download?date=${dataStart}`)
+      //  .then(response => response.headers())
+      //   .then(data => {
+      //     console.log(data);
+        
+      //     //alert("Create Successfully");
+      //   })
+      //   .catch(error => {
+      //     console.log("Error:" + error);
+      //   });
+
+      fetch(`http://localhost:8888/download?date=${dataStart}`)
+  .then(response => {
+    const filename = response.headers.get('content-disposition').split('filename=')[1];
+    console.log(response);
+    console.log(filename);
+    return response.blob().then(blob => ({ filename, blob }));
+  })
+  .then(({ filename, blob }) => {
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    window.URL.revokeObjectURL(url);
+  })
+  .catch(error => console.error('Error downloading file:', error));
+
        
 
       if (!response.ok) {
