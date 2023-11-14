@@ -172,9 +172,22 @@ const EditExamina = () => {
                                 </div>
                             </div>
                         </Link>
-                    </div>
 
 
+
+                    <Link className="aexams2" to={"/exportData"}>
+                            <div className="aframe-parent">
+                                <div className="atemplate-group">
+
+                                    <img className="atemplate-icon1" alt=""
+                                        src="/uexport.svg"
+                                    />
+                                    <div className="aexams3">Export Data</div>
+                                </div>
+                                <div className="aframe-item" />
+                            </div>
+                        </Link>
+                        </div>
 
 
                     {/* <button className="logout3">

@@ -108,6 +108,12 @@ const ExamExamina = () => {
                 <div className="ucreate-exams1">Edit</div>
               </div>
             </Link>
+            <Link className="ucreate-data" to={"/exportData"}>
+              <div className="uupward-trend-parent">
+                <img className="uuedit-icon" alt="" src="/uexport.svg" />
+                <div className="ucreate-exams1">Export Data</div>
+              </div>
+            </Link>
           </div>
           {/* <button className="logout3">
             <div className="logout-container">

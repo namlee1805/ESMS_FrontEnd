@@ -17,6 +17,7 @@ import ReportSt from "./pages/ReportSt/ReportSt";
 import EditExamina from "./pages/EditExami/EditExamina";
 import RegisLec from "./pages/RegistLec/RegisLec";
 import ExamExamina from "./pages/ExScheExam/ExamExamina";
+import ExportDataEx from "./pages/ExportDataEx/ExportDataEx"
 
 
 function App() {
@@ -152,21 +153,27 @@ function App() {
             </Proctected>
           }
           />
-          
-          
+
+          < Route path="/exportData" element={
+            <Proctected>
+              <ExportDataEx />
+            </Proctected>
+          }
+          />
+
           < Route path="/reportLec" element={
             <Proctected>
               <ReportLec />
             </Proctected>
           }
           />
-     < Route path="/reportSt" element={
+          < Route path="/reportSt" element={
             <Proctected>
               <ReportSt />
             </Proctected>
           }
           />
-          
+
           {/* <Route path="/profile" element={isMobile ? <ProStudentMobile /> : (window.innerWidth >= 840 ? <ProStudentTablet /> : <ProStudentDesktop />)} /> */}
         </Routes>
       </AuthContextProvider>

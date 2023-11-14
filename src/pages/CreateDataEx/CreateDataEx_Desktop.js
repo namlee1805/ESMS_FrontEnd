@@ -244,6 +244,12 @@ const [roomLoading, setRoomLoading] = useState(false);
                 <div className="qcreate-exams1">Edit</div>
               </div>
             </Link>
+            <Link className="qedit" to={"/exportData"}>
+              <div className="qupward-trend-parent">
+                <img className="quedit-icon" alt="" src="/uexport.svg" />
+                <div className="qcreate-exams1">Export Data</div>
+              </div>
+            </Link>
           </div>
           <button onClick={handleSignOut} className="qlogout">
             Logout

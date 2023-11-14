@@ -2,7 +2,7 @@ import { async } from "@firebase/util";
 import React, { useState, useEffect, useCallback } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { UserAuth } from "../../context/AuthContext";
-import "./CreaExam.css";
+import "./ExportDataEx.css";
 import axios from "axios";
 
 
@@ -149,12 +149,20 @@ const CreaExam = () => {
               </div>
             </div>
           </Link>
-          <Link className="creacreateexams" to={"/createExamEx"}>
+          {/* <Link className="creacreateexams" to={"/createExamEx"}>
             <div className="creacreateexams-inner">
               <div className="createmplate-group">
                 <img className="createmplate-icon1" alt="" src="/template1 copy.svg" />
                 <div className="creacreate-exams">Create Exams</div>
                 <div className="creaframe-item" />
+              </div>
+            </div>
+          </Link> */}
+          <Link className="creaexams" to={"/createExamEx"}>
+            <div className="creaframe-parent">
+              <div className="createmplate-parent">
+                <img className="createmplate-icon" alt="" src="/template1 copy.svg" />
+                <div className="creaexams1">Create Exams</div>
               </div>
             </div>
           </Link>
@@ -174,10 +182,13 @@ const CreaExam = () => {
               <div className="creaedit1">Edit</div>
             </div>
           </Link>
-          <Link className="creacreate-data" to={"/exportData"}>
-            <div className="creaupward-trend-parent">
-              <img className="creauedit-icon" alt="" src="/uexport.svg" />
-              <div className="creaedit1">Export Data</div>
+          <Link className="creacreateexams" to={"/exportData"}>
+            <div className="creacreateexams-inner">
+              <div className="createmplate-group">
+                <img className="createmplate-icon1" alt="" src="/uexport.svg" />
+                <div className="creacreate-exams">Export Data</div>
+                <div className="creaframe-item" />
+              </div>
             </div>
           </Link>
         </div>
@@ -195,10 +206,10 @@ const CreaExam = () => {
         </button>
       </div>
       <div className="creabody">
-        <b className="creacreate-exam">Create Exam</b>
+        <b className="creacreate-exam">Export Exam Schedule</b>
         <form onSubmit={handleSubmit} className="creaexam-form">
           <div className="creaform-group">
-            <label htmlFor="startDate">Start Date:</label>
+            <label htmlFor="startDate">Choose Date:</label>
             <input 
               type="date" 
               id="startDate"
@@ -213,7 +224,7 @@ const CreaExam = () => {
           
           <button type="submit" className="creabtn-save">
             <img className="creauedit-icon" alt="" src="/usave.svg" />
-            <b className="creasave">Save</b>
+            <b className="creasave">Export File (.xlsx)</b>
           </button>
         </form>
       </div>
