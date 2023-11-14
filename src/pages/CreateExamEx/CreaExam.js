@@ -69,10 +69,19 @@ const CreaExam = () => {
       //   body: JSON.stringify({ startDate: dataStart }),
       // });
       alert("Please wait show notification Create Success");
-      fetch(`http://localhost:8888/generate?email=${dataStart}`)
+      fetch(`http://localhost:8888/generate?dateStart=${dataStart}`)
+       .then(response => response.text())
         .then(data => {
-          alert("Create Successfully");
-          navigator("/exscheduleExami");
+          console.log(data);
+          if(data == "Insert date false"){
+            alert("Please insert date after today is 3 days.");
+          }else{
+            if(data == "Success"){
+              alert("Create Exam Schedule Success.");
+              navigator("/exscheduleExami");
+            }
+          }
+          //alert("Create Successfully");
         })
         .catch(error => {
           console.log("Error:" + error);
