@@ -23,7 +23,7 @@ const ExReaEx = () => {
   // const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('http://localhost:8888/viewexamimater')
+    fetch('http://localhost:8888/reason')
         .then(response => response.json())
         .then(data => {
             setExaminaterData(data);
@@ -225,10 +225,10 @@ const ExReaEx = () => {
             <div className="urectangle-parent">
             <div className="uframe-inner" />
             <div className="ucsd201-parent">
-              <div className="ucsd201">{loading ? 'Loading...' : examinaterData.course_id}</div>
-              <div className="udiv">{loading ? 'Loading...' : examinaterData.Room_id}</div>
-              <div className="udiv1">{loading ? 'Loading...' : examinaterData.Date}</div>
-              <div className="udiv2">{loading ? 'Loading...' : examinaterData.Time}</div>
+              <div className="ucsd201">{loading ? 'Loading...' : examinaterData.Email}</div>
+              <div className="udiv">{loading ? 'Loading...' : examinaterData.Date}</div>
+              <div className="udiv1">{loading ? 'Loading...' : examinaterData.Time}</div>
+              <div className="udiv2">{loading ? 'Loading...' : examinaterData.reason}</div>
               {/* <div className="utruonglv">{loading ? 'Loading...' : examinaterData.lecture_id}</div> */}
             </div>
           </div>

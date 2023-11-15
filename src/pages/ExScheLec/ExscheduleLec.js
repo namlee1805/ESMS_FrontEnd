@@ -16,36 +16,43 @@ const ExscheduleLec = () => {
     }
   }
 
-  const handleDeleteClick = async (index,deleteReasons) => {
+  const handleDeleteClick = async (index, deleteReasons) => {
     try {
       // Giả sử cấu trúc dữ liệu có Slot_id và lecturer_Email
       const selectedLecturer = lecturerData[index];
-  
-      console.log(localStorage.getItem("email"));
-     console.log(selectedLecturer.slot_id);
-     console.log(deleteReasons);
-      fetch(`http://localhost:8888/deleteLecture?emailLecture=${localStorage.getItem("email")}&slotId=${selectedLecturer.slot_id}`)
-        .then(response => response.json())
-        .then(data => {
-          setStudentData(data);
 
+      console.log(localStorage.getItem("email"));
+      console.log(selectedLecturer.slot_id);
+      console.log(deleteReasons);
+      fetch(`http://localhost:8888/deleteLecture?emailLecture=${localStorage.getItem("email")}&slotId=${selectedLecturer.slot_id}&reason=${deleteReasons}`)
+        .then(response => response.text())
+        .then(data => {
+          //setStudentData(data);
+          alert(data);
+          if (data == "Success") {
+            const updatedData = [...lecturerData];
+            updatedData.splice(index, 1);
+            setLecturerData(updatedData);
+          }
         })
         .catch(error => {
           console.error('Error deleting lecturer:', error);
         });
-            // Xóa phần tử tại vị trí index khỏi mảng lecturerData
+      // Xóa phần tử tại vị trí index khỏi mảng lecturerData
+      // if (data == "Success") {
+      //   const updatedData = [...lecturerData];
+      //   updatedData.splice(index, 1);
+      //   setLecturerData(updatedData);
+      // }
 
-        const updatedData = [...lecturerData];
-        updatedData.splice(index, 1);
-        setLecturerData(updatedData);
-        // const deleteReason = [...deleteReasons];
-        // deleteReason.splice(index);
-        // setDeleteReasons(deleteReason);
-        resetDeleteReason(index);
+      // const deleteReason = [...deleteReasons];
+      // deleteReason.splice(index);
+      // setDeleteReasons(deleteReason);
+      resetDeleteReason(index);
     } catch (error) {
       console.error('Đã xảy ra lỗi:', error);
     }
-    
+
   };
 
 
@@ -308,35 +315,35 @@ const ExscheduleLec = () => {
                     <div className="cdiv2">{loading ? 'Loading...' : lecturerData.Time}</div>
                     {/* <button className="cvector-wrapper">
                       <img className="cvector-icon" alt="" src="/vector.svg" />
-                    </button> */}   
+                    </button> */}
                     <input type="text" placeholder="Delete reason" value={deleteReasons[index]}
-                    onChange={(e) => handleReasonsChange(index, e.target.value)}
+                      onChange={(e) => handleReasonsChange(index, e.target.value)}
                     />
-                    <button className="cvector-container"  onClick={() => handleDeleteClick(index, deleteReasons[index])}>
+                    <button className="cvector-container" onClick={() => handleDeleteClick(index, deleteReasons[index])}>
                       <img className="cvector-icon1" alt="" src="/vector1.svg" />
                     </button>
                   </div>
-                  </div>
-                  )))
-                  : (
-                  <div>No data available</div>
-              )}
                 </div>
-
-        </div>
-        </div>
-        <div className="cbot">
-          <div className="creport2">
-            <button className="creport-item"  onClick={onReportClick}/>
-            <div className="creport3">Report</div>
-            <div className="cimage-1-container">
-              <img className="cimage-1-icon1" alt="" src="/image-1111@2x.png" />
-            </div>
+              )))
+              : (
+                <div>No data available</div>
+              )}
           </div>
-          <img className="clogofpt-icon" alt="" src="/logofpt1@2x.png" />
+
         </div>
       </div>
-      );
+      <div className="cbot">
+        <div className="creport2">
+          <button className="creport-item" onClick={onReportClick} />
+          <div className="creport3">Report</div>
+          <div className="cimage-1-container">
+            <img className="cimage-1-icon1" alt="" src="/image-1111@2x.png" />
+          </div>
+        </div>
+        <img className="clogofpt-icon" alt="" src="/logofpt1@2x.png" />
+      </div>
+    </div>
+  );
 };
 
-      export default ExscheduleLec;
+export default ExscheduleLec;
