@@ -16,24 +16,14 @@ const ExscheduleLec = () => {
     }
   }
 
-  const handleDeleteClick = async (index) => {
+  const handleDeleteClick = async (index,deleteReasons) => {
     try {
       // Giả sử cấu trúc dữ liệu có Slot_id và lecturer_Email
       const selectedLecturer = lecturerData[index];
   
       console.log(localStorage.getItem("email"));
      console.log(selectedLecturer.slot_id);
-      // Gọi API để lấy thêm thông tin
-      // const response = await fetch('http://localhost:8888/selectLecture', {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify({
-      //     Slot_id: selectedLecturer.slot_id,
-      //     lecturer_Email: localStorage.getItem("email"),
-      //   }),
-      // });
+     console.log(deleteReasons);
       fetch(`http://localhost:8888/deleteLecture?emailLecture=${localStorage.getItem("email")}&slotId=${selectedLecturer.slot_id}`)
         .then(response => response.json())
         .then(data => {
@@ -41,23 +31,17 @@ const ExscheduleLec = () => {
 
         })
         .catch(error => {
-
+          console.error('Error deleting lecturer:', error);
         });
             // Xóa phần tử tại vị trí index khỏi mảng lecturerData
 
         const updatedData = [...lecturerData];
         updatedData.splice(index, 1);
         setLecturerData(updatedData);
-  
-    //   if (response.ok) {
-    //     const responseData = await response.json();
-    //     console.log('Slot_id:', responseData.Slot_id);
-    //     console.log('lecturer_Email:', responseData.lecturer_Email);
-  
-    //     // Bây giờ bạn có Slot_id và lecturer_Email, bạn có thể sử dụng chúng theo nhu cầu
-    //   } else {
-    //     console.error('Lỗi khi gọi API:', response.statusText);
-    //   }
+        // const deleteReason = [...deleteReasons];
+        // deleteReason.splice(index);
+        // setDeleteReasons(deleteReason);
+        resetDeleteReason(index);
     } catch (error) {
       console.error('Đã xảy ra lỗi:', error);
     }
@@ -68,6 +52,7 @@ const ExscheduleLec = () => {
   const [lecturerData, setLecturerData] = useState([]);
   // const [lecturerData, setLecturerData] = useState(null);
   const [loading, setLoading] = useState(true);
+
 
   console.log(localStorage.getItem("email"));
   const disable = localStorage.getItem("email");
@@ -84,6 +69,19 @@ const ExscheduleLec = () => {
       });
   }, []);
 
+  const [deleteReasons, setDeleteReasons] = useState(Array.from({ length: lecturerData.length }, () => ''));
+
+  const handleReasonsChange = (index, value) => {
+    const newReasons = [...deleteReasons];
+    newReasons[index] = value;
+    setDeleteReasons(newReasons);
+  }
+
+  const resetDeleteReason = (index) => {
+    const newReasons = [...deleteReasons];
+    newReasons[index] = '';
+    setDeleteReasons(newReasons);
+  }
 
   const onReportClick = useCallback(() => {
     window.open('https://forms.gle/fCCNqjzx7UHx5X8Y6');
@@ -308,10 +306,13 @@ const ExscheduleLec = () => {
                     <div className="cdiv">{loading ? 'Loading...' : lecturerData.Room_id}</div>
                     <div className="cdiv1">{loading ? 'Loading...' : lecturerData.Date}</div>
                     <div className="cdiv2">{loading ? 'Loading...' : lecturerData.Time}</div>
-                    <button className="cvector-wrapper">
+                    {/* <button className="cvector-wrapper">
                       <img className="cvector-icon" alt="" src="/vector.svg" />
-                    </button>
-                    <button className="cvector-container"  onClick={() => handleDeleteClick(index)}>
+                    </button> */}   
+                    <input type="text" placeholder="Delete reason" value={deleteReasons[index]}
+                    onChange={(e) => handleReasonsChange(index, e.target.value)}
+                    />
+                    <button className="cvector-container"  onClick={() => handleDeleteClick(index, deleteReasons[index])}>
                       <img className="cvector-icon1" alt="" src="/vector1.svg" />
                     </button>
                   </div>
