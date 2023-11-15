@@ -154,7 +154,7 @@ const ExReaEx = () => {
             <div className="ucourses">Email</div>
             <div className="uroom">Date</div>
             <div className="udate">Time</div>
-            <div className="uslot">Reason</div>
+            <div className="uslot1">Reason</div>
             {/* <div className="ulecturer">Lecturer</div> */}
           </div>
           {/* <div className="urectangle-parent">
@@ -225,10 +225,10 @@ const ExReaEx = () => {
             <div className="urectangle-parent">
             <div className="uframe-inner" />
             <div className="ucsd201-parent">
-              <div className="ucsd201">{loading ? 'Loading...' : examinaterData.Email}</div>
-              <div className="udiv">{loading ? 'Loading...' : examinaterData.Date}</div>
-              <div className="udiv1">{loading ? 'Loading...' : examinaterData.Time}</div>
-              <div className="udiv2">{loading ? 'Loading...' : examinaterData.reason}</div>
+              <div className="ucsd2011">{loading ? 'Loading...' : examinaterData.Email}</div>
+              <div className="udiv11">{loading ? 'Loading...' : examinaterData.Date}</div>
+              <div className="udiv21">{loading ? 'Loading...' : examinaterData.Time}</div>
+              <div className="utruonglv1">{loading ? 'Loading...' : examinaterData.reason}</div>
               {/* <div className="utruonglv">{loading ? 'Loading...' : examinaterData.lecture_id}</div> */}
             </div>
           </div>

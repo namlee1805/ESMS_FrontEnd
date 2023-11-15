@@ -49,20 +49,25 @@ const EditExamina = () => {
           console.log(examina.course_id);
 
           fetch(`http://localhost:8888/editexam?room=${examina.Room_id}&slotId=${examina.slot_id}&courseId=${examina.course_id}`)
-            // .then(response => response.text())
+             .then(response => response.text())
             .then(data => {
-              setExamData(data);
-
+              //setExamData(data);
+              //alert(data);
+              if (data == "Success") {
+                const updatedData = [...examinaterData];
+                updatedData.splice(index, 1);
+                setExaminaterData(updatedData);
+                alert("Delete Successfully");
+              }else{
+                alert(" Too late to delete")
+              }
             })
             .catch(error => {
                 console.error('loi:', error);
             });
                 // Xóa phần tử tại vị trí index khỏi mảng lecturerData
 
-            const updatedData = [...examinaterData];
-            updatedData.splice(index, 1);
-            setExaminaterData(updatedData);
-            alert("Delete Successfully");   
+               
 
         } catch (error) {
           console.error('Đã xảy ra lỗi:', error);

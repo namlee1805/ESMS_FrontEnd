@@ -388,7 +388,7 @@
 }
 .udate,
 .uroom,
-.uslot {
+.uslot1 {
   position: relative;
   line-height: 49px;
   flex-shrink: 0;
@@ -399,14 +399,15 @@
   justify-content: center;
   width: 58px;
 }
-.uslot {
+.uslot1 {
   text-align: right;
   width: 36px;
   padding-left: 35px;
+  margin-left: 80px;
 }
 .ulecturer,
 .uname3,
-.uslot {
+.uslot1 {
   display: flex;
   align-items: center;
   padding-left: 40px;
@@ -435,47 +436,57 @@
   width: 940px;
   height: 1px;
 }
-.ucsd201 {
+.ucsd2011 {
   position: relative;
   line-height: 49px;
   width: 78px;
   flex-shrink: 0;
 }
-.ucsd201,
-.udiv,
+.ucsd2011,
+.udiv11,
 .udiv1 {
   display: inline-block;
 }
-.udiv {
+.udiv11 {
   position: relative;
   font-size: var(--font-size-sm);
   line-height: 49px;
   width: 81px;
   flex-shrink: 0;
+  margin-left: 80px;
 }
 .udiv1 {
   width: 106px;
 }
 .udiv1,
-.udiv2,
-.utruonglv {
+.udiv21,
+.utruonglv1 {
   position: relative;
   line-height: 49px;
   flex-shrink: 0;
 }
-.udiv2 {
+.udiv21 {
   font-size: var(--font-size-sm);
   text-align: center;
   display: inline-block;
   width: 150px;
+  margin-left: -10px;
 }
-.utruonglv {
+.utruonglv1 {
+  /* overflow-wrap: break-word;
   font-size: var(--font-size-mid);
   text-align: left;
   display: flex;
   align-items: center;
   width: 89px;
-  height: 49px;
+  height: auto;
+  margin-right: 78px; */
+  font-size: var(--font-size-sm);
+  text-align: center;
+  display: inline-block;
+  width: 200px;
+  overflow-wrap: break-word;
+  height: auto
 }
 .ucsd201-parent {
   flex: 1;

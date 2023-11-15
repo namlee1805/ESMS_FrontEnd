@@ -28,11 +28,14 @@ const ExscheduleLec = () => {
         .then(response => response.text())
         .then(data => {
           //setStudentData(data);
-          alert(data);
+          //alert(data);
           if (data == "Success") {
             const updatedData = [...lecturerData];
             updatedData.splice(index, 1);
             setLecturerData(updatedData);
+            alert("Delete Successfully");
+          }else{
+            alert(" Too late to delete")
           }
         })
         .catch(error => {

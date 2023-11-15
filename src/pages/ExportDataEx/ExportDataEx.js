@@ -89,7 +89,7 @@ const ExportDataEx = () => {
       //   .catch(error => {
       //     console.log("Error:" + error);
       //   });
-
+alert("Please wait show notification is Export Successfully.");
       fetch(`http://localhost:8888/download?date=${dataStart}`)
   .then(response => {
     const filename = response.headers.get('content-disposition').split('filename=')[1];
@@ -106,6 +106,7 @@ const ExportDataEx = () => {
     a.click();
     document.body.removeChild(a);
     window.URL.revokeObjectURL(url);
+    alert("Export Successfully");
   })
   .catch(error => console.error('Error downloading file:', error));
 
