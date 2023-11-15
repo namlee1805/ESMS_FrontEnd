@@ -65,6 +65,10 @@ const ProStudent_Desktop = () => {
     window.location.href('http://localhost:3000/');
   }, []);
 
+  const onReportclick = useCallback(() => {
+    window.open('https://forms.gle/fCCNqjzx7UHx5X8Y6')
+  })
+
   return (
     <div className="vprostudent">
       <div className="vnavbar">
@@ -170,7 +174,7 @@ const ProStudent_Desktop = () => {
         </div>
         <div className="vbot">
           <div className="vreport">
-            <button className="vreport-child" onClick={onReportStuClick} />
+            <button className="vreport-child" onClick={onReportclick} />
             <div className="vreport1">Report</div>
             <div className="vimage-1-wrapper">
               <img className="vimage-1-icon" alt="" src="/image-1@2x.png" />

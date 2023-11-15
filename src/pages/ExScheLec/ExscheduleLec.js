@@ -84,6 +84,10 @@ const ExscheduleLec = () => {
       });
   }, []);
 
+
+  const onReportClick = useCallback(() => {
+    window.open('https://forms.gle/fCCNqjzx7UHx5X8Y6');
+  })
   return (
     <div className="cexschedulelec">
       <div className="cnavbar1">
@@ -322,7 +326,7 @@ const ExscheduleLec = () => {
         </div>
         <div className="cbot">
           <div className="creport2">
-            <button className="creport-item" />
+            <button className="creport-item"  onClick={onReportClick}/>
             <div className="creport3">Report</div>
             <div className="cimage-1-container">
               <img className="cimage-1-icon1" alt="" src="/image-1111@2x.png" />

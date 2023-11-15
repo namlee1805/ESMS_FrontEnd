@@ -15,6 +15,10 @@ const ReportLec = () => {
     }
   }
 
+  const onReportClick = useCallback(() => {
+    window.open('https://forms.gle/fCCNqjzx7UHx5X8Y6')
+  })
+
   return (
     <div className="rereportlec">
       <div className="renavbar1">
@@ -132,7 +136,7 @@ const ReportLec = () => {
       </div>
       <div className="rebot">
         <div className="rereport2">
-          <button className="rereport-item" />
+          <button className="rereport-item" onClick={onReportClick}/>
           <div className="rereport3">Report</div>
           <div className="reimage-1-container">
             <img className="reimage-1-icon1" alt="" src="/image-111@2x.png" />

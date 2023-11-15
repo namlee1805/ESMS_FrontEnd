@@ -15,6 +15,10 @@ const ReportSt = () => {
     }
   }
 
+  const onReportClick = useCallback(() => {
+    window.open('https://forms.gle/fCCNqjzx7UHx5X8Y6')
+  })
+
   return (
     <div className="zxreportstu">
       <div className="zxnavbar1">
@@ -104,7 +108,7 @@ const ReportSt = () => {
       </div>
       <div className="zxbot">
         <div className="zxreport2">
-          <button className="zxreport-item" />
+          <button className="zxreport-item" onClick={onReportClick}/>
           <div className="zxreport3">Report</div>
           <div className="zximage-1-container">
             <img className="zximage-1-icon1" alt="" src="/image-111@2x.png" />

@@ -50,6 +50,9 @@ const SalaryLec_Desktop = () => {
   }, []);
 
 
+  const onReportClick = useCallback(() => {
+    window.open('https://forms.gle/fCCNqjzx7UHx5X8Y6')
+  })
 
   return (
     <div className="salary6">
@@ -255,7 +258,7 @@ const SalaryLec_Desktop = () => {
       </div>
       <div className="bot5">
         <div className="report12">
-          <button className="report-child3" />
+          <button className="report-child3" onClick={onReportClick}/>
           <div className="report13">Report</div>
           <div className="image-1-wrapper4">
             <img className="image-1-icon6" alt="" src="/image-111@2x.png" />
