@@ -86,7 +86,7 @@ const Desktop_login = () => {
                 <div className="welcome-fpt-university">Username</div>
                 <input
                   className="username"
-                  placeholder="Example@email.com"
+                  placeholder="Username"
                   type="text"
                   value={username}
                   onChange={(event) => {
