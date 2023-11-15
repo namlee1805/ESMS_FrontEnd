@@ -149,7 +149,7 @@ const ExReaEx = () => {
           </button>
         </div>
         <div className="ubody">
-          <b className="uexam-schedule2">Exam Schedule</b>
+          <b className="uexam-schedule2">Exam Reason</b>
           <div className="uname3">
             <div className="ucourses">Email</div>
             <div className="uroom">Date</div>

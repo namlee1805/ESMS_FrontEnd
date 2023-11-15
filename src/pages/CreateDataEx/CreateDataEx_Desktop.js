@@ -295,11 +295,11 @@ const [roomLoading, setRoomLoading] = useState(false);
                   <div className="qbrowser">Upload</div>
                 </button>
               </div>
-              <div className="qfidownload-parent" onClick={handleDownload('course')}>
-                <button className="qfidownload-parent">
+              <div className="qfidownload-parent" >
+                <Link className="qfidownload-parent" to={"https://drive.usercontent.google.com/download?id=1-DEYM_7HV_esRFq9bif-m7ilA3HtyNqe&export=download&authuser=0&confirm=t&uuid=d098c65d-1da4-4233-8771-196fbca122f6&at=APZUnTU_YBQgZfOO_Mjp_FzYmtsG:1700077169904"}>
                   <img className="quedit-icon" alt="" src="/fidownload.svg" />
                   <div className="qbrowser">Download</div>
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -335,11 +335,11 @@ const [roomLoading, setRoomLoading] = useState(false);
                   <div className="qbrowser">Upload</div>
                 </button>
               </div>
-              <div className="qfidownload-parent" onClick={handleDownload('lecturer')}>
-                <button className="qfidownload-parent">
+              <div className="qfidownload-parent" >
+                <Link className="qfidownload-parent" to={"https://drive.usercontent.google.com/download?id=1-AbvZhBlPtewbtg1ZPoZe4ctaN5pm7dV&export=download&authuser=0&confirm=t&uuid=58cfa337-c23d-4c1e-9dc4-488306cb927f&at=APZUnTXZfnSYZw8oGvGnpuaPM_eG:1700077233344"}>
                   <img className="quedit-icon" alt="" src="/fidownload.svg" />
                   <div className="qbrowser">Download</div>
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -374,11 +374,11 @@ const [roomLoading, setRoomLoading] = useState(false);
                   <div className="qbrowser">Upload</div>
                 </button>
               </div>
-              <div className="qfidownload-parent" onClick={handleDownload('student')}>
-                <button className="qfidownload-parent">
+              <div className="qfidownload-parent" >
+                <Link className="qfidownload-parent" to={"https://drive.usercontent.google.com/download?id=1-DaKpsTyoXWnFOvXSOVduqLMQPT6FKeM&export=download&authuser=0&confirm=t&uuid=78c64043-d32c-4ceb-9b9f-4a8a8ceb73d9&at=APZUnTWDwCSizxgfcEM91Zf7SJfN:1700077287743"}>
                   <img className="quedit-icon" alt="" src="/fidownload.svg" />
                   <div className="qbrowser">Download</div>
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -411,11 +411,11 @@ const [roomLoading, setRoomLoading] = useState(false);
                   <div className="qbrowser">Upload</div>
                 </button>
               </div>
-              <div className="qfidownload-parent" onClick={handleDownload('room')}>
-                <button className="qfidownload-parent">
+              <div className="qfidownload-parent" >
+                <Link className="qfidownload-parent" to={"https://drive.usercontent.google.com/download?id=1-EBjSHEjvqflkDhwmjYcjqmQsCUst2P0&export=download&authuser=0&confirm=t&uuid=4988ea8d-f1ce-467d-9257-e9dce682a6a4&at=APZUnTWPdDIjXPG1n57fSWzFSG77:1700077254555"}>
                   <img className="quedit-icon" alt="" src="/fidownload.svg" />
                   <div className="qbrowser">Download</div>
-                </button>
+                </Link>
               </div>
             </div>
           </div>

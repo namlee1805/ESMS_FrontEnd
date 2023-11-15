@@ -415,11 +415,12 @@
   overflow: hidden;
   flex-direction: row;
   justify-content: flex-start;
-  padding: 0 44px;
+  /* padding: 0 44px; */
   box-sizing: border-box;
   gap: 88px;
   text-align: center;
   font-size: var(--font-size-xl);
+  margin-right: 63px;
 }
 .cframe-inner {
   position: relative;
