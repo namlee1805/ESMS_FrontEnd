@@ -187,6 +187,18 @@ const EditExamina = () => {
                                 <div className="aframe-item" />
                             </div>
                         </Link>
+                        <Link className="aexams2" to={"/exReasonExami"}>
+                            <div className="aframe-parent">
+                                <div className="atemplate-group">
+
+                                    <img className="atemplate-icon1" alt=""
+                                        src="/icon31.svg"
+                                    />
+                                    <div className="aexams3">Exam Reason</div>
+                                </div>
+                                <div className="aframe-item" />
+                            </div>
+                        </Link>
                         </div>
 
 

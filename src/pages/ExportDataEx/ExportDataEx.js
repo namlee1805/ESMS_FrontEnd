@@ -6,7 +6,7 @@ import "./ExportDataEx.css";
 import axios from "axios";
 
 
-const CreaExam = () => {
+const ExportDataEx = () => {
 
   const navigate = useNavigate();
   const { logOut, user } = UserAuth();
@@ -222,6 +222,12 @@ const CreaExam = () => {
               </div>
             </div>
           </Link>
+          <Link className="creacreate-data" to={"/exReasonExami"}>
+            <div className="creaupward-trend-parent">
+              <img className="creauedit-icon" alt="" src="/icon31.svg" />
+              <div className="creaedit1">Exam Reason</div>
+            </div>
+          </Link>
         </div>
         {/* <button onClick={handleSignOut} className="crealogout">
           <div className="crealogout-wrapper">
@@ -274,4 +280,4 @@ const CreaExam = () => {
 );
 };
 
-export default CreaExam;
+export default ExportDataEx;

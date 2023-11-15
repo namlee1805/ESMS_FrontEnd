@@ -18,6 +18,7 @@ import EditExamina from "./pages/EditExami/EditExamina";
 import RegisLec from "./pages/RegistLec/RegisLec";
 import ExamExamina from "./pages/ExScheExam/ExamExamina";
 import ExportDataEx from "./pages/ExportDataEx/ExportDataEx"
+import ExReaEx from "./pages/ExReaEx/ExReaEx";
 
 
 function App() {
@@ -141,6 +142,13 @@ function App() {
           }
           />
 
+          < Route path="/exReasonExami" element={
+            <Proctected>
+              <ExReaEx />
+            </Proctected>
+          }
+          />
+
           < Route path="/profileLe" element={
             <Proctected>
               <ProLec_Desktop />
@@ -155,9 +163,9 @@ function App() {
           />
 
           < Route path="/exportData" element={
-            <Proctected>
+            // <Proctected>
               <ExportDataEx />
-            </Proctected>
+            // </Proctected>
           }
           />
 

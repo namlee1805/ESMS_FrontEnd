@@ -2,9 +2,9 @@ import { async } from "@firebase/util";
 import React, { useState, useEffect, useCallback } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../../context/AuthContext";
-import "./ExamExamina.css";
+import "./ExReaEx.css";
 
-const ExamExamina = () => {
+const ExReaEx = () => {
 
   const { logOut, user } = UserAuth();
  const navigate = useNavigate();
@@ -73,13 +73,23 @@ const ExamExamina = () => {
             </div>
           </button>
           <div className="umenu1">
-            <Link className="ucreatedata" to={"/exscheduleExami"}>
+            {/* <Link className="ucreatedata" to={"/exscheduleExami"}>
               <div className="ucreatedata-inner">
                 <div className="utemplate-group">
                   <img className="utemplate-icon1" alt="" src="/template1.svg" />
                   <div className="uexams2">Exams</div>
                   <div className="uframe-item" />
                 </div>
+              </div>
+            </Link> */}
+            <Link className="ucreate-exams" to={"/exscheduleExami"}>
+              <div className="uupward-trend-parent">
+                <img
+                  className="uupward-trend-icon"
+                  alt=""
+                  src="/template1.svg"
+                />
+                <div className="ucreate-exams1">Exams</div>
               </div>
             </Link>
             <Link className="ucreate-exams" to={"/createExamEx"}>
@@ -114,10 +124,13 @@ const ExamExamina = () => {
                 <div className="ucreate-exams1">Export Data</div>
               </div>
             </Link>
-            <Link className="ucreate-data" to={"/exReasonExami"}>
-              <div className="uupward-trend-parent">
-                <img className="uuedit-icon" alt="" src="/icon31.svg" />
-                <div className="ucreate-exams1">Exam Reason</div>
+            <Link className="ucreatedata" to={"/exReasonExami"}>
+              <div className="ucreatedata-inner">
+                <div className="utemplate-group">
+                  <img className="utemplate-icon1" alt="" src="/icon31.svg" />
+                  <div className="uexams2">Exam Reason</div>
+                  <div className="uframe-item" />
+                </div>
               </div>
             </Link>
           </div>
@@ -138,11 +151,11 @@ const ExamExamina = () => {
         <div className="ubody">
           <b className="uexam-schedule2">Exam Schedule</b>
           <div className="uname3">
-            <div className="ucourses">Courses</div>
-            <div className="uroom">Room</div>
-            <div className="udate">Date</div>
-            <div className="uslot">Slot</div>
-            <div className="ulecturer">Lecturer</div>
+            <div className="ucourses">Email</div>
+            <div className="uroom">Date</div>
+            <div className="udate">Time</div>
+            <div className="uslot">Reason</div>
+            {/* <div className="ulecturer">Lecturer</div> */}
           </div>
           {/* <div className="urectangle-parent">
             <div className="uframe-inner" />
@@ -216,7 +229,7 @@ const ExamExamina = () => {
               <div className="udiv">{loading ? 'Loading...' : examinaterData.Room_id}</div>
               <div className="udiv1">{loading ? 'Loading...' : examinaterData.Date}</div>
               <div className="udiv2">{loading ? 'Loading...' : examinaterData.Time}</div>
-              <div className="utruonglv">{loading ? 'Loading...' : examinaterData.lecture_id}</div>
+              {/* <div className="utruonglv">{loading ? 'Loading...' : examinaterData.lecture_id}</div> */}
             </div>
           </div>
           )))
@@ -240,4 +253,4 @@ const ExamExamina = () => {
   );
 };
 
-export default ExamExamina;
+export default ExReaEx;
